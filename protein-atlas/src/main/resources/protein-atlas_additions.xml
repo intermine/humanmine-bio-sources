@@ -4,7 +4,6 @@
 <classes>
 <class name="ProteinAtlasExpression" is-interface="true">
   <attribute name="level" type="java.lang.String"/>
-  <attribute name="expressionType" type="java.lang.String"/>
   <attribute name="reliability" type="java.lang.String"/>
   <attribute name="cellType" type="java.lang.String"/>
   <reference name="gene" referenced-type="Gene" reverse-reference="proteinAtlasExpression"/>

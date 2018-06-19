@@ -155,16 +155,15 @@ public class ProteinAtlasConverter extends BioFileConverter
 
             String cellType = line[3];
             String level = line[4];
-            String expressionType = line[5];
-            String reliability = line[6];
+            String reliability = line[5];
 
-            level = alterLevel(level, expressionType);
-            reliability = alterReliability(reliability, expressionType);
+//            level = alterLevel(level, expressionType);
+//            reliability = alterReliability(reliability, expressionType);
 
             Item expression = createItem("ProteinAtlasExpression");
             expression.setAttribute("cellType", cellType);
             expression.setAttribute("level", level);
-            expression.setAttribute("expressionType", alterExpressionType(expressionType));
+//            expression.setAttribute("expressionType", alterExpressionType(expressionType));
             expression.setAttribute("reliability", reliability);
             expression.setReference("gene", geneId);
             expression.setReference("tissue", tissueId);
@@ -289,51 +288,51 @@ public class ProteinAtlasConverter extends BioFileConverter
     }
 
 
-    private static String alterLevel(String level, String type) {
-        if ("staining".equalsIgnoreCase(type)) {
-            if ("strong".equalsIgnoreCase(level)) {
-                return "High";
-            } else if ("moderate".equalsIgnoreCase(level)) {
-                return "Medium";
-            } else if ("weak".equalsIgnoreCase(level)) {
-                return "Low";
-            } else if ("negative".equalsIgnoreCase(level)) {
-                return "None";
-            }
-        }
-        return level;
-    }
-
-    private static String alterReliability(String reliability, String type) {
-        if ("staining".equalsIgnoreCase(type)) {
-            if ("supportive".equalsIgnoreCase(reliability)) {
-                return "High";
-            } else if ("uncertain".equalsIgnoreCase(reliability)) {
-                return "Low";
-            }
-        } else if ("ape".equalsIgnoreCase(type)) {
-            if ("hi".equalsIgnoreCase(reliability)) {
-                return "High";
-            } else if ("medium".equalsIgnoreCase(reliability)) {
-                return "High";
-            }  else if ("low".equalsIgnoreCase(reliability)) {
-                return "Low";
-            }  else if ("very low".equalsIgnoreCase(reliability)) {
-                return "Low";
-            }
-        }
-        return reliability;
-    }
-
-    private static String alterExpressionType(String expressionType) {
-        if ("APE".equalsIgnoreCase(expressionType)) {
-            return "APE - two or more antibodies";
-        } else if ("Staining".equalsIgnoreCase(expressionType)) {
-            return "Staining - one antibody only";
-        } else {
-            return expressionType;
-        }
-    }
+//    private static String alterLevel(String level, String type) {
+//        if ("staining".equalsIgnoreCase(type)) {
+//            if ("strong".equalsIgnoreCase(level)) {
+//                return "High";
+//            } else if ("moderate".equalsIgnoreCase(level)) {
+//                return "Medium";
+//            } else if ("weak".equalsIgnoreCase(level)) {
+//                return "Low";
+//            } else if ("negative".equalsIgnoreCase(level)) {
+//                return "None";
+//            }
+//        }
+//        return level;
+//    }
+//
+//    private static String alterReliability(String reliability, String type) {
+//        if ("staining".equalsIgnoreCase(type)) {
+//            if ("supportive".equalsIgnoreCase(reliability)) {
+//                return "High";
+//            } else if ("uncertain".equalsIgnoreCase(reliability)) {
+//                return "Low";
+//            }
+//        } else if ("ape".equalsIgnoreCase(type)) {
+//            if ("hi".equalsIgnoreCase(reliability)) {
+//                return "High";
+//            } else if ("medium".equalsIgnoreCase(reliability)) {
+//                return "High";
+//            }  else if ("low".equalsIgnoreCase(reliability)) {
+//                return "Low";
+//            }  else if ("very low".equalsIgnoreCase(reliability)) {
+//                return "Low";
+//            }
+//        }
+//        return reliability;
+//    }
+//
+//    private static String alterExpressionType(String expressionType) {
+//        if ("APE".equalsIgnoreCase(expressionType)) {
+//            return "APE - two or more antibodies";
+//        } else if ("Staining".equalsIgnoreCase(expressionType)) {
+//            return "Staining - one antibody only";
+//        } else {
+//            return expressionType;
+//        }
+//    }
 
     private void processEntry(ProteinAtlasEntry entry) throws ObjectStoreException {
         entryCount++;
