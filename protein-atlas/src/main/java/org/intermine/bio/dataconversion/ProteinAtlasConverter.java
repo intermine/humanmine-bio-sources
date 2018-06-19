@@ -352,14 +352,14 @@ public class ProteinAtlasConverter extends BioFileConverter
                 .getDataSet()) {
             String expressionType = ted.getLevelSet().iterator().next()
                     .getType();
-            reliability = alterReliability(reliability, expressionType);
+//            reliability = alterReliability(reliability, expressionType);
 
             Item expression = createItem("ProteinAtlasExpression");
             expression.setAttribute("cellType", ted.getCellType());
             expression.setAttribute("level", ted.getLevelSet().iterator()
                     .next().getLevel());
-            expression.setAttribute("expressionType",
-                    alterExpressionType(expressionType));
+//            expression.setAttribute("expressionType",
+//                    alterExpressionType(expressionType));
             expression.setAttribute("reliability", reliability);
             expression.setReference("gene", geneRefId);
             expression.setReference("tissue", ted.getTissue());
