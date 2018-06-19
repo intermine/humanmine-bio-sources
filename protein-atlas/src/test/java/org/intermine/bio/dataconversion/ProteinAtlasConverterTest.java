@@ -34,15 +34,15 @@ public class ProteinAtlasConverterTest extends ItemsTestCase
     }
 
     public void testProcess() throws Exception {
-        String input = "\"Gene\",\"Symbol\", \"Tissue\",\"Cell type\",\"Level\",\"Expression type\",\"Reliability\"" + ENDL
-            + "\"ENSG00000000003\",\"TSPAN6\", \"adrenal gland\",\"glandular cells\",\"Negative\",\"Staining\",\"Supportive\"" + ENDL
-            + "\"ENSG00000000003\",\"TSPAN6\", \"appendix\",\"glandular cells\",\"Moderate\",\"Staining\",\"Supportive\"" + ENDL;
+        String input = "Gene\tSymbol\tTissue\tCell type\tLevel\tExpression type\tReliability" + ENDL
+            + "ENSG00000000003\tTSPAN6\tadrenal gland\tglandular cells\tNegative\tStaining\tSupportive" + ENDL
+            + "ENSG00000000003\tTSPAN6\tappendix\tglandular cells\tModerate\tStaining\tSupportive" + ENDL;
 
 
         MockItemWriter itemWriter = new MockItemWriter(new HashMap<String, Item>());
         BioFileConverter converter = new ProteinAtlasConverter(itemWriter,
                                                                    Model.getInstanceByName("genomic"));
-        converter.setCurrentFile(new File("normal_tissue.csv"));
+        converter.setCurrentFile(new File("normal_tissue.tsv"));
         converter.process(new StringReader(input));
         converter.close();
 

@@ -77,7 +77,7 @@ public class ProteinAtlasConverter extends BioFileConverter
     @Override
     public void process(Reader reader) throws Exception {
         File currentFile = getCurrentFile();
-        if ("normal_tissue.csv".equals(currentFile.getName())) {
+        if ("normal_tissue.tsv".equals(currentFile.getName())) {
             processNormalTissue(reader);
         } else if ("tissue_to_organ.tsv".equals(currentFile.getName())) {
             processTissueToOrgan(reader);
@@ -140,7 +140,7 @@ public class ProteinAtlasConverter extends BioFileConverter
         // 2 - medium/ unsupportive
         // 3 - high/ supportive
 
-        Iterator<?> lineIter = FormattedTextParser.parseCsvDelimitedReader(reader);
+        Iterator<?> lineIter = FormattedTextParser.parseTabDelimitedReader(reader);
         lineIter.next();  // discard header
 
         while (lineIter.hasNext()) {
