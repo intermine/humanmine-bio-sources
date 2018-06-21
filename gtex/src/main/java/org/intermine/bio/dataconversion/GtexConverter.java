@@ -160,6 +160,7 @@ public class GtexConverter extends BioDirectoryConverter
                 Item item = createItem("RNASeqResult");
                 item.setReference("gene", gene);
                 item.setAttribute("tissue", columnName);
+                item.setAttribute("expressionType", "TMP");
                 item.setAttribute("expressionScore", line[i]);
                 store(item);
                 gene.addToCollection("rnaSeqResults", item);
