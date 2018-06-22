@@ -26,8 +26,8 @@ subprojects {
     apply plugin: 'dbmodel'
     apply plugin: 'biosource-dbmodel'
 
-    sourceCompatibility = 1.6
-    targetCompatibility = 1.6
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
 
     repositories {
         mavenCentral()
