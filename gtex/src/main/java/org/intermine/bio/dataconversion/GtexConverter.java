@@ -17,6 +17,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.intermine.dataconversion.ItemWriter;
 import org.intermine.metadata.Model;
@@ -60,9 +61,9 @@ public class GtexConverter extends BioDirectoryConverter
         List<File> files = readFilesInDir(dataDir);
         for (File f : files) {
             String fileName = f.getName();
-            if (fileName.contains("gene_median_rpkm")) {
+            if (fileName.contains("egenes")) {
                 processExpression(new FileReader(f));
-            } else if (fileName.contains("signif_snpgene")) {
+            } else if (fileName.contains("signif")) {
                 processSNPs(new FileReader(f), fileName);
             }
         }
@@ -109,7 +110,7 @@ public class GtexConverter extends BioDirectoryConverter
         String tissue = parseFilename(filename);
         while (lineIter.hasNext()) {
             String[] line = (String[]) lineIter.next();
-            if (line.length != 11) {
+            if (line.length < 4) {
                 continue;
             }
             String snpIdentifier = line[0];
@@ -141,13 +142,13 @@ public class GtexConverter extends BioDirectoryConverter
             String[] line = (String[]) lineIter.next();
 
             // process header
-            if ("Name".equals(line[0])) {
-                headers = line;
-            }
-            // keep going until we find the column heading
             if (headers == null) {
-                continue;
+                headers = line;
+
+                // fast forward to process gene line
+                line = (String[]) lineIter.next();
             }
+
             String geneIdentifier = line[0];
             Item gene = getGene(geneIdentifier);
             if (gene == null) {
@@ -161,7 +162,10 @@ public class GtexConverter extends BioDirectoryConverter
                 item.setReference("gene", gene);
                 item.setAttribute("tissue", columnName);
                 item.setAttribute("expressionType", "TMP");
-                item.setAttribute("expressionScore", line[i]);
+                String expressionScore = line[i];
+                if (StringUtils.isNotEmpty(expressionScore)) {
+                    item.setAttribute("expressionScore", expressionScore);
+                }
                 store(item);
                 gene.addToCollection("rnaSeqResults", item);
             }
