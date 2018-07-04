@@ -32,7 +32,7 @@ import java.io.IOException;
  *
  * @author Julie Sullivan
  */
-public class GtexConverter extends BioDirectoryConverter
+public class GtexConverter extends BioFileConverter
 {
     //
     private static final String DATASET_TITLE = "GTex data set";
@@ -52,21 +52,12 @@ public class GtexConverter extends BioDirectoryConverter
     }
 
     @Override
-    public void process(File dataDir) throws Exception {
+    public void process(Reader reader) throws Exception {
 
         if (rslv == null) {
             rslv = IdResolverService.getIdResolverByOrganism(TAXON_ID);
         }
-
-        List<File> files = readFilesInDir(dataDir);
-        for (File f : files) {
-            String fileName = f.getName();
-            if (fileName.contains("egenes")) {
-                processExpression(new FileReader(f));
-            } else if (fileName.contains("signif")) {
-                processSNPs(new FileReader(f), fileName);
-            }
-        }
+        processExpression(reader);
     }
 
     /**
@@ -82,71 +73,20 @@ public class GtexConverter extends BioDirectoryConverter
         }
     }
 
-    private List<File> readFilesInDir(File dir) {
-        List<File> files = new ArrayList<File>();
-        for (File file : dir.listFiles()) {
-            files.add(file);
-        }
-        return files;
-    }
-
-//    private void processGeneFile(Reader reader) throws IOException, ObjectStoreException {
-//        Iterator<String[]> lineIter = FormattedTextParser.parseTabDelimitedReader(reader);
-//        lineIter.next(); // move past header
-//        while (lineIter.hasNext()) {
-//            String[] line = (String[]) lineIter.next();
-//            if (line.length < 28) {
-//                continue;
-//            }
-//            String geneIdentifier = line[0];
-//            Item gene = getGene(geneIdentifier);
-//        }
-//    }
-
-    private void processSNPs(Reader reader, String filename)
-        throws IOException, ObjectStoreException {
-        Iterator<String[]> lineIter = FormattedTextParser.parseTabDelimitedReader(reader);
-        lineIter.next(); // move past header
-        String tissue = parseFilename(filename);
-        while (lineIter.hasNext()) {
-            String[] line = (String[]) lineIter.next();
-            if (line.length < 4) {
-                continue;
-            }
-            String snpIdentifier = line[0];
-            String geneIdentifier = line[1];
-            String tssDistance = line[2];
-            String pValue = line[3];
-
-            Item gene = getGene(geneIdentifier);
-            if (gene == null) {
-                continue;
-            }
-            String snp = getSNP(snpIdentifier, gene, tissue, tssDistance, pValue);
-            gene.addToCollection("SNPs", snp);
-        }
-    }
-
-    // Nerve_Tibial_Analysis.v6p.egenes.txt
-    private String parseFilename(String filename) {
-        String[] bits = filename.split("\\.");
-        String tissue = bits[0];
-        return tissue.replace("_", " ");
-    }
-
     private void processExpression(Reader reader) throws IOException, ObjectStoreException {
         Iterator<String[]> lineIter = FormattedTextParser.parseTabDelimitedReader(reader);
         String[] headers = null;
 
         while (lineIter.hasNext()) {
-            String[] line = (String[]) lineIter.next();
+            String[] line = lineIter.next();
 
             // process header
-            if (headers == null) {
+            if ("gene_id".equals(line[0])) {
                 headers = line;
-
-                // fast forward to process gene line
-                line = (String[]) lineIter.next();
+            }
+            // keep going until we find the column heading
+            if (headers == null) {
+                continue;
             }
 
             String geneIdentifier = line[0];
