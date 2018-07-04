@@ -17,6 +17,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.intermine.dataconversion.ItemWriter;
 import org.intermine.metadata.Model;
@@ -162,6 +163,10 @@ public class GtexConverter extends BioDirectoryConverter
                 item.setAttribute("tissue", columnName);
                 item.setAttribute("expressionType", "TMP");
                 item.setAttribute("expressionScore", line[i]);
+                String expressionScore = line[i];
+                if (StringUtils.isEmpty(expressionScore)) {
+                    item.setAttribute("expressionScore", expressionScore);
+                }
                 store(item);
                 gene.addToCollection("rnaSeqResults", item);
             }
@@ -200,12 +205,6 @@ public class GtexConverter extends BioDirectoryConverter
         return item.getIdentifier();
     }
 
-    /**
-     * resolve old human symbol
-     * @param taxonId id of organism for this gene
-     * @param ih interactor holder
-     * @throws ObjectStoreException
-     */
     private String resolveGene(String identifier) {
         String id = identifier;
         // ENSG00000225880.4
