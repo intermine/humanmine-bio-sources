@@ -32,7 +32,7 @@ import java.io.IOException;
  *
  * @author Julie Sullivan
  */
-public class GtexConverter extends BioFileConverter
+public class GtexConverter extends BioDirectoryConverter
 {
     //
     private static final String DATASET_TITLE = "GTex data set";
@@ -52,12 +52,21 @@ public class GtexConverter extends BioFileConverter
     }
 
     @Override
-    public void process(Reader reader) throws Exception {
+    public void process(File dataDir) throws Exception {
 
         if (rslv == null) {
             rslv = IdResolverService.getIdResolverByOrganism(TAXON_ID);
         }
-        processExpression(reader);
+
+        List<File> files = readFilesInDir(dataDir);
+        for (File f : files) {
+            String fileName = f.getName();
+            if (fileName.contains("tpm")) {
+                processExpression(new FileReader(f));
+            } else if (fileName.contains("signif")) {
+                processSNPs(new FileReader(f), fileName);
+            }
+        }
     }
 
     /**
@@ -71,6 +80,45 @@ public class GtexConverter extends BioFileConverter
                 throw new RuntimeException(e);
             }
         }
+    }
+
+    private List<File> readFilesInDir(File dir) {
+        List<File> files = new ArrayList<File>();
+        for (File file : dir.listFiles()) {
+            files.add(file);
+        }
+        return files;
+    }
+
+    private void processSNPs(Reader reader, String filename)
+            throws IOException, ObjectStoreException {
+        Iterator<String[]> lineIter = FormattedTextParser.parseTabDelimitedReader(reader);
+        lineIter.next(); // move past header
+        String tissue = parseFilename(filename);
+        while (lineIter.hasNext()) {
+            String[] line = (String[]) lineIter.next();
+            if (line.length < 4) {
+                continue;
+            }
+            String snpIdentifier = line[0];
+            String geneIdentifier = line[1];
+            String tssDistance = line[2];
+            String pValue = line[6];
+
+            Item gene = getGene(geneIdentifier);
+            if (gene == null) {
+                continue;
+            }
+            String snp = getSNP(snpIdentifier, gene, tissue, tssDistance, pValue);
+            gene.addToCollection("SNPs", snp);
+        }
+    }
+
+    // Nerve_Tibial_Analysis.v6p.egenes.txt
+    private String parseFilename(String filename) {
+        String[] bits = filename.split("\\.");
+        String tissue = bits[0];
+        return tissue.replace("_", " ");
     }
 
     private void processExpression(Reader reader) throws IOException, ObjectStoreException {
@@ -131,8 +179,8 @@ public class GtexConverter extends BioFileConverter
     }
 
     private String getSNP(String primaryIdentifier, Item gene, String tissue,
-        String tssDistance, String pValue)
-        throws ObjectStoreException {
+                          String tssDistance, String pValue)
+            throws ObjectStoreException {
         Item item = createItem("SNP");
         item.setAttribute("primaryIdentifier", primaryIdentifier);
         item.setAttribute("tissue", tissue);
@@ -153,8 +201,8 @@ public class GtexConverter extends BioFileConverter
             int resCount = rslv.countResolutions(TAXON_ID, ensemblIdentifier);
             if (resCount != 1) {
                 LOG.info("RESOLVER: failed to resolve gene to one identifier, ignoring gene: "
-                         + ensemblIdentifier + " count: " + resCount + " Human identifier: "
-                         + rslv.resolveId(TAXON_ID, ensemblIdentifier));
+                        + ensemblIdentifier + " count: " + resCount + " Human identifier: "
+                        + rslv.resolveId(TAXON_ID, ensemblIdentifier));
                 return null;
             }
             id = rslv.resolveId(TAXON_ID, ensemblIdentifier).iterator().next();
