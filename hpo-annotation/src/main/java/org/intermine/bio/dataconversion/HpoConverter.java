@@ -161,7 +161,7 @@ public class HpoConverter extends BioDirectoryConverter
         Item item = diseases.get(omimId);
         if (item == null) {
             item = createItem("Disease");
-            item.setAttribute("identifier", omimId);
+            item.setAttribute("primaryIdentifier", omimId);
             diseases.put(omimId, item);
         }
         return item;
@@ -305,7 +305,7 @@ public class HpoConverter extends BioDirectoryConverter
     private String getEvidenceCode(String code) throws ObjectStoreException {
         String refId = evidenceCodes.get(code);
         if (refId == null) {
-            Item item = createItem("GOEvidenceCode");
+            Item item = createItem("OntologyAnnotationEvidenceCode");
             item.setAttribute("code", code);
             refId = item.getIdentifier();
             evidenceCodes.put(code, refId);
