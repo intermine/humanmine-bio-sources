@@ -130,7 +130,7 @@ public class ClinvarConverter extends BioFileConverter
                     return null;
                 }
                 Item item = createItem("Disease");
-                item.setAttribute("primaryIdentifier", identifier);
+                item.setAttribute("identifier", identifier);
                 diseases.put(identifier, item.getIdentifier());
                 store(item);
                 return item.getIdentifier();

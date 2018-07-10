@@ -161,7 +161,7 @@ public class HpoConverter extends BioDirectoryConverter
         Item item = diseases.get(omimId);
         if (item == null) {
             item = createItem("Disease");
-            item.setAttribute("primaryIdentifier", omimId);
+            item.setAttribute("identifier", omimId);
             diseases.put(omimId, item);
         }
         return item;
