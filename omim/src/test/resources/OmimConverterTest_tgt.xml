@@ -3,7 +3,7 @@
 <attribute name="pubMedId" value="9312173"/>
 </item>
 <item id="4_2" class="Disease">
-<attribute name="identifier" value="OMIM:601665"/>
+<attribute name="primaryIdentifier" value="OMIM:601665"/>
 <attribute name="name" value="OBESITY"/>
 <collection name="dataSets"><reference ref_id="2_1"/></collection>
 <collection name="genes"><reference ref_id="6_1"/><reference ref_id="6_2"/><reference ref_id="6_3"/><reference ref_id="6_4"/><reference ref_id="6_5"/><reference ref_id="6_6"/><reference ref_id="6_7"/><reference ref_id="6_8"/></collection>
@@ -113,7 +113,7 @@
 <attribute name="pubMedId" value="9758619"/>
 </item>
 <item id="4_1" class="Disease">
-<attribute name="identifier" value="OMIM:125853"/>
+<attribute name="primaryIdentifier" value="OMIM:125853"/>
 <attribute name="name" value="DIABETES MELLITUS, NONINSULIN-DEPENDENT"/>
 <collection name="dataSets"><reference ref_id="2_1"/></collection>
 <collection name="genes"><reference ref_id="6_1"/><reference ref_id="6_2"/><reference ref_id="6_3"/><reference ref_id="6_4"/><reference ref_id="6_5"/></collection>
@@ -386,7 +386,7 @@
 <attribute name="pubMedId" value="1978328"/>
 </item>
 <item id="4_3" class="Disease">
-<attribute name="identifier" value="OMIM:604367"/>
+<attribute name="primaryIdentifier" value="OMIM:604367"/>
 <attribute name="name" value="LIPODYSTROPHY, FAMILIAL PARTIAL, TYPE 3"/>
 <collection name="dataSets"><reference ref_id="2_1"/></collection>
 <collection name="genes"><reference ref_id="6_1"/><reference ref_id="6_2"/><reference ref_id="6_3"/><reference ref_id="6_4"/><reference ref_id="6_5"/></collection>
@@ -519,7 +519,7 @@
 <attribute name="pubMedId" value="9498630"/>
 </item>
 <item id="4_4" class="Disease">
-<attribute name="identifier" value="OMIM:609338"/>
+<attribute name="primaryIdentifier" value="OMIM:609338"/>
 <attribute name="name" value="CAROTID INTIMAL MEDIAL THICKNESS 1"/>
 <collection name="dataSets"><reference ref_id="2_1"/></collection>
 <collection name="genes"><reference ref_id="6_1"/><reference ref_id="6_2"/><reference ref_id="6_3"/><reference ref_id="6_4"/><reference ref_id="6_5"/></collection>

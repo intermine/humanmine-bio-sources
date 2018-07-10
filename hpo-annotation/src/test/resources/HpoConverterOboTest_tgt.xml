@@ -51,11 +51,11 @@
 <attribute name="name" value="HPO Annotation"/>
 <reference name="dataSource" ref_id="1_1"/>
 </item>
-<item id="7_2" class="GOEvidenceCode">
+<item id="7_2" class="OntologyAnnotationEvidenceCode">
 <attribute name="code" value="TAS"/>
 </item>
 <item id="4_1" class="Disease">
-<attribute name="identifier" value="OMIM:614652"/>
+<attribute name="primaryIdentifier" value="OMIM:614652"/>
 <collection name="dataSets"><reference ref_id="2_1"/></collection>
 <collection name="genes"><reference ref_id="5_1"/><reference ref_id="5_2"/></collection>
 <collection name="hpoAnnotations"><reference ref_id="9_1"/><reference ref_id="9_2"/><reference ref_id="9_3"/><reference ref_id="9_4"/><reference ref_id="9_5"/><reference ref_id="9_6"/><reference ref_id="9_7"/><reference ref_id="9_8"/><reference ref_id="9_9"/></collection>
@@ -67,7 +67,7 @@
 <collection name="dataSets"><reference ref_id="2_1"/></collection>
 <collection name="diseases"><reference ref_id="4_1"/></collection>
 </item>
-<item id="7_1" class="GOEvidenceCode">
+<item id="7_1" class="OntologyAnnotationEvidenceCode">
 <attribute name="code" value="IEA"/>
 </item>
 <item id="9_4" class="HPOAnnotation">

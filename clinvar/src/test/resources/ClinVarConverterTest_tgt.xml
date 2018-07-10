@@ -71,10 +71,10 @@
 <attribute name="taxonId" value="9606"/>
 </item>
 <item id="7_1" class="Disease">
-<attribute name="identifier" value="OMIM:114500"/>
+<attribute name="primaryIdentifier" value="OMIM:114500"/>
 </item>
 <item id="7_2" class="Disease">
-<attribute name="identifier" value="OMIM:604367"/>
+<attribute name="primaryIdentifier" value="OMIM:604367"/>
 </item>
 <item id="5_3" class="Allele">
 <attribute name="alternate" value="G"/>
