@@ -61,7 +61,7 @@ public class GtexConverter extends BioDirectoryConverter
         List<File> files = readFilesInDir(dataDir);
         for (File f : files) {
             String fileName = f.getName();
-            if (fileName.contains("tpm")) {
+            if (fileName.contains("gene_median")) {
                 processExpression(new FileReader(f));
             } else if (fileName.contains("signif")) {
                 processSNPs(new FileReader(f), fileName);
@@ -90,14 +90,27 @@ public class GtexConverter extends BioDirectoryConverter
         return files;
     }
 
+//    private void processGeneFile(Reader reader) throws IOException, ObjectStoreException {
+//        Iterator<String[]> lineIter = FormattedTextParser.parseTabDelimitedReader(reader);
+//        lineIter.next(); // move past header
+//        while (lineIter.hasNext()) {
+//            String[] line = (String[]) lineIter.next();
+//            if (line.length < 28) {
+//                continue;
+//            }
+//            String geneIdentifier = line[0];
+//            Item gene = getGene(geneIdentifier);
+//        }
+//    }
+
     private void processSNPs(Reader reader, String filename)
             throws IOException, ObjectStoreException {
         Iterator<String[]> lineIter = FormattedTextParser.parseTabDelimitedReader(reader);
         lineIter.next(); // move past header
         String tissue = parseFilename(filename);
         while (lineIter.hasNext()) {
-            String[] line = (String[]) lineIter.next();
-            if (line.length < 4) {
+            String[] line = lineIter.next();
+            if (line.length != 12) {
                 continue;
             }
             String snpIdentifier = line[0];
@@ -136,7 +149,6 @@ public class GtexConverter extends BioDirectoryConverter
             if (headers == null) {
                 continue;
             }
-
             String geneIdentifier = line[0];
             Item gene = getGene(geneIdentifier);
             if (gene == null) {
@@ -151,6 +163,7 @@ public class GtexConverter extends BioDirectoryConverter
                 item.setAttribute("tissue", columnName);
                 item.setAttribute("expressionType", "TMP");
                 String expressionScore = line[i];
+                // TODO if there isn't an expression score, maybe skip?
                 if (StringUtils.isNotEmpty(expressionScore)) {
                     item.setAttribute("expressionScore", expressionScore);
                 }
@@ -192,6 +205,12 @@ public class GtexConverter extends BioDirectoryConverter
         return item.getIdentifier();
     }
 
+    /**
+     * resolve old human symbol
+     * @param taxonId id of organism for this gene
+     * @param ih interactor holder
+     * @throws ObjectStoreException
+     */
     private String resolveGene(String identifier) {
         String id = identifier;
         // ENSG00000225880.4

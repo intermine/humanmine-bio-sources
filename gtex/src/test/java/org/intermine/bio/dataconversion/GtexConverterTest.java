@@ -36,8 +36,7 @@ public class GtexConverterTest extends ItemsTestCase
         itemWriter = new MockItemWriter(new HashMap<String, Item>());
         converter = new GtexConverter(itemWriter, model);
         converter.rslv = IdResolverService.getMockIdResolver("Gene");
-        converter.rslv.addResolverEntry("9606", "123", Collections.singleton("ENSG00000225880"));
-        converter.rslv.addResolverEntry("9606", "3456", Collections.singleton("ENSG00000238009"));
+        converter.rslv.addResolverEntry("9606", "123", Collections.singleton("ENSG00000225630"));
     }
 
     public void testProcess() throws Exception {
