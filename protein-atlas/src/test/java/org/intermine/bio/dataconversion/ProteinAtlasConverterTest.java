@@ -34,9 +34,9 @@ public class ProteinAtlasConverterTest extends ItemsTestCase
     }
 
     public void testProcess() throws Exception {
-        String input = "Gene\tSymbol\tTissue\tCell type\tLevel\tExpression type\tReliability" + ENDL
-            + "ENSG00000000003\tTSPAN6\tadrenal gland\tglandular cells\tNegative\tStaining\tSupportive" + ENDL
-            + "ENSG00000000003\tTSPAN6\tappendix\tglandular cells\tModerate\tStaining\tSupportive" + ENDL;
+        String input = "Gene\tSymbol\tTissue\tCell type\tLevel\tReliability" + ENDL
+            + "ENSG00000000003\tTSPAN6\tadrenal gland\tglandular cells\tNegative\tSupportive" + ENDL
+            + "ENSG00000000003\tTSPAN6\tappendix\tglandular cells\tModerate\tSupportive" + ENDL;
 
 
         MockItemWriter itemWriter = new MockItemWriter(new HashMap<String, Item>());
@@ -57,20 +57,21 @@ public class ProteinAtlasConverterTest extends ItemsTestCase
         return FullParser.parse(getClass().getClassLoader().getResourceAsStream("ProteinAtlasConverterTest.xml"));
     }
 
-    public void testXMLParsing() throws Exception {
-        MockItemWriter itemWriter = new MockItemWriter(new HashMap<String, Item>());
-        BioFileConverter converter = new ProteinAtlasConverter(itemWriter,
-                                                                   Model.getInstanceByName("genomic"));
-
-        File testFile = new File(getClass().getClassLoader()
-                .getResource("proteinatlas.xml").toURI());
-        converter.setCurrentFile(testFile);
-        converter.process(null);
-        converter.close();
-
-        // uncomment to write out a new target items file
-        // writeItemsFile(itemWriter.getItems(), "protein-atlas-tgt.xml");
-
-        assertEquals(readItemSet("ProteinAtlasConverterXMLParsingTest.xml"), itemWriter.getItems());
-    }
+    // we don't parse the XML any more.
+//    public void testXMLParsing() throws Exception {
+//        MockItemWriter itemWriter = new MockItemWriter(new HashMap<String, Item>());
+//        BioFileConverter converter = new ProteinAtlasConverter(itemWriter,
+//                                                                   Model.getInstanceByName("genomic"));
+//
+//        File testFile = new File(getClass().getClassLoader()
+//                .getResource("proteinatlas.xml").toURI());
+//        converter.setCurrentFile(testFile);
+//        converter.process(null);
+//        converter.close();
+//
+//        // uncomment to write out a new target items file
+//        // writeItemsFile(itemWriter.getItems(), "protein-atlas-tgt.xml");
+//
+//        assertEquals(readItemSet("ProteinAtlasConverterXMLParsingTest.xml"), itemWriter.getItems());
+//    }
 }

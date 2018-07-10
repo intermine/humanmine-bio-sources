@@ -18,7 +18,7 @@
   <attribute name="name" type="java.lang.String"/>
   <collection name="tissues" referenced-type="Tissue"  reverse-reference="tissueGroup"/>
 </class>
-<class name="Gene" is-interface="true">
+<class name="Gene" extends="SequenceFeature" is-interface="true">
   <collection name="proteinAtlasExpression" referenced-type="ProteinAtlasExpression"  reverse-reference="gene"/>
 </class>
 
