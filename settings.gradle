@@ -11,7 +11,6 @@ include ':bio-source-arrayexpress-atlas',
 ':bio-source-huge-gwas',
 ':bio-source-human-gene',
 ':bio-source-mgi-alleles',
-':bio-source-ncbi-gene',
 ':bio-source-ncbi-summaries',
 ':bio-source-orphanet',
 ':bio-source-protein-atlas',
@@ -28,7 +27,6 @@ project(':bio-source-hpo-annotation').projectDir = new File(settingsDir, './hpo-
 project(':bio-source-huge-gwas').projectDir = new File(settingsDir, './huge-gwas')
 project(':bio-source-human-gene').projectDir = new File(settingsDir, './human-gene')
 project(':bio-source-mgi-alleles').projectDir = new File(settingsDir, './mgi-alleles')
-project(':bio-source-ncbi-gene').projectDir = new File(settingsDir, './ncbi-gene')
 project(':bio-source-ncbi-summaries').projectDir = new File(settingsDir, './ncbi-summaries')
 project(':bio-source-orphanet').projectDir = new File(settingsDir, './orphanet')
 project(':bio-source-protein-atlas').projectDir = new File(settingsDir, './protein-atlas')
