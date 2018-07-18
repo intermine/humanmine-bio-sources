@@ -40,12 +40,9 @@ import org.json.JSONObject;
 public class ArrayexpressAtlasConverter extends BioDirectoryConverter
 {
     //
-    private static final String DATASET_TITLE_PREFIX = "ArrayExpress accession: ";
+    private static final String DATASET_TITLE = "E-MTAB-62";
     private static final String DATA_SOURCE_NAME = "ArrayExpress";
     private Map<String, String> genes = new HashMap<String, String>();
-    private boolean isDatasetTitleAssigned = false;
-    private String datasetTitle;
-    private List<String> datasets = new ArrayList<String>();
     protected IdResolver rslv;
     private static final String TAXON_ID = "9606";
     private static final Logger LOG = Logger.getLogger(ArrayexpressAtlasConverter.class);
@@ -60,7 +57,7 @@ public class ArrayexpressAtlasConverter extends BioDirectoryConverter
      * @param model the Model
      */
     public ArrayexpressAtlasConverter(ItemWriter writer, Model model) {
-        super(writer, model, DATA_SOURCE_NAME, null);
+        super(writer, model, DATA_SOURCE_NAME, DATASET_TITLE);
 
         if (rslv == null) {
             rslv = IdResolverService.getIdResolverByOrganism(Collections.singleton(TAXON_ID));
@@ -102,16 +99,6 @@ public class ArrayexpressAtlasConverter extends BioDirectoryConverter
         JSONArray results = json.getJSONArray("results");
 
         JSONObject result = results.getJSONObject(0);
-
-        if (!isDatasetTitleAssigned) {
-            JSONObject experimentInfo = result.getJSONObject("experimentInfo");
-            String accession = experimentInfo.getString("accession");
-            datasetTitle = DATASET_TITLE_PREFIX + accession;
-            String dataSetRefId = getDataSet(datasetTitle, getDataSource(DATA_SOURCE_NAME));
-            setDataSet(dataSetRefId);
-            datasets.add(dataSetRefId);
-            isDatasetTitleAssigned = true;
-        }
 
         String arrayDesign = result.getString("arrayDesign");
 
@@ -155,7 +142,6 @@ public class ArrayexpressAtlasConverter extends BioDirectoryConverter
                         expressionItem.setAttribute("expression", expression);
                         expressionItem.setAttribute("pValue", pValue.toString());
                         expressionItem.setAttribute("tStatistic", tStatistic.toString());
-                        expressionItem.setCollection("dataSets", datasets);
                         store(expressionItem);
                     } catch (JSONException e) {
                         LOG.warn("JSON object missing some values: "
