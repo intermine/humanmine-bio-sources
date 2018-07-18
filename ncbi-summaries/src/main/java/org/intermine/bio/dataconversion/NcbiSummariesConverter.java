@@ -29,7 +29,7 @@ import org.intermine.xml.full.Item;
 public class NcbiSummariesConverter extends BioFileConverter
 {
     private static final String DATASET_TITLE = "NCBI Gene summaries";
-    private static final String DATA_SOURCE_NAME = "NCBI Gene";
+    private static final String DATA_SOURCE_NAME = "NCBI";
     private static final String HUMAN_TAXON_ID = "9606";
     protected static final Logger LOG = Logger.getLogger(NcbiSummariesConverter.class);
 
