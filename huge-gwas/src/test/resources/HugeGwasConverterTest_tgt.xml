@@ -78,7 +78,7 @@
 <collection name="associatedGenes"><reference ref_id="3_5"/></collection>
 </item>
 <item id="2_1" class="DataSet">
-<attribute name="name" value="HuGE GWAS Integrator"/>
+<attribute name="name" value="HuGE navigator and GWAS catalog"/>
 <reference name="dataSource" ref_id="1_1"/>
 </item>
 <item id="3_5" class="Gene">

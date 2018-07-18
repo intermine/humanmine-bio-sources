@@ -34,9 +34,12 @@ import java.io.IOException;
  */
 public class GtexConverter extends BioDirectoryConverter
 {
-    //
-    private static final String DATASET_TITLE = "GTex data set";
-    private static final String DATA_SOURCE_NAME = "GTex";
+    private static final String DATASET_TITLE_RNASEQ = "RNA-Seq Data";
+    private static final String DATASET_TITLE_EGENE = "Single-Tissue cis-eQTL Data";
+    private String dataSetRNASeq;
+    private String dataSetEGene;
+
+    private static final String DATA_SOURCE_NAME = "GTEx portal";
     private Map<String, Item> genes = new HashMap<String, Item>();
     private static final String TAXON_ID = "9606";
     protected IdResolver rslv;
@@ -48,7 +51,39 @@ public class GtexConverter extends BioDirectoryConverter
      * @param model the Model
      */
     public GtexConverter(ItemWriter writer, Model model) {
-        super(writer, model, DATA_SOURCE_NAME, DATASET_TITLE);
+        super(writer, model, null, null);
+;        updateDataSets();
+    }
+
+    private void updateDataSets() {
+        Item datasource = createItem("DataSource");
+        datasource.setAttribute("name", DATA_SOURCE_NAME);
+        try {
+            store(datasource);
+        } catch (ObjectStoreException e) {
+            throw new RuntimeException(e);
+        }
+        String datasourceRefId = datasource.getIdentifier();
+
+        Item dataSetRnaSeq = createItem("DataSet");
+        dataSetRnaSeq.setAttribute("name", DATASET_TITLE_RNASEQ);
+        dataSetRnaSeq.setReference("dataSource", datasourceRefId);
+        try {
+            store(dataSetRnaSeq);
+        } catch (ObjectStoreException e) {
+            throw new RuntimeException(e);
+        }
+        dataSetRNASeq = dataSetRnaSeq.getIdentifier();
+
+        Item dataSetEgene = createItem("DataSet");
+        dataSetEgene.setAttribute("name", DATASET_TITLE_EGENE);
+        dataSetEgene.setReference("dataSource", datasourceRefId);
+        try {
+            store(dataSetEgene);
+        } catch (ObjectStoreException e) {
+            throw new RuntimeException(e);
+        }
+        dataSetEGene = dataSetEgene.getIdentifier();
     }
 
     @Override
@@ -124,6 +159,7 @@ public class GtexConverter extends BioDirectoryConverter
             }
             String snp = getSNP(snpIdentifier, gene, tissue, tssDistance, pValue);
             gene.addToCollection("SNPs", snp);
+            gene.addToCollection("dataSets", dataSetEGene);
         }
     }
 
@@ -167,14 +203,15 @@ public class GtexConverter extends BioDirectoryConverter
                 if (StringUtils.isNotEmpty(expressionScore)) {
                     item.setAttribute("expressionScore", expressionScore);
                 }
+                item.addToCollection("dataSets", dataSetRNASeq);
                 store(item);
                 gene.addToCollection("rnaSeqResults", item);
+                gene.addToCollection("dataSets", dataSetRNASeq);
             }
         }
     }
 
     private Item getGene(String ensemblIdentifier) throws ObjectStoreException {
-
         String primaryIdentifier = resolveGene(ensemblIdentifier);
         // could not resolve
         if (primaryIdentifier == null) {
@@ -201,6 +238,7 @@ public class GtexConverter extends BioDirectoryConverter
         item.setAttribute("pValue", pValue);
         item.setReference("organism", getOrganism(TAXON_ID));
         item.setReference("gene", gene);
+        item.addToCollection("dataSets", dataSetEGene);
         store(item);
         return item.getIdentifier();
     }

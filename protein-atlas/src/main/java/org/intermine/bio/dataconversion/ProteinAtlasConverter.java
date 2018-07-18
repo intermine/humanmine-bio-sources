@@ -48,8 +48,8 @@ import org.xml.sax.SAXException;
 public class ProteinAtlasConverter extends BioFileConverter
 {
     private static final Logger LOG = Logger.getLogger(ProteinAtlasConverter.class);
-    private static final String DATASET_TITLE = "Protein Atlas expression";
-    private static final String DATA_SOURCE_NAME = "Protein Atlas";
+    private static final String DATASET_TITLE = "The Human Protein Atlas expression profiles";
+    private static final String DATA_SOURCE_NAME = "The Human Protein Atlas";
     private Map<String, String> genes = new HashMap<String, String>();
     private Map<String, Item> tissues = new HashMap<String, Item>();
     private Set<String> storedTissues = new HashSet<String>();

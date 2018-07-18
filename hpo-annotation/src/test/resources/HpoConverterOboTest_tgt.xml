@@ -48,7 +48,7 @@
 <collection name="evidences"><reference ref_id="8_7"/></collection>
 </item>
 <item id="2_1" class="DataSet">
-<attribute name="name" value="HPO Annotation"/>
+<attribute name="name" value="Human Phenoptype Ontology Annotations"/>
 <reference name="dataSource" ref_id="1_1"/>
 </item>
 <item id="7_2" class="OntologyAnnotationEvidenceCode">

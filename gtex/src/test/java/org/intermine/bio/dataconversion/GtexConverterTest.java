@@ -47,7 +47,7 @@ public class GtexConverterTest extends ItemsTestCase
         converter.close();
 
         // uncomment to write out a new target items file
-        writeItemsFile(itemWriter.getItems(), "gtex-tgt-items.xml");
+        //writeItemsFile(itemWriter.getItems(), "gtex-tgt-items.xml");
 
         Set<org.intermine.xml.full.Item> expected = readItemSet(targetFile);
 
