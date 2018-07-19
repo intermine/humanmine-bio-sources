@@ -1,0 +1,14 @@
+language: python
+addons:
+  postgresql: 9.3
+env:
+  global:
+  - TERM=dumb
+
+sudo: true
+jdk:
+- openjdk8
+before_script:
+- "./config/init.sh"
+script:
+- "./config/run.sh"
