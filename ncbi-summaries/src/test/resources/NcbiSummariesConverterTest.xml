@@ -1,6 +1,6 @@
 <items>
 <item id="1_1" class="DataSource">
-<attribute name="name" value="NCBI Gene"/>
+<attribute name="name" value="NCBI"/>
 </item>
 <item id="5_1" class="SOTerm">
 <attribute name="name" value="gene"/>

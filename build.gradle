@@ -34,8 +34,8 @@ subprojects {
     targetCompatibility = 1.8
 
     repositories {
-        mavenCentral()
         mavenLocal()
+        jcenter()
         maven {
             url "https://oss.jfrog.org/artifactory/oss-snapshot-local"
         }
