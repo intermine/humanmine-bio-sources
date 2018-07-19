@@ -85,7 +85,7 @@ subprojects {
     }
 
     test {
-        ignoreFailures = true
+        ignoreFailures = false
         forkEvery = 1
     }
 }

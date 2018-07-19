@@ -1,6 +1,6 @@
 <items>
 <item id="5_7" class="Allele">
-<attribute name="alternate" value="A"/>
+<attribute name="alternate" value="B"/>
 <attribute name="clinicalSignificance" value="Pathogenic"/>
 <attribute name="primaryIdentifier" value="23174"/>
 <attribute name="reference" value="G"/>
