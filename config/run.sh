@@ -13,5 +13,3 @@ export ANT_OPTS='-server'
 ./gradlew build
 
 ./gradlew checkstyleMain
-
-./config/parse_checkstyle_report.py 'bio/build/reports/checkstyle/checkstyle_report.xml'

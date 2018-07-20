@@ -8,5 +8,3 @@ before_script:
 - "./config/init.sh"
 script:
 - "./config/run.sh"
-# after_success:
-# test $TRAVIS_BRANCH == "master" && bash config/travis/deploydocs.sh
