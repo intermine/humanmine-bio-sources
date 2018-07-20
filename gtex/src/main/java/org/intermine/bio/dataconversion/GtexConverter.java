@@ -52,7 +52,7 @@ public class GtexConverter extends BioDirectoryConverter
      */
     public GtexConverter(ItemWriter writer, Model model) {
         super(writer, model, null, null);
-;        updateDataSets();
+        updateDataSets();
     }
 
     private void updateDataSets() {
@@ -243,12 +243,6 @@ public class GtexConverter extends BioDirectoryConverter
         return item.getIdentifier();
     }
 
-    /**
-     * resolve old human symbol
-     * @param taxonId id of organism for this gene
-     * @param ih interactor holder
-     * @throws ObjectStoreException
-     */
     private String resolveGene(String identifier) {
         String id = identifier;
         // ENSG00000225880.4

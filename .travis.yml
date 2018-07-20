@@ -1,14 +1,12 @@
 language: python
 addons:
-  postgresql: 9.3
-env:
-  global:
-  - TERM=dumb
-
+  postgresql: 9.6
 sudo: true
 jdk:
 - openjdk8
 before_script:
-- "./config/init.sh"
+- "./config/travis/init.sh"
 script:
-- "./config/run.sh"
+- "./config/travis/run.sh"
+# after_success:
+# test $TRAVIS_BRANCH == "master" && bash config/travis/deploydocs.sh
