@@ -35,7 +35,7 @@ public class HugeGwasConverter extends BioFileConverter
 {
     //
     private static final String DATASET_TITLE = "HuGE navigator and GWAS catalog";
-    private static final String DATA_SOURCE_NAME = "HuGE Navigator";
+    private static final String DATA_SOURCE_NAME = "Public Health Genomics Knowledge Base";
 
     private String headerStart = "rs Number(region location)";
     private Map<String, String> genes = new HashMap<String, String>();
