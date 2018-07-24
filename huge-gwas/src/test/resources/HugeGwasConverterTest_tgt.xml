@@ -265,7 +265,7 @@
 <collection name="dataSets"><reference ref_id="2_1"/></collection>
 </item>
 <item id="1_1" class="DataSource">
-<attribute name="name" value="HuGE Navigator"/>
+<attribute name="name" value="Public Health Genomics Knowledge Base"/>
 </item>
 <item id="3_7" class="Gene">
 <attribute name="primaryIdentifier" value="SLCO1B1"/>
