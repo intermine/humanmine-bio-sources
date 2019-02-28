@@ -197,7 +197,7 @@ public class GtexConverter extends BioDirectoryConverter
                 Item item = createItem("RNASeqResult");
                 item.setReference("gene", gene);
                 item.setAttribute("tissue", columnName);
-                item.setAttribute("expressionType", "TMP");
+                item.setAttribute("expressionType", "TPM");
                 String expressionScore = line[i];
                 // TODO if there isn't an expression score, maybe skip?
                 if (StringUtils.isNotEmpty(expressionScore)) {

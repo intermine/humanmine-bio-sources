@@ -1,0 +1,90 @@
+<items>
+<item id="6_2" class="RNASeqResult">
+<attribute name="expressionScore" value="26.4"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="adrenal gland"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="3_1" class="Gene">
+<attribute name="primaryIdentifier" value="ENSG00000000003"/>
+<reference name="organism" ref_id="4_1"/>
+<reference name="sequenceOntologyTerm" ref_id="5_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="6_9" class="RNASeqResult">
+<attribute name="expressionScore" value="27.1"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="duodenum"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="2_1" class="DataSet">
+<attribute name="name" value="Protein Atlas RNA Gene data"/>
+<reference name="dataSource" ref_id="1_1"/>
+</item>
+<item id="6_6" class="RNASeqResult">
+<attribute name="expressionScore" value="18.5"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="cerebral cortex"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="1_1" class="DataSource">
+<attribute name="name" value="The Human Protein Atlas"/>
+</item>
+<item id="6_1" class="RNASeqResult">
+<attribute name="expressionScore" value="31.5"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="adipose tissue"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="4_1" class="Organism">
+<attribute name="taxonId" value="9606"/>
+</item>
+<item id="6_5" class="RNASeqResult">
+<attribute name="expressionScore" value="53.4"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="breast"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="6_7" class="RNASeqResult">
+<attribute name="expressionScore" value="54.2"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="cervix, uterine"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_1" class="SOTerm">
+<attribute name="name" value="gene"/>
+<reference name="ontology" ref_id="0_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="6_8" class="RNASeqResult">
+<attribute name="expressionScore" value="48.5"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="colon"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="6_3" class="RNASeqResult">
+<attribute name="expressionScore" value="9.2"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="appendix"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="0_1" class="Ontology">
+<attribute name="name" value="Sequence Ontology"/>
+<attribute name="url" value="http://www.sequenceontology.org"/>
+</item>
+<item id="6_4" class="RNASeqResult">
+<attribute name="expressionScore" value="0.7"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="bone marrow"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+</items>
