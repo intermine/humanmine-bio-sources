@@ -38,6 +38,7 @@ public class OrphanetConverter extends BioFileConverter
     private static final String DATASET_TITLE = "Orphanet data set";
     private static final String DATA_SOURCE_NAME = "Orphanet";
     private static final String PREFIX = "ORPHANET:";
+    private static final String LICENCE = "https://creativecommons.org/licenses/by/4.0/";
 
     /**
      * Constructor
@@ -45,7 +46,7 @@ public class OrphanetConverter extends BioFileConverter
      * @param model the Model
      */
     public OrphanetConverter(ItemWriter writer, Model model) {
-        super(writer, model, DATA_SOURCE_NAME, DATASET_TITLE);
+        super(writer, model, DATA_SOURCE_NAME, DATASET_TITLE, LICENCE);
     }
 
     /**
