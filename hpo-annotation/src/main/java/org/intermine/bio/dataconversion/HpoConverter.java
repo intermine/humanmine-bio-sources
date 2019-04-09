@@ -40,7 +40,7 @@ import org.intermine.xml.full.Item;
 public class HpoConverter extends BioDirectoryConverter
 {
 
-    private static final String DATASET_TITLE = "Human Phenoptype Ontology Annotations";
+    private static final String DATASET_TITLE = "Human Phenotype Ontology Annotations";
     private static final String DATA_SOURCE_NAME = "HPO";
 
     private List<String> ignoreDbList = Arrays.asList("DECIPHER");
@@ -73,7 +73,7 @@ public class HpoConverter extends BioDirectoryConverter
      * @throws Exception if something goes wrong
      */
     public HpoConverter(ItemWriter writer, Model model) throws Exception {
-        super(writer, model, DATA_SOURCE_NAME, DATASET_TITLE);
+        super(writer, model, DATA_SOURCE_NAME, DATASET_TITLE, "https://hpo.jax.org/app/license");
     }
 
     @Override
