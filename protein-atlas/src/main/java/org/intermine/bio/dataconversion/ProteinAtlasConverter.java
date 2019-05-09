@@ -50,6 +50,8 @@ public class ProteinAtlasConverter extends BioFileConverter
     private static final Logger LOG = Logger.getLogger(ProteinAtlasConverter.class);
     private static final String DATASET_TITLE = "The Human Protein Atlas expression profiles";
     private static final String DATA_SOURCE_NAME = "The Human Protein Atlas";
+    private static final String LICENSE = "https://creativecommons.org/licenses/by-sa/3.0/";
+
     private Map<String, String> genes = new HashMap<String, String>();
     private Map<String, Item> tissues = new HashMap<String, Item>();
     private Set<String> storedTissues = new HashSet<String>();
@@ -63,7 +65,7 @@ public class ProteinAtlasConverter extends BioFileConverter
      * @param model the Model
      */
     public ProteinAtlasConverter(ItemWriter writer, Model model) {
-        super(writer, model, DATA_SOURCE_NAME, DATASET_TITLE);
+        super(writer, model, DATA_SOURCE_NAME, DATASET_TITLE, LICENSE);
         if (rslv == null) {
             rslv = IdResolverService.getIdResolverByOrganism(Collections.singleton(TAXON_ID));
         }
