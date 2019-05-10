@@ -109,7 +109,8 @@ public class HugeGwasConverter extends BioFileConverter
                     initialSample, replicateSample);
             result.setReference("study", studyIdentifier);
 
-            result.setAttribute("associatedVariantRiskAllele", associatedVariantRiskAllele);
+            result.setAttribute("associatedVariantRiskAllele",
+                    parseAllele(associatedVariantRiskAllele));
             result.setAttribute("riskAlleleFreqInControls", riskAlleleFreqInControls);
 
             store(result);
@@ -171,11 +172,16 @@ public class HugeGwasConverter extends BioFileConverter
         return pubIdentifier;
     }
 
-    private String getSnpIdentifier(String snpIdentifier) throws ObjectStoreException {
-        String rsNumber = snpIdentifier;
+    private String parseAllele(String snpIdentifier) throws ObjectStoreException {
+        String allele = snpIdentifier;
         if (snpIdentifier.contains("-")) {
-            rsNumber = snpIdentifier.substring(0, snpIdentifier.indexOf('-'));
+            String[] bits = snpIdentifier.split("-");
+            allele = bits[1];
         }
+        return allele;
+    }
+
+    private String getSnpIdentifier(String rsNumber) throws ObjectStoreException {
         if (!snps.containsKey(rsNumber)) {
             Item snp = createItem("SNP");
             snp.setAttribute("primaryIdentifier", rsNumber);
