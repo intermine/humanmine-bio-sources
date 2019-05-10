@@ -15,6 +15,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+import com.sun.org.apache.xml.internal.security.utils.IdResolver;
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.intermine.dataconversion.ItemWriter;
 import org.intermine.metadata.Model;
@@ -109,10 +111,19 @@ public class HugeGwasConverter extends BioFileConverter
                     initialSample, replicateSample);
             result.setReference("study", studyIdentifier);
 
-            result.setAttribute("associatedVariantRiskAllele",
-                    parseAllele(associatedVariantRiskAllele));
-            result.setAttribute("riskAlleleFreqInControls", riskAlleleFreqInControls);
-
+            String allele = parseAllele(associatedVariantRiskAllele, snp);
+            if (StringUtils.isNotEmpty(allele)) {
+                result.setAttribute("associatedVariantRiskAllele", allele);
+            }
+            if (StringUtils.isNotEmpty(riskAlleleFreqInControls)) {
+                try {
+                    Float.parseFloat(riskAlleleFreqInControls);
+                    result.setAttribute("riskAlleleFreqInControls",
+                            riskAlleleFreqInControls);
+                } catch (NumberFormatException e) {
+                    // wasn't a valid float, probably "NR"
+                }
+            }
             store(result);
         }
     }
@@ -149,7 +160,9 @@ public class HugeGwasConverter extends BioFileConverter
             gwas.setAttribute("year", year);
             gwas.setAttribute("name", name);
             gwas.setAttribute("initialSample", initialSample);
-            gwas.setAttribute("replicateSample", replicateSample);
+            if (StringUtils.isNotEmpty(replicateSample)) {
+                gwas.setAttribute("replicateSample", replicateSample);
+            }
             gwas.setReference("publication", pubIdentifier);
             store(gwas);
 
@@ -172,13 +185,17 @@ public class HugeGwasConverter extends BioFileConverter
         return pubIdentifier;
     }
 
-    private String parseAllele(String snpIdentifier) throws ObjectStoreException {
-        String allele = snpIdentifier;
-        if (snpIdentifier.contains("-")) {
-            String[] bits = snpIdentifier.split("-");
-            allele = bits[1];
+    private String parseAllele(String snpIdentifier, String rsNumber) {
+        if (snpIdentifier.startsWith("rs")) {
+            if (snpIdentifier.indexOf('-') >= 0) {
+                String riskSnp = snpIdentifier.substring(0, snpIdentifier.indexOf('-'));
+                if (riskSnp.equals(rsNumber)) {
+                    String allele = snpIdentifier.substring(snpIdentifier.indexOf('-') + 1);
+                    return allele;
+                }
+            }
         }
-        return allele;
+        return null;
     }
 
     private String getSnpIdentifier(String rsNumber) throws ObjectStoreException {
