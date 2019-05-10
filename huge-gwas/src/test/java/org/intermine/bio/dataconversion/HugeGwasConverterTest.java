@@ -41,7 +41,7 @@ public class HugeGwasConverterTest extends ItemsTestCase
     }
 
     public void testProcess() throws Exception {
-        File srcFile = new File(getClass().getClassLoader().getResource("HUGE-GWAS.txt").toURI());
+        File srcFile = new File(getClass().getClassLoader().getResource("HUGE-GWAS.tsv").toURI());
         converter.setCurrentFile(srcFile);
         converter.process(new FileReader(srcFile));
 
@@ -49,11 +49,6 @@ public class HugeGwasConverterTest extends ItemsTestCase
         //writeItemsFile(itemWriter.getItems(), "huge-gwas_tgt.xml");
 
         assertEquals(readItemSet("HugeGwasConverterTest_tgt.xml"), itemWriter.getItems());
-    }
-
-    public void testParseSnp() throws Exception {
-        assertEquals("rs10048146", converter.parseSnp("rs10048146(16q24.1)"));
-        assertEquals("rs10048146", converter.parseSnp("rs10048146"));
     }
 
     public void testParsePValue() throws Exception {

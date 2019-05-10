@@ -11,14 +11,9 @@ package org.intermine.bio.dataconversion;
  */
 
 import java.io.Reader;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import org.apache.log4j.Logger;
 import org.intermine.dataconversion.ItemWriter;
@@ -37,14 +32,12 @@ public class HugeGwasConverter extends BioFileConverter
     private static final String DATASET_TITLE = "HuGE navigator and GWAS catalog";
     private static final String DATA_SOURCE_NAME = "Public Health Genomics Knowledge Base";
 
-    private String headerStart = "rs Number(region location)";
     private Map<String, String> genes = new HashMap<String, String>();
     private Map<String, String> pubs = new HashMap<String, String>();
     private Map<String, String> snps = new HashMap<String, String>();
     private Map<String, String> studies = new HashMap<String, String>();
 
     private static final String HUMAN_TAXON = "9606";
-    private List<String> invalidGenes = Arrays.asList(new String[] {"nr", "intergenic"});
 
     // approximately the minimum permitted double value in postgres
     private static final double MIN_POSTGRES_DOUBLE = 1.0E-307;
@@ -72,81 +65,54 @@ public class HugeGwasConverter extends BioFileConverter
         }
 
         Iterator<?> lineIter = FormattedTextParser.parseTabDelimitedReader(reader);
-        boolean doneHeader = false;
+
+        // skip header
+        lineIter.next();
 
         while (lineIter.hasNext()) {
             String[] line = (String[]) lineIter.next();
-            LOG.info("Line: " + line);
-
-            if (line[0].startsWith(headerStart)) {
-                doneHeader = true;
-                continue;
-            }
-
-            if (!doneHeader) {
-                continue;
-            }
-
             if (line.length <= 1) {
                 continue;
             }
 
-            Set<String> rsNumbers = parseSnpRsNumbers(line[0]);
-            if (rsNumbers.isEmpty()) {
-                continue;
+            String pubIdentifier = getPub(line[1]);
+            String geneIdentifier = getGene(line[17]);
+            String snp = line[21];
+
+            // gwas
+            String firstAuthor = line[2];
+            String initialSample = line[8];
+            String name = line[6];
+            String replicateSample = line[9];
+            String expDate = line[3];
+            String year = null;
+            if (expDate != null) {
+                year = expDate.substring(0, 4);
             }
 
-            Set<String> geneIdentifiers = getGenes(line[1]);
-            String phenotype = line[3];
-            String firstAuthor = line[4];
-            String year = line[6];
-            String pubIdentifier = getPub(line[7]);
-            Map<String, String> samples = parseSamples(line[8]);
-            String riskAlleleStr = line[9];
-            Double pValue = parsePValue(line[11]);
+            // result
+            String associatedVariantRiskAllele = line[20];
+            String phenotype = line[7];
+            Double pValue = parsePValue(line[27]);
+            String riskAlleleFreqInControls = line[26];
 
-            // There may be multiple SNPs in one line, create a GWASResult per SNP.
-            for (String rsNumber : rsNumbers) {
-                Item result = createItem("GWASResult");
-                result.setReference("SNP", getSnpIdentifier(rsNumber));
-                if (!geneIdentifiers.isEmpty()) {
-                    result.setCollection("associatedGenes", new ArrayList<String>(geneIdentifiers));
-                }
-                result.setAttribute("phenotype", phenotype);
-                if (pValue != null) {
-                    result.setAttribute("pValue", pValue.toString());
-                }
-                String studyIdentifier = getStudy(pubIdentifier, firstAuthor, year, phenotype,
-                        samples);
-                result.setReference("study", studyIdentifier);
-
-                // set risk allele details
-                String[] alleleParts = riskAlleleStr.split("\\[");
-                String alleleStr = alleleParts[0];
-                if (alleleStr.startsWith("rs")) {
-                    if (alleleStr.indexOf('-') >= 0) {
-                        String riskSnp = alleleStr.substring(0, alleleStr.indexOf('-'));
-                        if (riskSnp.equals(rsNumber)) {
-                            String allele = alleleStr.substring(alleleStr.indexOf('-') + 1);
-                            result.setAttribute("associatedVariantRiskAllele", allele);
-                        }
-                    } else {
-                        LOG.warn("ALLELE: no allele found in '" + alleleStr + "'.");
-                    }
-                } else {
-                    result.setAttribute("associatedVariantRiskAllele", alleleParts[0]);
-                }
-                if (alleleParts.length > 1) {
-                    String freqStr = alleleParts[1];
-                    try {
-                        Float freq = Float.parseFloat(freqStr.substring(0, freqStr.indexOf(']')));
-                        result.setAttribute("riskAlleleFreqInControls", freq.toString());
-                    } catch (NumberFormatException e) {
-                        // wasn't a valid float, probably "NR"
-                    }
-                }
-                store(result);
+            Item result = createItem("GWASResult");
+            result.setReference("SNP", getSnpIdentifier(snp));
+            if (geneIdentifier != null) {
+                result.addToCollection("associatedGenes", geneIdentifier);
             }
+            result.setAttribute("phenotype", phenotype);
+            if (pValue != null) {
+                result.setAttribute("pValue", pValue.toString());
+            }
+            String studyIdentifier = getStudy(pubIdentifier, firstAuthor, year, name,
+                    initialSample, replicateSample);
+            result.setReference("study", studyIdentifier);
+
+            result.setAttribute("associatedVariantRiskAllele", associatedVariantRiskAllele);
+            result.setAttribute("riskAlleleFreqInControls", riskAlleleFreqInControls);
+
+            store(result);
         }
     }
 
@@ -172,41 +138,17 @@ public class HugeGwasConverter extends BioFileConverter
         }
     }
 
-    private Map<String, String> parseSamples(String fromFile) {
-        Map<String, String> samples = new HashMap<String, String>();
-        String[] parts = fromFile.split("/");
-        samples.put("initial", parts[0]);
-        if (parts.length == 1 || "NR".equals(parts[1])) {
-            samples.put("replicate", "No replicate");
-        } else {
-            samples.put("replicate", parts[1]);
-        }
-        return samples;
-    }
-
-    /**
-     * Extract a SNP rs id from a string of the format rs11099864(4q31.3).
-     * @param s the string read from the file
-     * @return the SNP rs number
-     */
-    protected String parseSnp(String s) {
-        if (s.indexOf('(') > 0) {
-            return s.substring(0, s.indexOf('(')).trim();
-        }
-        return s.trim();
-    }
-
-    private String getStudy(String pubIdentifier, String firstAuthor, String year, String phenotype,
-            Map<String, String> samples)
+    private String getStudy(String pubIdentifier, String firstAuthor, String year, String name,
+            String initialSample, String replicateSample)
         throws ObjectStoreException {
         String studyIdentifier = studies.get(pubIdentifier);
         if (studyIdentifier == null) {
             Item gwas = createItem("GWAS");
             gwas.setAttribute("firstAuthor", firstAuthor);
             gwas.setAttribute("year", year);
-            gwas.setAttribute("name", phenotype);
-            gwas.setAttribute("initialSample", samples.get("initial"));
-            gwas.setAttribute("replicateSample", samples.get("replicate"));
+            gwas.setAttribute("name", name);
+            gwas.setAttribute("initialSample", initialSample);
+            gwas.setAttribute("replicateSample", replicateSample);
             gwas.setReference("publication", pubIdentifier);
             store(gwas);
 
@@ -229,20 +171,11 @@ public class HugeGwasConverter extends BioFileConverter
         return pubIdentifier;
     }
 
-
-
-    private Set<String> parseSnpRsNumbers(String fromFile) {
-        Set<String> rsNumbers = new HashSet<String>();
-        for (String s : fromFile.split(",")) {
-            String rsNumber = parseSnp(s);
-            if (rsNumber.startsWith("rs")) {
-                rsNumbers.add(rsNumber);
-            }
+    private String getSnpIdentifier(String snpIdentifier) throws ObjectStoreException {
+        String rsNumber = snpIdentifier;
+        if (snpIdentifier.contains("-")) {
+            rsNumber = snpIdentifier.substring(0, snpIdentifier.indexOf('-'));
         }
-        return rsNumbers;
-    }
-
-    private String getSnpIdentifier(String rsNumber) throws ObjectStoreException {
         if (!snps.containsKey(rsNumber)) {
             Item snp = createItem("SNP");
             snp.setAttribute("primaryIdentifier", rsNumber);
@@ -253,17 +186,11 @@ public class HugeGwasConverter extends BioFileConverter
         return snps.get(rsNumber);
     }
 
-    private Set<String> getGenes(String s) throws ObjectStoreException {
-        Set<String> geneIdentifiers = new HashSet<String>();
-        for (String symbol : s.split(",")) {
-            symbol = symbol.trim();
-            if (invalidGenes.contains(symbol.toLowerCase())) {
-                continue;
-            }
+    private String getGene(String ensemblIdentifier) throws ObjectStoreException {
 
-            String identifier = resolveGene(symbol);
+            String identifier = resolveGene(ensemblIdentifier);
             if (identifier == null) {
-                continue;
+                return null;
             }
 
             String geneIdentifier = genes.get(identifier);
@@ -275,17 +202,9 @@ public class HugeGwasConverter extends BioFileConverter
                 store(gene);
                 genes.put(identifier, geneIdentifier);
             }
-            geneIdentifiers.add(geneIdentifier);
-        }
-        return geneIdentifiers;
+            return geneIdentifier;
     }
 
-    /**
-     * resolve old human symbol
-     * @param taxonId id of organism for this gene
-     * @param ih interactor holder
-     * @throws ObjectStoreException
-     */
     private String resolveGene(String identifier) {
         String id = identifier;
 
