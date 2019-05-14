@@ -13,6 +13,14 @@
         <reference name="ontology" ref_id="0_1"/>
         <collection name="dataSets"><reference ref_id="2_1"/></collection>
     </item>
+    <item id="7_1" class="GWASResult">
+        <attribute name="associatedVariantRiskAllele" value="?"/>
+        <attribute name="pValue" value="9.0E-6"/>
+        <attribute name="phenotype" value="Inflammatory skin disease"/>
+        <reference name="SNP" ref_id="8_1"/>
+        <reference name="study" ref_id="9_1"/>
+        <collection name="associatedGenes"><reference ref_id="4_1"/></collection>
+    </item>
     <item id="3_1" class="Publication">
         <attribute name="pubMedId" value="25574825"/>
     </item>
@@ -34,15 +42,6 @@
         <reference name="organism" ref_id="5_1"/>
         <reference name="sequenceOntologyTerm" ref_id="6_1"/>
         <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_1" class="GWASResult">
-        <attribute name="associatedVariantRiskAllele" value="?"/>
-        <attribute name="pValue" value="9.0E-6"/>
-        <attribute name="phenotype" value="Inflammatory skin disease"/>
-        <attribute name="riskAlleleFreqInControls" value="NR"/>
-        <reference name="SNP" ref_id="8_1"/>
-        <reference name="study" ref_id="9_1"/>
-        <collection name="associatedGenes"><reference ref_id="4_1"/></collection>
     </item>
     <item id="5_1" class="Organism">
         <attribute name="taxonId" value="9606"/>
