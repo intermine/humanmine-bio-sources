@@ -19,10 +19,6 @@
 <reference name="gene" ref_id="3_1"/>
 <collection name="dataSets"><reference ref_id="2_1"/></collection>
 </item>
-<item id="2_1" class="DataSet">
-<attribute name="name" value="Protein Atlas RNA Gene data"/>
-<reference name="dataSource" ref_id="1_1"/>
-</item>
 <item id="6_6" class="RNASeqResult">
 <attribute name="expressionScore" value="18.5"/>
 <attribute name="expressionType" value="TPM"/>
@@ -49,6 +45,11 @@
 <attribute name="tissue" value="breast"/>
 <reference name="gene" ref_id="3_1"/>
 <collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="2_1" class="DataSet">
+<attribute name="licence" value="https://creativecommons.org/licenses/by-sa/3.0/"/>
+<attribute name="name" value="Protein Atlas RNA Gene data"/>
+<reference name="dataSource" ref_id="1_1"/>
 </item>
 <item id="6_7" class="RNASeqResult">
 <attribute name="expressionScore" value="54.2"/>
