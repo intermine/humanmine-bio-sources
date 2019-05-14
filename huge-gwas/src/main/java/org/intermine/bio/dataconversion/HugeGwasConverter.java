@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+import com.sun.org.apache.xml.internal.security.utils.IdResolver;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.intermine.dataconversion.ItemWriter;
@@ -209,22 +210,21 @@ public class HugeGwasConverter extends BioFileConverter
     }
 
     private String getGene(String ensemblIdentifier) throws ObjectStoreException {
+        String identifier = resolveGene(ensemblIdentifier);
+        if (identifier == null) {
+            return null;
+        }
 
-            String identifier = resolveGene(ensemblIdentifier);
-            if (identifier == null) {
-                return null;
-            }
-
-            String geneIdentifier = genes.get(identifier);
-            if (geneIdentifier == null) {
-                Item gene = createItem("Gene");
-                gene.setAttribute("primaryIdentifier", identifier);
-                gene.setReference("organism", getOrganism(HUMAN_TAXON));
-                geneIdentifier = gene.getIdentifier();
-                store(gene);
-                genes.put(identifier, geneIdentifier);
-            }
-            return geneIdentifier;
+        String geneIdentifier = genes.get(identifier);
+        if (geneIdentifier == null) {
+            Item gene = createItem("Gene");
+            gene.setAttribute("primaryIdentifier", identifier);
+            gene.setReference("organism", getOrganism(HUMAN_TAXON));
+            geneIdentifier = gene.getIdentifier();
+            store(gene);
+            genes.put(identifier, geneIdentifier);
+        }
+        return geneIdentifier;
     }
 
     private String resolveGene(String identifier) {
