@@ -1,0 +1,10 @@
+structure_id,slab_num,well_id,slab_type,structure_acronym,structure_name,polygon_id,mri_voxel_x,mri_voxel_y,mri_voxel_z,mni_x,mni_y,mni_z
+4143,9,11281,CX,"MTG-i","middle temporal gyrus, left, inferior bank of gyrus",1283581,149,106,137,-58.0,-46.0,3.0
+4151,9,11305,CX,"ITG-mts","inferior temporal gyrus, left, bank of mts",1283601,152,128,137,-61.0,-46.0,-19.0
+4149,9,11289,CX,"ITG-its","inferior temporal gyrus, left, bank of the its",1283603,143,126,137,-52.0,-46.0,-17.0
+4142,8,11335,CX,"MTG-s","middle temporal gyrus, left, superior bank of gyrus",1279507,151,108,127,-60.0,-36.0,1.0
+4135,8,11319,CX,"STG-l","superior temporal gyrus, left, lateral bank of gyrus",1283331,160,100,127,-69.0,-36.0,9.0
+4143,7,11263,CX,"MTG-i","middle temporal gyrus, left, inferior bank of gyrus",1284160,149,128,110,-58.0,-19.0,-19.0
+4273,6,11326,CX,"SIG","short insular gyri, left",1280038,134,96,99,-43.0,-8.0,13.0
+4270,6,11318,CX,"LIG","long insular gyri, left",1280037,132,104,100,-41.0,-9.0,5.0
+4178,6,11310,CX,"PLP","planum polare, left",1284515,150,104,99,-59.0,-8.0,5.0
