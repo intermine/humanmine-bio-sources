@@ -93,7 +93,18 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
             processExpression(new FileReader(files.get(EXPRESSION_FILE)));
             processPACall(new FileReader(files.get(PACALL_FILE)));
 //        processOntology(new FileReader(files.get(ONTOLOGY_FILE)));
+
+            reset();
         }
+    }
+
+    private void reset() {
+        genes = new HashMap<String, String>();
+        samples = new LinkedList<String>();
+        structures = new HashMap<String, String>();
+        probes = new HashMap<String, String>();
+        geneToProbe = new HashMap<String, HashSet<String>>();
+        probeResults = new LinkedHashMap<String, LinkedList<Item>>();
     }
 
     // 1058685,3.5010774998847847,4.15417262910917
