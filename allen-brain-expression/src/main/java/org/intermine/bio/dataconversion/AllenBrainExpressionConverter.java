@@ -90,8 +90,9 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
             // don't change order
             processProbes(new FileReader(files.get(PROBES_FILE)));
             processSamples(new FileReader(files.get(SAMPLES_FILE)));
-            processExpression(new FileReader(files.get(EXPRESSION_FILE)));
-            processPACall(new FileReader(files.get(PACALL_FILE)));
+            processExpression(new FileReader(files.get(EXPRESSION_FILE)),
+                    new FileReader(files.get(PACALL_FILE)));
+//            processPACall(new FileReader(files.get(PACALL_FILE)));
 //        processOntology(new FileReader(files.get(ONTOLOGY_FILE)));
 
             reset();
@@ -104,10 +105,14 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
     }
 
     // 1058685,3.5010774998847847,4.15417262910917
-    private void processExpression(Reader reader) throws IOException, ObjectStoreException {
+    private void processExpression(Reader reader, Reader paReader)
+        throws IOException, ObjectStoreException {
         Iterator<String[]> lineIter = FormattedTextParser.parseCsvDelimitedReader(reader);
+        Iterator<String[]> palineIter = FormattedTextParser.parseCsvDelimitedReader(paReader);
+
         while (lineIter.hasNext()) {
             String[] line = lineIter.next();
+            String[] paline = palineIter.next();
             String probeIdentifier = line[0];
             String probeRefId = probes.get(probeIdentifier);
             if (probeRefId == null) {
@@ -120,42 +125,48 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
             for (int i = 0; i < samples.size(); i++) {
                 String sample = samples.get(i);
                 String result = line[i + 1];
+                String pacall = paline[i + 1];
 
                 Item probeResult = createItem("ProbeResult");
-                probeResult.setAttribute("expressionValue", result);
+                if ("1".equals(pacall)) {
+                    probeResult.setAttribute("expressionValue", result);
+                }
                 probeResult.setReference("probe", probeRefId);
                 probeResult.setReference("sample", sample);
+                probeResult.setAttribute("PACall", pacall);
+                store(probeResult);
                 currentProbeResults.add(probeResult);
             }
             probeResults.put(probeIdentifier, currentProbeResults);
         }
-    }
-
-    private void processPACall(Reader reader) throws IOException, ObjectStoreException {
-        Iterator<String[]> lineIter = FormattedTextParser.parseCsvDelimitedReader(reader);
-        while (lineIter.hasNext()) {
-            String[] line = lineIter.next();
-            String probeIdentifier = line[0];
-            String probeRefId = probes.get(probeIdentifier);
-            if (probeRefId == null) {
-                throw new RuntimeException("Probe not found:" + probeIdentifier);
-            }
-            List<Item> resultsForThisProbe = probeResults.get(probeIdentifier);
-
-            // loop through each column
-            // samples is in order, so will match with the result
-            for (int i = 0; i < resultsForThisProbe.size(); i++) {
-                Item probeResult = resultsForThisProbe.get(i);
-                String pacall = line[i + 1];
-                probeResult.setAttribute("PACall", pacall);
-                if ("0".equals(pacall)) {
-                    probeResult.removeAttribute("expressionValue");
-                }
-                store(probeResult);
-            }
-        }
         createExpressionResults();
     }
+
+//    private void processPACall(Reader reader) throws IOException, ObjectStoreException {
+//        Iterator<String[]> lineIter = FormattedTextParser.parseCsvDelimitedReader(reader);
+//        while (lineIter.hasNext()) {
+//            String[] line = lineIter.next();
+//            String probeIdentifier = line[0];
+//            String probeRefId = probes.get(probeIdentifier);
+//            if (probeRefId == null) {
+//                throw new RuntimeException("Probe not found:" + probeIdentifier);
+//            }
+//            List<Item> resultsForThisProbe = probeResults.get(probeIdentifier);
+//
+//            // loop through each column
+//            // samples is in order, so will match with the result
+//            for (int i = 0; i < resultsForThisProbe.size(); i++) {
+//                Item probeResult = resultsForThisProbe.get(i);
+//                String pacall = line[i + 1];
+//                probeResult.setAttribute("PACall", pacall);
+//                if ("0".equals(pacall)) {
+//                    probeResult.removeAttribute("expressionValue");
+//                }
+//                store(probeResult);
+//            }
+//        }
+//        createExpressionResults();
+//    }
 
     private void createExpressionResults() throws ObjectStoreException {
         // samples to the list of probeResults
