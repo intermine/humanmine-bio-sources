@@ -71,7 +71,7 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
     }
 
     /**
-     * 
+     *
      *
      * {@inheritDoc}
      */
@@ -167,10 +167,10 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
         // we want to do calcs for all results for each gene
         for (Map.Entry<String, HashSet<String>> entry : geneToProbe.entrySet()) {
             String geneRefId = entry.getKey();
-            HashSet<String> probes = entry.getValue();
+            HashSet<String> geneProbes = entry.getValue();
 
             // each gene will have several probes
-            for (String probeIdentifier : probes) {
+            for (String probeIdentifier : geneProbes) {
                 List<Item> resultsForThisProbe = probeResults.get(probeIdentifier);
                 for (int i = 0; i < probeResults.size(); i++) {
                     Item probeResult = resultsForThisProbe.get(i);
@@ -189,9 +189,9 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
                 Item expressionResult = createItem("ExpressionResult");
                 expressionResult.setReference("gene", geneRefId);
                 expressionResult.setReference("sample", samples.get(i));
-                List<Item> probeResults = sampleResults.get("Sample" + String.valueOf(i));
+                List<Item> sampleProbeResults = sampleResults.get("Sample" + String.valueOf(i));
                 Set<String> expressionValues = new HashSet<String>();
-                for (Item item : probeResults) {
+                for (Item item : sampleProbeResults) {
                     if (item.hasAttribute("expressionValue")) {
                         Attribute attr = item.getAttribute("expressionValue");
                         String expressionValue = attr.getValue();
@@ -224,8 +224,6 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
         return averagedExpression;
     }
 
-    // structure_id,slab_num,well_id,slab_type,structure_acronym,structure_name,polygon_id,mri_voxel_x,mri_voxel_y,mri_voxel_z,mni_x,mni_y,mni_z
-    // 4143,9,11281,CX,"MTG-i","middle temporal gyrus, left, inferior bank of gyrus",1283581,149,106,137,-58.0,-46.0,3.0
     private void processSamples(Reader reader) throws IOException, ObjectStoreException {
         Iterator<String[]> lineIter = FormattedTextParser.parseCsvDelimitedReader(reader);
         // skip header
@@ -244,24 +242,24 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
             String structure_name = line[5];
 
             // location
-            String polygon_id = line[6];
-            String mri_voxel_x = line[7];
-            String mri_voxel_y = line[8];
-            String mri_voxel_z = line[9];
-            String mni_x = line[10];
-            String mni_y = line[11];
-            String mni_z = line[12];
+            String polygonId = line[6];
+            String mrivoxelx = line[7];
+            String mrivoxely = line[8];
+            String mrivoxelz = line[9];
+            String mnix = line[10];
+            String mniy = line[11];
+            String mniz = line[12];
 
             String structureId = getStructure(structure, structure_acronym, structure_name);
 
             Item location = createItem("BrainLocation");
-            location.setAttribute("polygon_id", polygon_id);
-            location.setAttribute("mri_voxel_x", mri_voxel_x);
-            location.setAttribute("mri_voxel_y", mri_voxel_y);
-            location.setAttribute("mri_voxel_z", mri_voxel_z);
-            location.setAttribute("mni_x", mni_x);
-            location.setAttribute("mni_y", mni_y);
-            location.setAttribute("mni_z", mni_z);
+            location.setAttribute("polygon_id", polygonId);
+            location.setAttribute("mri_voxel_x", mrivoxelx);
+            location.setAttribute("mri_voxel_y", mrivoxely);
+            location.setAttribute("mri_voxel_z", mrivoxelz);
+            location.setAttribute("mni_x", mnix);
+            location.setAttribute("mni_y", mniy);
+            location.setAttribute("mni_z", mniz);
             store(location);
 
             Item sample = createItem("Sample");
@@ -326,13 +324,13 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
         return refId;
     }
 
-    private String getStructure(String identifier, String structure_acronym, String structure_name)
+    private String getStructure(String identifier, String name)
         throws ObjectStoreException {
         String refId = structures.get(identifier);
         if (refId == null) {
             Item item = createItem("BrainAtlasStructure");
             item.setAttribute("identifier", identifier);
-            item.setAttribute("name", structure_name);
+            item.setAttribute("name", name);
             store(item);
             refId = item.getIdentifier();
             structures.put(identifier, refId);
