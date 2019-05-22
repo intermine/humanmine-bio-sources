@@ -233,13 +233,13 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
             String structure = line[0];
 
             // sample
-            String slab_num = line[1];
-            String well_id = line[2];
-            String slab_type = line[3];
+            String slabnum = line[1];
+            String wellid = line[2];
+            String slabtype = line[3];
 
             // structure
-            String structure_acronym = line[4];
-            String structure_name = line[5];
+//            String structure_acronym = line[4];
+            String structurename = line[5];
 
             // location
             String polygonId = line[6];
@@ -250,7 +250,7 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
             String mniy = line[11];
             String mniz = line[12];
 
-            String structureId = getStructure(structure, structure_acronym, structure_name);
+            String structureId = getStructure(structure, structurename);
 
             Item location = createItem("BrainLocation");
             location.setAttribute("polygon_id", polygonId);
@@ -263,9 +263,9 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
             store(location);
 
             Item sample = createItem("Sample");
-            sample.setAttribute("slab_num", slab_num);
-            sample.setAttribute("well_id", well_id);
-            sample.setAttribute("slab_type", slab_type);
+            sample.setAttribute("slab_num", slabnum);
+            sample.setAttribute("well_id", wellid);
+            sample.setAttribute("slab_type", slabtype);
             sample.setReference("structure", structureId);
             sample.setReference("location", location);
             store(sample);
