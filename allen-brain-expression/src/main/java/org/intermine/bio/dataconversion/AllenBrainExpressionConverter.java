@@ -116,7 +116,8 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
             String probeIdentifier = line[0];
             String probeRefId = probes.get(probeIdentifier);
             if (probeRefId == null) {
-                throw new RuntimeException("Probe not found" + probeIdentifier);
+                // probe is not of interest, didn't have an associated gene
+                continue;
             }
             LinkedList<Item> currentProbeResults = new LinkedList<Item>();
 
@@ -141,32 +142,6 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
         }
         createExpressionResults();
     }
-
-//    private void processPACall(Reader reader) throws IOException, ObjectStoreException {
-//        Iterator<String[]> lineIter = FormattedTextParser.parseCsvDelimitedReader(reader);
-//        while (lineIter.hasNext()) {
-//            String[] line = lineIter.next();
-//            String probeIdentifier = line[0];
-//            String probeRefId = probes.get(probeIdentifier);
-//            if (probeRefId == null) {
-//                throw new RuntimeException("Probe not found:" + probeIdentifier);
-//            }
-//            List<Item> resultsForThisProbe = probeResults.get(probeIdentifier);
-//
-//            // loop through each column
-//            // samples is in order, so will match with the result
-//            for (int i = 0; i < resultsForThisProbe.size(); i++) {
-//                Item probeResult = resultsForThisProbe.get(i);
-//                String pacall = line[i + 1];
-//                probeResult.setAttribute("PACall", pacall);
-//                if ("0".equals(pacall)) {
-//                    probeResult.removeAttribute("expressionValue");
-//                }
-//                store(probeResult);
-//            }
-//        }
-//        createExpressionResults();
-//    }
 
     private void createExpressionResults() throws ObjectStoreException {
         // samples to the list of probeResults
@@ -292,6 +267,11 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
             String name = line[1];
             String symbol = line[3];
             String entrezId = line[5];
+
+            // Miguel says to ignore (for now) probes that don't have an associated gene
+            if (StringUtils.isEmpty(symbol)) {
+                continue;
+            }
 
             String geneRefId = getGene(entrezId, symbol);
 
