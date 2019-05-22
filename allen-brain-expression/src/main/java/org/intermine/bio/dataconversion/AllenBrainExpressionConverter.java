@@ -15,7 +15,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -186,8 +185,8 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
                         Attribute attr = item.getAttribute("expressionValue");
                         String expressionValue = attr.getValue();
                         expressionValues.add(expressionValue);
-//                        throw new RuntimeException(item.toString());
                     }
+                    expressionResult.addToCollection("probeResults", item);
                 }
                 BigDecimal averagedExpression = getAveragedExpression(expressionValues);
                 if (!averagedExpression.equals(BigDecimal.ZERO)) {
@@ -204,8 +203,6 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
         if (count == 0) {
             return BigDecimal.ZERO;
         }
-        BigDecimal total = new BigDecimal(0);
-        String msg = "";
         Set<BigDecimal> decimalValues = new HashSet<BigDecimal>();
         for (String expressionValue : expressionValues) {
             BigDecimal decimalValue = new BigDecimal(expressionValue);
@@ -213,7 +210,6 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
         }
         BigDecimal sum = decimalValues.stream().reduce(BigDecimal.ZERO, BigDecimal::add);
         BigDecimal averagedExpression = sum.divide(new BigDecimal(count), 2);
-        //throw new RuntimeException(" total " + total + " " + msg + count);
         return averagedExpression;
     }
 
