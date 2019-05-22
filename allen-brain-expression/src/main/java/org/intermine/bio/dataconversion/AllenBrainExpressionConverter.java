@@ -99,10 +99,6 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
     }
 
     private void reset() {
-        genes = new HashMap<String, String>();
-        samples = new LinkedList<String>();
-        structures = new HashMap<String, String>();
-        probes = new HashMap<String, String>();
         geneToProbe = new HashMap<String, HashSet<String>>();
         probeResults = new LinkedHashMap<String, LinkedList<Item>>();
     }
