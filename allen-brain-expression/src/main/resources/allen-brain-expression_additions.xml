@@ -44,7 +44,7 @@
     </class>
     <class name="ProbeResult" is-interface="true">
         <attribute name="PACall" type="java.lang.Boolean"/>
-        <attribute name="value" type="java.lang.Double"/>
+        <attribute name="expressionValue" type="java.lang.Double"/>
         <reference name="sample" referenced-type="Sample" reverse-reference="probeResults"/>
         <reference name="probe" referenced-type="Probe" reverse-reference="probeResults"/>
         <reference name="expressionResult" referenced-type="ExpressionResult" reverse-reference="probeResults"/>

@@ -1,7 +1,7 @@
 package org.intermine.bio.dataconversion;
 
 /*
- * Copyright (C) 2002-2018 FlyMine
+ * Copyright (C) 2002-2019 FlyMine
  *
  * This code may be freely distributed and modified under the
  * terms of the GNU Lesser General Public Licence.  This should
@@ -14,17 +14,24 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
+import org.apache.commons.lang.StringUtils;
 import org.intermine.dataconversion.ItemWriter;
 import org.intermine.metadata.Model;
 import org.intermine.objectstore.ObjectStoreException;
 import org.intermine.util.FormattedTextParser;
+import org.intermine.xml.full.Attribute;
 import org.intermine.xml.full.Item;
 
 
@@ -35,7 +42,7 @@ import org.intermine.xml.full.Item;
  */
 public class AllenBrainExpressionConverter extends BioDirectoryConverter
 {
-    //
+    //private static final Logger LOG = Logger.getLogger(AllenBrainExpressionConverter.class);
     private static final String DATASET_TITLE = "Allen Brain Expression data set";
     private static final String DATA_SOURCE_NAME = "Allen Brain Atlas";
     private static final String TAXON_ID = "9606";
@@ -51,6 +58,7 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
     private List<String> samples = new LinkedList<String>();
     private Map<String, String> structures = new HashMap<String, String>();
     private Map<String, String> probes = new HashMap<String, String>();
+    private Map<String, HashSet<String>> geneToProbe = new HashMap<String, HashSet<String>>();
     private Map<String, LinkedList<Item>> probeResults
             = new LinkedHashMap<String, LinkedList<Item>>();
 
@@ -69,17 +77,24 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
      * {@inheritDoc}
      */
     public void process(File dataDir) throws Exception {
-
-        Map<String, File> files = readFilesInDir(dataDir);
-
         organism = getOrganism(TAXON_ID);
 
-        // don't change order
-        processProbes(new FileReader(files.get(PROBES_FILE)));
-        processSamples(new FileReader(files.get(SAMPLES_FILE)));
-        processExpression(new FileReader(files.get(EXPRESSION_FILE)));
-        processPACall(new FileReader(files.get(PACALL_FILE)));
+        // get list of subdirectories
+        File[] directories = new File(dataDir.getAbsolutePath()).listFiles(File::isDirectory);
+
+        // process each directory
+        for (File f: directories) {
+
+            // get list of files
+            Map<String, File> files = readFilesInDir(f);
+
+            // don't change order
+            processProbes(new FileReader(files.get(PROBES_FILE)));
+            processSamples(new FileReader(files.get(SAMPLES_FILE)));
+            processExpression(new FileReader(files.get(EXPRESSION_FILE)));
+            processPACall(new FileReader(files.get(PACALL_FILE)));
 //        processOntology(new FileReader(files.get(ONTOLOGY_FILE)));
+        }
     }
 
     // 1058685,3.5010774998847847,4.15417262910917
@@ -87,25 +102,26 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
         Iterator<String[]> lineIter = FormattedTextParser.parseCsvDelimitedReader(reader);
         while (lineIter.hasNext()) {
             String[] line = lineIter.next();
-            String probe = probes.get(line[0]);
-            if (probe == null) {
-                throw new RuntimeException("Probe not found" + line[0]);
+            String probeIdentifier = line[0];
+            String probeRefId = probes.get(probeIdentifier);
+            if (probeRefId == null) {
+                throw new RuntimeException("Probe not found" + probeIdentifier);
             }
             LinkedList<Item> currentProbeResults = new LinkedList<Item>();
 
             // loop through each column
             // samples is in order, so will match with the result
-            for (int i = 1; i < samples.size(); i++) {
+            for (int i = 0; i < samples.size(); i++) {
                 String sample = samples.get(i);
                 String result = line[i];
 
                 Item probeResult = createItem("ProbeResult");
-                probeResult.setAttribute("value", result);
-                probeResult.setReference("probe", probe);
+                probeResult.setAttribute("expressionValue", result);
+                probeResult.setReference("probe", probeRefId);
                 probeResult.setReference("sample", sample);
                 currentProbeResults.add(probeResult);
             }
-            probeResults.put(probe, currentProbeResults);
+            probeResults.put(probeIdentifier, currentProbeResults);
         }
     }
 
@@ -113,26 +129,93 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
         Iterator<String[]> lineIter = FormattedTextParser.parseCsvDelimitedReader(reader);
         while (lineIter.hasNext()) {
             String[] line = lineIter.next();
-            String probe = probes.get(line[0]);
-            if (probe == null) {
-                throw new RuntimeException("Probe not found:" + line[0]);
+            String probeIdentifier = line[0];
+            String probeRefId = probes.get(probeIdentifier);
+            if (probeRefId == null) {
+                throw new RuntimeException("Probe not found:" + probeIdentifier);
             }
-            List<Item> results = probeResults.get(probe);
+            List<Item> results = probeResults.get(probeIdentifier);
 
             // loop through each column
             // samples is in order, so will match with the result
-            for (int i = 1; i < results.size(); i++) {
+            for (int i = 0; i < results.size(); i++) {
                 Item probeResult = results.get(i);
-                String pacall = line[i];
+                String pacall = line[i + 1];
                 probeResult.setAttribute("PACall", pacall);
                 if ("0".equals(pacall)) {
-                    probeResult.removeAttribute("value");
+                    probeResult.removeAttribute("expressionValue");
                 }
                 store(probeResult);
             }
         }
+        createExpressionResults();
     }
 
+    private void createExpressionResults() throws ObjectStoreException {
+        // samples to the list of probeResults
+        Map<String, List<Item>> sampleResults = new HashMap<String, List<Item>>();
+        // we want to do calcs for all results for each gene
+        for (Map.Entry<String, HashSet<String>> entry : geneToProbe.entrySet()) {
+            String geneRefId = entry.getKey();
+            HashSet<String> probes = entry.getValue();
+
+            // each gene will have several probes
+            for (String probeIdentifier : probes) {
+                List<Item> resultsForThisProbe = probeResults.get(probeIdentifier);
+                for (int i = 0; i < probeResults.size(); i++) {
+                    Item probeResult = resultsForThisProbe.get(i);
+                    List<Item> sampleResultsForProbe = sampleResults.get("Sample"
+                            + String.valueOf(i));
+                    if (sampleResultsForProbe == null) {
+                        sampleResultsForProbe = new ArrayList<Item>();
+                    }
+                    sampleResultsForProbe.add(probeResult);
+                    sampleResults.put("Sample" + String.valueOf(i), sampleResultsForProbe);
+                }
+            }
+
+            // we've gathered up all of the information. do the math now!
+            for (int i = 0; i < probeResults.size(); i++) {
+                Item expressionResult = createItem("ExpressionResult");
+                expressionResult.setReference("gene", geneRefId);
+                expressionResult.setReference("sample", samples.get(i));
+                List<Item> probeResults = sampleResults.get("Sample" + String.valueOf(i));
+                Set<String> expressionValues = new HashSet<String>();
+                for (Item item : probeResults) {
+                    if (item.hasAttribute("expressionValue")) {
+                        Attribute attr = item.getAttribute("expressionValue");
+                        String expressionValue = attr.getValue();
+                        expressionValues.add(expressionValue);
+//                        throw new RuntimeException(item.toString());
+                    }
+                }
+                BigDecimal averagedExpression = getAveragedExpression(expressionValues);
+                if (!averagedExpression.equals(BigDecimal.ZERO)) {
+                    expressionResult.setAttribute("averagedExpression",
+                        averagedExpression.toString());
+                }
+                store(expressionResult);
+            }
+        }
+    }
+
+    private BigDecimal getAveragedExpression(Set<String> expressionValues) {
+        int count = expressionValues.size();
+        if (count == 0) {
+            return BigDecimal.ZERO;
+        }
+        BigDecimal total = new BigDecimal(0);
+        String msg = "";
+        Set<BigDecimal> decimalValues = new HashSet<BigDecimal>();
+        for (String expressionValue : expressionValues) {
+            BigDecimal decimalValue = new BigDecimal(expressionValue);
+            decimalValues.add(decimalValue);
+        }
+        BigDecimal sum = decimalValues.stream().reduce(BigDecimal.ZERO, BigDecimal::add);
+        BigDecimal averagedExpression = sum.divide(new BigDecimal(count), 2);
+        //throw new RuntimeException(" total " + total + " " + msg + count);
+        return averagedExpression;
+    }
 
     // structure_id,slab_num,well_id,slab_type,structure_acronym,structure_name,polygon_id,mri_voxel_x,mri_voxel_y,mri_voxel_z,mni_x,mni_y,mni_z
     // 4143,9,11281,CX,"MTG-i","middle temporal gyrus, left, inferior bank of gyrus",1283581,149,106,137,-58.0,-46.0,3.0
@@ -193,18 +276,26 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
         lineIter.next();
         while (lineIter.hasNext()) {
             String[] line = lineIter.next();
-            String probeId = line[0];
+            String probeIdentifier = line[0];
             String name = line[1];
+            String symbol = line[3];
             String entrezId = line[5];
 
-            String geneId = getGene(entrezId);
+            String geneRefId = getGene(entrezId, symbol);
 
             Item probe = createItem("Probe");
-            probe.setAttribute("probe_id", probeId);
+            probe.setAttribute("probe_id", probeIdentifier);
             probe.setAttribute("name", name);
-            probe.setReference("gene", geneId);
+            probe.setReference("gene", geneRefId);
             store(probe);
-            probes.put(probeId, probe.getIdentifier());
+            probes.put(probeIdentifier, probe.getIdentifier());
+
+            HashSet<String> probeSets = geneToProbe.get(geneRefId);
+            if (probeSets == null) {
+                probeSets = new HashSet<String>();
+            }
+            probeSets.add(probeIdentifier);
+            geneToProbe.put(geneRefId, probeSets);
         }
     }
 
@@ -212,11 +303,14 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
         if gene ID is new, create a gene object and store to the database
         if gene is old, return the ID of the stored gene.
      */
-    private String getGene(String entrezId) throws ObjectStoreException {
+    private String getGene(String entrezId, String symbol) throws ObjectStoreException {
         String refId = genes.get(entrezId);
         if (refId == null) {
             Item gene = createItem("Gene");
-            gene.setAttribute("primaryIdentifier", entrezId);
+            if (StringUtils.isNotEmpty(entrezId)) {
+                gene.setAttribute("primaryIdentifier", entrezId);
+            }
+            gene.setAttribute("symbol", symbol);
             gene.setReference("organism", organism);
             store(gene);
             refId = gene.getIdentifier();
@@ -246,7 +340,4 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
         }
         return files;
     }
-
-
-
 }
