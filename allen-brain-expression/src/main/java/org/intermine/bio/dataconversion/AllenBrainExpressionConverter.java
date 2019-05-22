@@ -140,12 +140,12 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
             if (probeRefId == null) {
                 throw new RuntimeException("Probe not found:" + probeIdentifier);
             }
-            List<Item> results = probeResults.get(probeIdentifier);
+            List<Item> resultsForThisProbe = probeResults.get(probeIdentifier);
 
             // loop through each column
             // samples is in order, so will match with the result
-            for (int i = 0; i < results.size(); i++) {
-                Item probeResult = results.get(i);
+            for (int i = 0; i < resultsForThisProbe.size(); i++) {
+                Item probeResult = resultsForThisProbe.get(i);
                 String pacall = line[i + 1];
                 probeResult.setAttribute("PACall", pacall);
                 if ("0".equals(pacall)) {
@@ -168,7 +168,7 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
             // each gene will have several probes
             for (String probeIdentifier : geneProbes) {
                 List<Item> resultsForThisProbe = probeResults.get(probeIdentifier);
-                for (int i = 0; i < probeResults.size(); i++) {
+                for (int i = 0; i < resultsForThisProbe.size(); i++) {
                     Item probeResult = resultsForThisProbe.get(i);
                     List<Item> sampleResultsForProbe = sampleResults.get("Sample"
                             + String.valueOf(i));
