@@ -119,7 +119,7 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
             // samples is in order, so will match with the result
             for (int i = 0; i < samples.size(); i++) {
                 String sample = samples.get(i);
-                String result = line[i];
+                String result = line[i + 1];
 
                 Item probeResult = createItem("ProbeResult");
                 probeResult.setAttribute("expressionValue", result);
@@ -181,7 +181,7 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
             }
 
             // we've gathered up all of the information. do the math now!
-            for (int i = 0; i < probeResults.size(); i++) {
+            for (int i = 0; i < samples.size(); i++) {
                 Item expressionResult = createItem("ExpressionResult");
                 expressionResult.setReference("gene", geneRefId);
                 expressionResult.setReference("sample", samples.get(i));
