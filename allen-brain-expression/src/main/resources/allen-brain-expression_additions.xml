@@ -3,6 +3,7 @@
 
 <classes>
     <class name="BrainAtlasStructure" is-interface="true">
+        <attribute name="identifier" type="java.lang.String"/>
         <attribute name="name" type="java.lang.String"/>
         <reference name="ontologyTerm" referenced-type="OntologyTerm" />
         <collection name="samples" referenced-type="Sample" reverse-reference="structure"/>
@@ -12,7 +13,7 @@
     <class name="Sample" is-interface="true">
         <attribute name="well_id" type="java.lang.String"/>
         <attribute name="slab_type" type="java.lang.String"/>
-        <attribute name="slab_number" type="java.lang.String"/>
+        <attribute name="slab_num" type="java.lang.String"/>
         <reference name="structure" referenced-type="BrainAtlasStructure" reverse-reference="samples"/>
         <reference name="location" referenced-type="BrainLocation" reverse-reference="sample"/>
         <reference name="donor" referenced-type="Donor" reverse-reference="samples"/>
@@ -23,10 +24,10 @@
         <attribute name="polygon_id" type="java.lang.String"/>
         <attribute name="mri_voxel_x" type="java.lang.Double"/>
         <attribute name="mri_voxel_y" type="java.lang.Double"/>
-        <attribute name="Mri_voxel_z" type="java.lang.Double"/>
-        <attribute name="Mni_x" type="java.lang.Double"/>
-        <attribute name="Mni_y" type="java.lang.Double"/>
-        <attribute name="Mni_z" type="java.lang.Double"/>
+        <attribute name="mri_voxel_z" type="java.lang.Double"/>
+        <attribute name="mni_x" type="java.lang.Double"/>
+        <attribute name="mni_y" type="java.lang.Double"/>
+        <attribute name="mni_z" type="java.lang.Double"/>
         <reference name="sample" referenced-type="Sample" reverse-reference="location"/>
     </class>
     <class name="Donor" is-interface="true">
