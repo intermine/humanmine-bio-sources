@@ -136,7 +136,12 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
                 }
                 probeResult.setReference("probe", probeRefId);
                 probeResult.setReference("sample", sample);
-                probeResult.setAttribute("PACall", pacall);
+                if ("1".equals(pacall)) {
+                    probeResult.setAttribute("PACall", "true");
+                } else {
+                    probeResult.setAttribute("PACall", "false");
+                }
+
                 store(probeResult);
                 //currentProbeResults.add(probeResult);
             }
