@@ -86,8 +86,8 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
         // process each directory
         for (File f: directories) {
 
-            String directoryName = f.getName();
-            donor = getDonor(directoryName);
+//            String directoryName = f.getName();
+//            donor = getDonor(directoryName);
 
             // get list of files
             Map<String, File> files = readFilesInDir(f);
@@ -300,18 +300,18 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
         return rslv.resolveId(TAXON_ID, identifier).iterator().next();
     }
 
-    private Item getDonor(String directoryName) {
-
-    }
-
-    private void storeDonors() {
-
-        Item item = createItem("Donor");
-        item.setAttribute();
-        H0351.1009
-        57
-        M
-        White or Caucasian
-
-    }
+//    private Item getDonor(String directoryName) {
+//
+//    }
+//
+//    private void storeDonors() {
+//
+//        Item item = createItem("Donor");
+//        item.setAttribute();
+//        H0351.1009
+//        57
+//        M
+//        White or Caucasian
+//
+//    }
 }
