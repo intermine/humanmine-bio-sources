@@ -34,6 +34,9 @@ public class AllenBrainExpressionConverterTest extends ItemsTestCase
     public void setUp() throws Exception {
         itemWriter = new MockItemWriter(new HashMap<String, org.intermine.model.fulldata.Item>());
         converter = new AllenBrainExpressionConverter(itemWriter, model);
+        converter.rslv = IdResolverService.getMockIdResolver("Gene");
+        converter.rslv.addResolverEntry("9606", "733", Collections.singleton("C8G"));
+        converter.rslv.addResolverEntry("9606", "735", Collections.singleton("C9"));
         super.setUp();
     }
 

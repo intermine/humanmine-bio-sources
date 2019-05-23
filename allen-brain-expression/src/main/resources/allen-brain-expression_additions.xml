@@ -4,6 +4,7 @@
 <classes>
     <class name="BrainAtlasStructure" is-interface="true">
         <attribute name="identifier" type="java.lang.String"/>
+        <attribute name="acronym" type="java.lang.String"/>
         <attribute name="name" type="java.lang.String"/>
         <reference name="ontologyTerm" referenced-type="OntologyTerm" />
         <collection name="samples" referenced-type="Sample" reverse-reference="structure"/>
