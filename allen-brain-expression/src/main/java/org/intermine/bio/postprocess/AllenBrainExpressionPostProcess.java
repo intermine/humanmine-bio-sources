@@ -126,6 +126,7 @@ public class AllenBrainExpressionPostProcess extends PostProcessor
             BigDecimal averagedExpression = getAveragedExpression(expressionValues);
             if (!averagedExpression.equals(BigDecimal.ZERO)) {
                 expressionResult.setAveragedExpression(averagedExpression.doubleValue());
+                //expressionResult.setLogExpression(Math.log10(averagedExpression));
             }
             osw.store(expressionResult);
         }

@@ -44,6 +44,7 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
     private static final String DATA_SOURCE_NAME = "Allen Brain Atlas";
     private static final String TAXON_ID = "9606";
     private String organism;
+    private String donor;
 
     private static final String EXPRESSION_FILE = "MicroarrayExpression.csv";
     private static final String ONTOLOGY_FILE = "Ontology.csv";
@@ -84,6 +85,9 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
 
         // process each directory
         for (File f: directories) {
+
+            String directoryName = f.getName();
+            donor = getDonor(directoryName);
 
             // get list of files
             Map<String, File> files = readFilesInDir(f);
@@ -242,13 +246,13 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
         if gene is old, return the ID of the stored gene.
      */
     private String getGene(String entrezId) throws ObjectStoreException {
-        String refId = genes.get(entrezId);
+        String identifier = resolveGene(entrezId);
+        if (identifier == null) {
+            // old gene!
+            return null;
+        }
+        String refId = genes.get(identifier);
         if (refId == null) {
-            String identifier = resolveGene(entrezId);
-            if (identifier == null) {
-                // old gene!
-                return null;
-            }
             Item gene = createItem("Gene");
             gene.setAttribute("primaryIdentifier", identifier);
             gene.setReference("organism", organism);
@@ -294,5 +298,20 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
             return null;
         }
         return rslv.resolveId(TAXON_ID, identifier).iterator().next();
+    }
+
+    private Item getDonor(String directoryName) {
+
+    }
+
+    private void storeDonors() {
+
+        Item item = createItem("Donor");
+        item.setAttribute();
+        H0351.1009
+        57
+        M
+        White or Caucasian
+
     }
 }

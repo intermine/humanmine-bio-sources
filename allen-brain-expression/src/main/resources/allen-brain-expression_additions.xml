@@ -35,10 +35,13 @@
         <attribute name="identifier" type="java.lang.String"/>
         <attribute name="age" type="java.lang.String"/>
         <attribute name="gender" type="java.lang.String"/>
+        <attribute name="ethnicity" type="java.lang.String"/>
+        <attribute name="pmi_hours" type="java.lang.Integer"/>
         <collection name="samples" referenced-type="Sample" reverse-reference="donor"/>
     </class>
     <class name="ExpressionResult" is-interface="true">
         <attribute name="averagedExpression" type="java.lang.Double"/>
+        <attribute name="logExpression" type="java.lang.Double"/>
         <reference name="sample" referenced-type="Sample" reverse-reference="expressionResults"/>
         <reference name="gene" referenced-type="Gene" reverse-reference="expressionResults"/>
         <collection name="probeResults" referenced-type="ProbeResult" reverse-reference="expressionResult"/>
