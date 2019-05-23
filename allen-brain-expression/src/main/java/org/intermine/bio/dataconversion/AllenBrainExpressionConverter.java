@@ -272,7 +272,6 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
             String[] line = lineIter.next();
             String probeIdentifier = line[0];
             String name = line[1];
-            String symbol = line[3];
             String entrezId = line[5];
 
             // Miguel says to ignore (for now) probes that don't have an associated gene
@@ -280,7 +279,7 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
                 continue;
             }
 
-            String geneRefId = getGene(entrezId, symbol);
+            String geneRefId = getGene(entrezId);
 
             Item probe = createItem("Probe");
             probe.setAttribute("probe_id", probeIdentifier);
@@ -302,14 +301,11 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
         if gene ID is new, create a gene object and store to the database
         if gene is old, return the ID of the stored gene.
      */
-    private String getGene(String entrezId, String symbol) throws ObjectStoreException {
+    private String getGene(String entrezId) throws ObjectStoreException {
         String refId = genes.get(entrezId);
         if (refId == null) {
             Item gene = createItem("Gene");
-            if (StringUtils.isNotEmpty(entrezId)) {
-                gene.setAttribute("primaryIdentifier", entrezId);
-            }
-            gene.setAttribute("symbol", symbol);
+            gene.setAttribute("primaryIdentifier", entrezId);
             gene.setReference("organism", organism);
             store(gene);
             refId = gene.getIdentifier();
