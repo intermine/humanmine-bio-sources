@@ -308,7 +308,7 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
             gene.setReference("organism", organism);
             store(gene);
             refId = gene.getIdentifier();
-            genes.put(entrezId, refId);
+            genes.put(symbol, refId);
         }
         return refId;
     }
