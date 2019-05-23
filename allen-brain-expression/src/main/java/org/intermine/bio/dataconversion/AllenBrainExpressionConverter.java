@@ -71,8 +71,6 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
     }
 
     /**
-     *
-     *
      * {@inheritDoc}
      */
     public void process(File dataDir) throws Exception {
