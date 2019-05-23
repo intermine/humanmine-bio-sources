@@ -1,10 +1,4 @@
 <items>
-  <item id="11_1" class="ExpressionResult">
-    <attribute name="averagedExpression" value="3.5010774998847847"/>
-    <reference name="gene" ref_id="4_1"/>
-    <reference name="sample" ref_id="9_1"/>
-    <collection name="probeResults"><reference ref_id="10_1"/></collection>
-  </item>
   <item id="7_4" class="BrainAtlasStructure">
     <attribute name="identifier" value="4142"/>
     <attribute name="name" value="middle temporal gyrus, left, superior bank of gyrus"/>
@@ -14,12 +8,6 @@
     <attribute name="expressionValue" value="6.36653697119033"/>
     <reference name="probe" ref_id="6_5"/>
     <reference name="sample" ref_id="9_5"/>
-  </item>
-  <item id="11_10" class="ExpressionResult">
-    <attribute name="averagedExpression" value="3.5010774998847847"/>
-    <reference name="gene" ref_id="4_2"/>
-    <reference name="sample" ref_id="9_1"/>
-    <collection name="probeResults"><reference ref_id="10_1"/><reference ref_id="10_19"/><reference ref_id="10_10"/></collection>
   </item>
   <item id="9_8" class="Sample">
     <attribute name="slab_num" value="6"/>
@@ -71,12 +59,6 @@
     <reference name="probe" ref_id="6_6"/>
     <reference name="sample" ref_id="9_3"/>
   </item>
-  <item id="11_7" class="ExpressionResult">
-    <attribute name="averagedExpression" value="4.238925182725189"/>
-    <reference name="gene" ref_id="4_1"/>
-    <reference name="sample" ref_id="9_7"/>
-    <collection name="probeResults"><reference ref_id="10_7"/></collection>
-  </item>
   <item id="10_11" class="ProbeResult">
     <attribute name="PACall" value="0"/>
     <reference name="probe" ref_id="6_2"/>
@@ -110,12 +92,6 @@
     <reference name="probe" ref_id="6_4"/>
     <reference name="sample" ref_id="9_3"/>
   </item>
-  <item id="11_36" class="ExpressionResult">
-    <attribute name="averagedExpression" value="7.068048532505319"/>
-    <reference name="gene" ref_id="4_4"/>
-    <reference name="sample" ref_id="9_9"/>
-    <collection name="probeResults"><reference ref_id="10_9"/><reference ref_id="10_27"/><reference ref_id="10_18"/><reference ref_id="10_36"/><reference ref_id="10_45"/><reference ref_id="10_54"/><reference ref_id="10_63"/><reference ref_id="10_72"/></collection>
-  </item>
   <item id="10_12" class="ProbeResult">
     <attribute name="PACall" value="0"/>
     <reference name="probe" ref_id="6_2"/>
@@ -135,12 +111,6 @@
     <reference name="probe" ref_id="6_8"/>
     <reference name="sample" ref_id="9_7"/>
   </item>
-  <item id="11_31" class="ExpressionResult">
-    <attribute name="averagedExpression" value="6.6839566922415918"/>
-    <reference name="gene" ref_id="4_4"/>
-    <reference name="sample" ref_id="9_4"/>
-    <collection name="probeResults"><reference ref_id="10_4"/><reference ref_id="10_22"/><reference ref_id="10_13"/><reference ref_id="10_31"/><reference ref_id="10_40"/><reference ref_id="10_49"/><reference ref_id="10_58"/><reference ref_id="10_67"/></collection>
-  </item>
   <item id="10_46" class="ProbeResult">
     <attribute name="PACall" value="1"/>
     <attribute name="expressionValue" value="8.946976190945655"/>
@@ -157,28 +127,11 @@
     <reference name="probe" ref_id="6_7"/>
     <reference name="sample" ref_id="9_9"/>
   </item>
-  <item id="11_2" class="ExpressionResult">
-    <reference name="gene" ref_id="4_1"/>
-    <reference name="sample" ref_id="9_2"/>
-    <collection name="probeResults"><reference ref_id="10_2"/></collection>
-  </item>
   <item id="10_80" class="ProbeResult">
     <attribute name="PACall" value="1"/>
     <attribute name="expressionValue" value="7.49917837379472"/>
     <reference name="probe" ref_id="6_9"/>
     <reference name="sample" ref_id="9_8"/>
-  </item>
-  <item id="11_33" class="ExpressionResult">
-    <attribute name="averagedExpression" value="7.033400992902055"/>
-    <reference name="gene" ref_id="4_4"/>
-    <reference name="sample" ref_id="9_6"/>
-    <collection name="probeResults"><reference ref_id="10_6"/><reference ref_id="10_24"/><reference ref_id="10_15"/><reference ref_id="10_33"/><reference ref_id="10_42"/><reference ref_id="10_51"/><reference ref_id="10_60"/><reference ref_id="10_69"/></collection>
-  </item>
-  <item id="11_37" class="ExpressionResult">
-    <attribute name="averagedExpression" value="6.6629399842003376"/>
-    <reference name="gene" ref_id="4_5"/>
-    <reference name="sample" ref_id="9_1"/>
-    <collection name="probeResults"><reference ref_id="10_1"/><reference ref_id="10_19"/><reference ref_id="10_10"/><reference ref_id="10_28"/><reference ref_id="10_37"/><reference ref_id="10_46"/><reference ref_id="10_55"/><reference ref_id="10_64"/><reference ref_id="10_73"/></collection>
   </item>
   <item id="10_1" class="ProbeResult">
     <attribute name="PACall" value="1"/>
@@ -195,11 +148,6 @@
     <attribute name="mri_voxel_z" value="99"/>
     <attribute name="polygon_id" value="1284515"/>
   </item>
-  <item id="11_6" class="ExpressionResult">
-    <reference name="gene" ref_id="4_1"/>
-    <reference name="sample" ref_id="9_6"/>
-    <collection name="probeResults"><reference ref_id="10_6"/></collection>
-  </item>
   <item id="8_6" class="BrainLocation">
     <attribute name="mni_x" value="-58.0"/>
     <attribute name="mni_y" value="-19.0"/>
@@ -208,12 +156,6 @@
     <attribute name="mri_voxel_y" value="128"/>
     <attribute name="mri_voxel_z" value="110"/>
     <attribute name="polygon_id" value="1284160"/>
-  </item>
-  <item id="11_38" class="ExpressionResult">
-    <attribute name="averagedExpression" value="7.35012971866943"/>
-    <reference name="gene" ref_id="4_5"/>
-    <reference name="sample" ref_id="9_2"/>
-    <collection name="probeResults"><reference ref_id="10_2"/><reference ref_id="10_20"/><reference ref_id="10_11"/><reference ref_id="10_29"/><reference ref_id="10_38"/><reference ref_id="10_47"/><reference ref_id="10_56"/><reference ref_id="10_65"/><reference ref_id="10_74"/></collection>
   </item>
   <item id="10_65" class="ProbeResult">
     <attribute name="PACall" value="1"/>
@@ -237,11 +179,6 @@
     <reference name="probe" ref_id="6_2"/>
     <reference name="sample" ref_id="9_1"/>
   </item>
-  <item id="11_15" class="ExpressionResult">
-    <reference name="gene" ref_id="4_2"/>
-    <reference name="sample" ref_id="9_6"/>
-    <collection name="probeResults"><reference ref_id="10_6"/><reference ref_id="10_24"/><reference ref_id="10_15"/></collection>
-  </item>
   <item id="6_2" class="Probe">
     <attribute name="name" value="CUST_15185_PI416261804"/>
     <attribute name="probe_id" value="1058684"/>
@@ -264,23 +201,11 @@
     <reference name="probe" ref_id="6_6"/>
     <reference name="sample" ref_id="9_6"/>
   </item>
-  <item id="11_28" class="ExpressionResult">
-    <attribute name="averagedExpression" value="6.4004268387078062"/>
-    <reference name="gene" ref_id="4_4"/>
-    <reference name="sample" ref_id="9_1"/>
-    <collection name="probeResults"><reference ref_id="10_1"/><reference ref_id="10_19"/><reference ref_id="10_10"/><reference ref_id="10_28"/><reference ref_id="10_37"/><reference ref_id="10_46"/><reference ref_id="10_55"/><reference ref_id="10_64"/></collection>
-  </item>
   <item id="10_81" class="ProbeResult">
     <attribute name="PACall" value="1"/>
     <attribute name="expressionValue" value="8.0624274874238"/>
     <reference name="probe" ref_id="6_9"/>
     <reference name="sample" ref_id="9_9"/>
-  </item>
-  <item id="11_26" class="ExpressionResult">
-    <attribute name="averagedExpression" value="7.02762955200039"/>
-    <reference name="gene" ref_id="4_3"/>
-    <reference name="sample" ref_id="9_8"/>
-    <collection name="probeResults"><reference ref_id="10_8"/><reference ref_id="10_26"/><reference ref_id="10_17"/><reference ref_id="10_35"/><reference ref_id="10_44"/><reference ref_id="10_53"/></collection>
   </item>
   <item id="10_32" class="ProbeResult">
     <attribute name="PACall" value="1"/>
@@ -288,20 +213,9 @@
     <reference name="probe" ref_id="6_4"/>
     <reference name="sample" ref_id="9_5"/>
   </item>
-  <item id="11_13" class="ExpressionResult">
-    <attribute name="averagedExpression" value="3.9620342890083284"/>
-    <reference name="gene" ref_id="4_2"/>
-    <reference name="sample" ref_id="9_4"/>
-    <collection name="probeResults"><reference ref_id="10_4"/><reference ref_id="10_22"/><reference ref_id="10_13"/></collection>
-  </item>
   <item id="7_6" class="BrainAtlasStructure">
     <attribute name="identifier" value="4273"/>
     <attribute name="name" value="short insular gyri, left"/>
-  </item>
-  <item id="11_5" class="ExpressionResult">
-    <reference name="gene" ref_id="4_1"/>
-    <reference name="sample" ref_id="9_5"/>
-    <collection name="probeResults"><reference ref_id="10_5"/></collection>
   </item>
   <item id="10_21" class="ProbeResult">
     <attribute name="PACall" value="0"/>
@@ -337,12 +251,6 @@
     <reference name="probe" ref_id="6_4"/>
     <reference name="sample" ref_id="9_8"/>
   </item>
-  <item id="11_19" class="ExpressionResult">
-    <attribute name="averagedExpression" value="5.8322397246182080"/>
-    <reference name="gene" ref_id="4_3"/>
-    <reference name="sample" ref_id="9_1"/>
-    <collection name="probeResults"><reference ref_id="10_1"/><reference ref_id="10_19"/><reference ref_id="10_10"/><reference ref_id="10_28"/><reference ref_id="10_37"/><reference ref_id="10_46"/></collection>
-  </item>
   <item id="8_1" class="BrainLocation">
     <attribute name="mni_x" value="-58.0"/>
     <attribute name="mni_y" value="-46.0"/>
@@ -373,23 +281,6 @@
     <reference name="probe" ref_id="6_5"/>
     <reference name="sample" ref_id="9_4"/>
   </item>
-  <item id="11_11" class="ExpressionResult">
-    <reference name="gene" ref_id="4_2"/>
-    <reference name="sample" ref_id="9_2"/>
-    <collection name="probeResults"><reference ref_id="10_2"/><reference ref_id="10_20"/><reference ref_id="10_11"/></collection>
-  </item>
-  <item id="11_25" class="ExpressionResult">
-    <attribute name="averagedExpression" value="6.090475885214700"/>
-    <reference name="gene" ref_id="4_3"/>
-    <reference name="sample" ref_id="9_7"/>
-    <collection name="probeResults"><reference ref_id="10_7"/><reference ref_id="10_25"/><reference ref_id="10_16"/><reference ref_id="10_34"/><reference ref_id="10_43"/><reference ref_id="10_52"/></collection>
-  </item>
-  <item id="11_20" class="ExpressionResult">
-    <attribute name="averagedExpression" value="7.05559769351901"/>
-    <reference name="gene" ref_id="4_3"/>
-    <reference name="sample" ref_id="9_2"/>
-    <collection name="probeResults"><reference ref_id="10_2"/><reference ref_id="10_20"/><reference ref_id="10_11"/><reference ref_id="10_29"/><reference ref_id="10_38"/><reference ref_id="10_47"/></collection>
-  </item>
   <item id="10_3" class="ProbeResult">
     <attribute name="PACall" value="1"/>
     <attribute name="expressionValue" value="4.10332400682848"/>
@@ -401,12 +292,6 @@
     <attribute name="expressionValue" value="5.773906293781111"/>
     <reference name="probe" ref_id="6_8"/>
     <reference name="sample" ref_id="9_9"/>
-  </item>
-  <item id="11_34" class="ExpressionResult">
-    <attribute name="averagedExpression" value="6.516227837762579"/>
-    <reference name="gene" ref_id="4_4"/>
-    <reference name="sample" ref_id="9_7"/>
-    <collection name="probeResults"><reference ref_id="10_7"/><reference ref_id="10_25"/><reference ref_id="10_16"/><reference ref_id="10_34"/><reference ref_id="10_43"/><reference ref_id="10_52"/><reference ref_id="10_61"/><reference ref_id="10_70"/></collection>
   </item>
   <item id="4_1" class="Gene">
     <attribute name="primaryIdentifier" value="733"/>
@@ -420,12 +305,6 @@
     <attribute name="expressionValue" value="5.10574648254994"/>
     <reference name="probe" ref_id="6_4"/>
     <reference name="sample" ref_id="9_6"/>
-  </item>
-  <item id="11_30" class="ExpressionResult">
-    <attribute name="averagedExpression" value="6.5689406481951668"/>
-    <reference name="gene" ref_id="4_4"/>
-    <reference name="sample" ref_id="9_3"/>
-    <collection name="probeResults"><reference ref_id="10_3"/><reference ref_id="10_21"/><reference ref_id="10_12"/><reference ref_id="10_30"/><reference ref_id="10_39"/><reference ref_id="10_48"/><reference ref_id="10_57"/><reference ref_id="10_66"/></collection>
   </item>
   <item id="10_37" class="ProbeResult">
     <attribute name="PACall" value="1"/>
@@ -506,27 +385,10 @@
     <attribute name="name" value="Allen Brain Expression data set"/>
     <reference name="dataSource" ref_id="1_1"/>
   </item>
-  <item id="11_45" class="ExpressionResult">
-    <attribute name="averagedExpression" value="7.233778358325066"/>
-    <reference name="gene" ref_id="4_5"/>
-    <reference name="sample" ref_id="9_9"/>
-    <collection name="probeResults"><reference ref_id="10_9"/><reference ref_id="10_27"/><reference ref_id="10_18"/><reference ref_id="10_36"/><reference ref_id="10_45"/><reference ref_id="10_54"/><reference ref_id="10_63"/><reference ref_id="10_72"/><reference ref_id="10_81"/></collection>
-  </item>
-  <item id="11_12" class="ExpressionResult">
-    <attribute name="averagedExpression" value="4.10332400682848"/>
-    <reference name="gene" ref_id="4_2"/>
-    <reference name="sample" ref_id="9_3"/>
-    <collection name="probeResults"><reference ref_id="10_3"/><reference ref_id="10_21"/><reference ref_id="10_12"/></collection>
-  </item>
   <item id="10_15" class="ProbeResult">
     <attribute name="PACall" value="0"/>
     <reference name="probe" ref_id="6_2"/>
     <reference name="sample" ref_id="9_6"/>
-  </item>
-  <item id="11_8" class="ExpressionResult">
-    <reference name="gene" ref_id="4_1"/>
-    <reference name="sample" ref_id="9_8"/>
-    <collection name="probeResults"><reference ref_id="10_8"/></collection>
   </item>
   <item id="3_1" class="Organism">
     <attribute name="taxonId" value="9606"/>
@@ -545,12 +407,6 @@
     <attribute name="name" value="CUST_1334_PI416261804"/>
     <attribute name="probe_id" value="1058679"/>
     <reference name="gene" ref_id="4_4"/>
-  </item>
-  <item id="11_23" class="ExpressionResult">
-    <attribute name="averagedExpression" value="6.77832884659488"/>
-    <reference name="gene" ref_id="4_3"/>
-    <reference name="sample" ref_id="9_5"/>
-    <collection name="probeResults"><reference ref_id="10_5"/><reference ref_id="10_23"/><reference ref_id="10_14"/><reference ref_id="10_32"/><reference ref_id="10_41"/><reference ref_id="10_50"/></collection>
   </item>
   <item id="7_8" class="BrainAtlasStructure">
     <attribute name="identifier" value="4178"/>
@@ -600,12 +456,6 @@
     <reference name="probe" ref_id="6_5"/>
     <reference name="sample" ref_id="9_2"/>
   </item>
-  <item id="11_4" class="ExpressionResult">
-    <attribute name="averagedExpression" value="3.9620342890083284"/>
-    <reference name="gene" ref_id="4_1"/>
-    <reference name="sample" ref_id="9_4"/>
-    <collection name="probeResults"><reference ref_id="10_4"/></collection>
-  </item>
   <item id="10_57" class="ProbeResult">
     <attribute name="PACall" value="1"/>
     <attribute name="expressionValue" value="8.76774034755435"/>
@@ -649,23 +499,11 @@
     <attribute name="probe_id" value="1058680"/>
     <reference name="gene" ref_id="4_3"/>
   </item>
-  <item id="11_39" class="ExpressionResult">
-    <attribute name="averagedExpression" value="6.8368528500356030"/>
-    <reference name="gene" ref_id="4_5"/>
-    <reference name="sample" ref_id="9_3"/>
-    <collection name="probeResults"><reference ref_id="10_3"/><reference ref_id="10_21"/><reference ref_id="10_12"/><reference ref_id="10_30"/><reference ref_id="10_39"/><reference ref_id="10_48"/><reference ref_id="10_57"/><reference ref_id="10_66"/><reference ref_id="10_75"/></collection>
-  </item>
   <item id="10_60" class="ProbeResult">
     <attribute name="PACall" value="1"/>
     <attribute name="expressionValue" value="8.99437681102143"/>
     <reference name="probe" ref_id="6_7"/>
     <reference name="sample" ref_id="9_6"/>
-  </item>
-  <item id="11_42" class="ExpressionResult">
-    <attribute name="averagedExpression" value="7.187812391193337"/>
-    <reference name="gene" ref_id="4_5"/>
-    <reference name="sample" ref_id="9_6"/>
-    <collection name="probeResults"><reference ref_id="10_6"/><reference ref_id="10_24"/><reference ref_id="10_15"/><reference ref_id="10_33"/><reference ref_id="10_42"/><reference ref_id="10_51"/><reference ref_id="10_60"/><reference ref_id="10_69"/><reference ref_id="10_78"/></collection>
   </item>
   <item id="6_1" class="Probe">
     <attribute name="name" value="A_23_P20713"/>
@@ -702,12 +540,6 @@
     <reference name="probe" ref_id="6_3"/>
     <reference name="sample" ref_id="9_5"/>
   </item>
-  <item id="11_27" class="ExpressionResult">
-    <attribute name="averagedExpression" value="6.90256527463823"/>
-    <reference name="gene" ref_id="4_3"/>
-    <reference name="sample" ref_id="9_9"/>
-    <collection name="probeResults"><reference ref_id="10_9"/><reference ref_id="10_27"/><reference ref_id="10_18"/><reference ref_id="10_36"/><reference ref_id="10_45"/><reference ref_id="10_54"/></collection>
-  </item>
   <item id="10_67" class="ProbeResult">
     <attribute name="PACall" value="1"/>
     <attribute name="expressionValue" value="5.936099267278195"/>
@@ -728,12 +560,6 @@
     <attribute name="mri_voxel_z" value="137"/>
     <attribute name="polygon_id" value="1283601"/>
   </item>
-  <item id="11_35" class="ExpressionResult">
-    <attribute name="averagedExpression" value="7.142206943255923"/>
-    <reference name="gene" ref_id="4_4"/>
-    <reference name="sample" ref_id="9_8"/>
-    <collection name="probeResults"><reference ref_id="10_8"/><reference ref_id="10_26"/><reference ref_id="10_17"/><reference ref_id="10_35"/><reference ref_id="10_44"/><reference ref_id="10_53"/><reference ref_id="10_62"/><reference ref_id="10_71"/></collection>
-  </item>
   <item id="9_9" class="Sample">
     <attribute name="slab_num" value="6"/>
     <attribute name="slab_type" value="CX"/>
@@ -747,23 +573,11 @@
     <reference name="probe" ref_id="6_9"/>
     <reference name="sample" ref_id="9_6"/>
   </item>
-  <item id="11_24" class="ExpressionResult">
-    <attribute name="averagedExpression" value="6.868364571943127"/>
-    <reference name="gene" ref_id="4_3"/>
-    <reference name="sample" ref_id="9_6"/>
-    <collection name="probeResults"><reference ref_id="10_6"/><reference ref_id="10_24"/><reference ref_id="10_15"/><reference ref_id="10_33"/><reference ref_id="10_42"/><reference ref_id="10_51"/></collection>
-  </item>
   <item id="10_45" class="ProbeResult">
     <attribute name="PACall" value="1"/>
     <attribute name="expressionValue" value="7.02335264242066"/>
     <reference name="probe" ref_id="6_5"/>
     <reference name="sample" ref_id="9_9"/>
-  </item>
-  <item id="11_22" class="ExpressionResult">
-    <attribute name="averagedExpression" value="6.3286537197468361"/>
-    <reference name="gene" ref_id="4_3"/>
-    <reference name="sample" ref_id="9_4"/>
-    <collection name="probeResults"><reference ref_id="10_4"/><reference ref_id="10_22"/><reference ref_id="10_13"/><reference ref_id="10_31"/><reference ref_id="10_40"/><reference ref_id="10_49"/></collection>
   </item>
   <item id="10_68" class="ProbeResult">
     <attribute name="PACall" value="1"/>
@@ -790,22 +604,10 @@
     <reference name="probe" ref_id="6_1"/>
     <reference name="sample" ref_id="9_8"/>
   </item>
-  <item id="11_32" class="ExpressionResult">
-    <attribute name="averagedExpression" value="6.98358173311949"/>
-    <reference name="gene" ref_id="4_4"/>
-    <reference name="sample" ref_id="9_5"/>
-    <collection name="probeResults"><reference ref_id="10_5"/><reference ref_id="10_23"/><reference ref_id="10_14"/><reference ref_id="10_32"/><reference ref_id="10_41"/><reference ref_id="10_50"/><reference ref_id="10_59"/><reference ref_id="10_68"/></collection>
-  </item>
   <item id="10_24" class="ProbeResult">
     <attribute name="PACall" value="0"/>
     <reference name="probe" ref_id="6_3"/>
     <reference name="sample" ref_id="9_6"/>
-  </item>
-  <item id="11_16" class="ExpressionResult">
-    <attribute name="averagedExpression" value="4.238925182725189"/>
-    <reference name="gene" ref_id="4_2"/>
-    <reference name="sample" ref_id="9_7"/>
-    <collection name="probeResults"><reference ref_id="10_7"/><reference ref_id="10_25"/><reference ref_id="10_16"/></collection>
   </item>
   <item id="10_66" class="ProbeResult">
     <attribute name="PACall" value="1"/>
@@ -819,27 +621,11 @@
     <reference name="probe" ref_id="6_8"/>
     <reference name="sample" ref_id="9_8"/>
   </item>
-  <item id="11_9" class="ExpressionResult">
-    <reference name="gene" ref_id="4_1"/>
-    <reference name="sample" ref_id="9_9"/>
-    <collection name="probeResults"><reference ref_id="10_9"/></collection>
-  </item>
   <item id="10_43" class="ProbeResult">
     <attribute name="PACall" value="1"/>
     <attribute name="expressionValue" value="6.277766291817745"/>
     <reference name="probe" ref_id="6_5"/>
     <reference name="sample" ref_id="9_7"/>
-  </item>
-  <item id="11_17" class="ExpressionResult">
-    <reference name="gene" ref_id="4_2"/>
-    <reference name="sample" ref_id="9_8"/>
-    <collection name="probeResults"><reference ref_id="10_8"/><reference ref_id="10_26"/><reference ref_id="10_17"/></collection>
-  </item>
-  <item id="11_43" class="ExpressionResult">
-    <attribute name="averagedExpression" value="6.792791429366689"/>
-    <reference name="gene" ref_id="4_5"/>
-    <reference name="sample" ref_id="9_7"/>
-    <collection name="probeResults"><reference ref_id="10_7"/><reference ref_id="10_25"/><reference ref_id="10_16"/><reference ref_id="10_34"/><reference ref_id="10_43"/><reference ref_id="10_52"/><reference ref_id="10_61"/><reference ref_id="10_70"/><reference ref_id="10_79"/></collection>
   </item>
   <item id="9_3" class="Sample">
     <attribute name="slab_num" value="9"/>
@@ -851,23 +637,6 @@
   <item id="7_5" class="BrainAtlasStructure">
     <attribute name="identifier" value="4135"/>
     <attribute name="name" value="superior temporal gyrus, left, lateral bank of gyrus"/>
-  </item>
-  <item id="11_41" class="ExpressionResult">
-    <attribute name="averagedExpression" value="7.13925498962912"/>
-    <reference name="gene" ref_id="4_5"/>
-    <reference name="sample" ref_id="9_5"/>
-    <collection name="probeResults"><reference ref_id="10_5"/><reference ref_id="10_23"/><reference ref_id="10_14"/><reference ref_id="10_32"/><reference ref_id="10_41"/><reference ref_id="10_50"/><reference ref_id="10_59"/><reference ref_id="10_68"/><reference ref_id="10_77"/></collection>
-  </item>
-  <item id="11_14" class="ExpressionResult">
-    <reference name="gene" ref_id="4_2"/>
-    <reference name="sample" ref_id="9_5"/>
-    <collection name="probeResults"><reference ref_id="10_5"/><reference ref_id="10_23"/><reference ref_id="10_14"/></collection>
-  </item>
-  <item id="11_29" class="ExpressionResult">
-    <attribute name="averagedExpression" value="7.16550192614519"/>
-    <reference name="gene" ref_id="4_4"/>
-    <reference name="sample" ref_id="9_2"/>
-    <collection name="probeResults"><reference ref_id="10_2"/><reference ref_id="10_20"/><reference ref_id="10_11"/><reference ref_id="10_29"/><reference ref_id="10_38"/><reference ref_id="10_47"/><reference ref_id="10_56"/><reference ref_id="10_65"/></collection>
   </item>
   <item id="10_73" class="ProbeResult">
     <attribute name="PACall" value="1"/>
@@ -908,23 +677,6 @@
     <attribute name="mri_voxel_z" value="100"/>
     <attribute name="polygon_id" value="1280037"/>
   </item>
-  <item id="11_40" class="ExpressionResult">
-    <attribute name="averagedExpression" value="6.9200206720041262"/>
-    <reference name="gene" ref_id="4_5"/>
-    <reference name="sample" ref_id="9_4"/>
-    <collection name="probeResults"><reference ref_id="10_4"/><reference ref_id="10_22"/><reference ref_id="10_13"/><reference ref_id="10_31"/><reference ref_id="10_40"/><reference ref_id="10_49"/><reference ref_id="10_58"/><reference ref_id="10_67"/><reference ref_id="10_76"/></collection>
-  </item>
-  <item id="11_18" class="ExpressionResult">
-    <reference name="gene" ref_id="4_2"/>
-    <reference name="sample" ref_id="9_9"/>
-    <collection name="probeResults"><reference ref_id="10_9"/><reference ref_id="10_27"/><reference ref_id="10_18"/></collection>
-  </item>
-  <item id="11_3" class="ExpressionResult">
-    <attribute name="averagedExpression" value="4.10332400682848"/>
-    <reference name="gene" ref_id="4_1"/>
-    <reference name="sample" ref_id="9_3"/>
-    <collection name="probeResults"><reference ref_id="10_3"/></collection>
-  </item>
   <item id="10_7" class="ProbeResult">
     <attribute name="PACall" value="1"/>
     <attribute name="expressionValue" value="4.238925182725189"/>
@@ -950,12 +702,6 @@
     <attribute name="mri_voxel_z" value="127"/>
     <attribute name="polygon_id" value="1283331"/>
   </item>
-  <item id="11_44" class="ExpressionResult">
-    <attribute name="averagedExpression" value="7.201702181679056"/>
-    <reference name="gene" ref_id="4_5"/>
-    <reference name="sample" ref_id="9_8"/>
-    <collection name="probeResults"><reference ref_id="10_8"/><reference ref_id="10_26"/><reference ref_id="10_17"/><reference ref_id="10_35"/><reference ref_id="10_44"/><reference ref_id="10_53"/><reference ref_id="10_62"/><reference ref_id="10_71"/><reference ref_id="10_80"/></collection>
-  </item>
   <item id="10_27" class="ProbeResult">
     <attribute name="PACall" value="0"/>
     <reference name="probe" ref_id="6_3"/>
@@ -971,12 +717,6 @@
     <attribute name="name" value="A_23_P52888"/>
     <attribute name="probe_id" value="1058677"/>
     <reference name="gene" ref_id="4_5"/>
-  </item>
-  <item id="11_21" class="ExpressionResult">
-    <attribute name="averagedExpression" value="6.1769692732313402"/>
-    <reference name="gene" ref_id="4_3"/>
-    <reference name="sample" ref_id="9_3"/>
-    <collection name="probeResults"><reference ref_id="10_3"/><reference ref_id="10_21"/><reference ref_id="10_12"/><reference ref_id="10_30"/><reference ref_id="10_39"/><reference ref_id="10_48"/></collection>
   </item>
   <item id="10_28" class="ProbeResult">
     <attribute name="PACall" value="1"/>
