@@ -9,17 +9,19 @@
     <reference name="probe" ref_id="6_5"/>
     <reference name="sample" ref_id="9_5"/>
   </item>
-  <item id="6_3" class="Probe">
-    <attribute name="name" value="A_32_P203917"/>
-    <attribute name="probe_id" value="1058683"/>
-    <reference name="gene" ref_id="4_3"/>
-  </item>
   <item id="9_8" class="Sample">
     <attribute name="slab_num" value="6"/>
     <attribute name="slab_type" value="CX"/>
     <attribute name="well_id" value="11318"/>
     <reference name="location" ref_id="8_8"/>
     <reference name="structure" ref_id="7_7"/>
+  </item>
+  <item id="4_4" class="Gene">
+    <attribute name="primaryIdentifier" value="741"/>
+    <attribute name="symbol" value="ZNHIT2"/>
+    <reference name="organism" ref_id="3_1"/>
+    <reference name="sequenceOntologyTerm" ref_id="5_1"/>
+    <collection name="dataSets"><reference ref_id="2_1"/></collection>
   </item>
   <item id="10_76" class="ProbeResult">
     <attribute name="PACall" value="1"/>
@@ -38,32 +40,13 @@
     <reference name="probe" ref_id="6_3"/>
     <reference name="sample" ref_id="9_1"/>
   </item>
-  <item id="4_6" class="Gene">
-    <attribute name="primaryIdentifier" value="740"/>
-    <attribute name="symbol" value="MRPL49"/>
-    <reference name="organism" ref_id="3_1"/>
-    <reference name="sequenceOntologyTerm" ref_id="5_1"/>
-    <collection name="dataSets"><reference ref_id="2_1"/></collection>
-  </item>
   <item id="10_59" class="ProbeResult">
     <attribute name="PACall" value="1"/>
     <attribute name="expressionValue" value="8.66410206480373"/>
     <reference name="probe" ref_id="6_7"/>
     <reference name="sample" ref_id="9_5"/>
   </item>
-  <item id="6_9" class="Probe">
-    <attribute name="name" value="A_23_P52888"/>
-    <attribute name="probe_id" value="1058677"/>
-    <reference name="gene" ref_id="4_9"/>
-  </item>
-  <item id="4_5" class="Gene">
-    <attribute name="primaryIdentifier" value="740"/>
-    <attribute name="symbol" value="MRPL49"/>
-    <reference name="organism" ref_id="3_1"/>
-    <reference name="sequenceOntologyTerm" ref_id="5_1"/>
-    <collection name="dataSets"><reference ref_id="2_1"/></collection>
-  </item>
-  <item id="4_4" class="Gene">
+  <item id="4_3" class="Gene">
     <attribute name="primaryIdentifier" value="740"/>
     <attribute name="symbol" value="MRPL49"/>
     <reference name="organism" ref_id="3_1"/>
@@ -109,24 +92,10 @@
     <reference name="probe" ref_id="6_4"/>
     <reference name="sample" ref_id="9_3"/>
   </item>
-  <item id="4_8" class="Gene">
-    <attribute name="primaryIdentifier" value="741"/>
-    <attribute name="symbol" value="ZNHIT2"/>
-    <reference name="organism" ref_id="3_1"/>
-    <reference name="sequenceOntologyTerm" ref_id="5_1"/>
-    <collection name="dataSets"><reference ref_id="2_1"/></collection>
-  </item>
   <item id="10_12" class="ProbeResult">
     <attribute name="PACall" value="0"/>
     <reference name="probe" ref_id="6_2"/>
     <reference name="sample" ref_id="9_3"/>
-  </item>
-  <item id="4_7" class="Gene">
-    <attribute name="primaryIdentifier" value="741"/>
-    <attribute name="symbol" value="ZNHIT2"/>
-    <reference name="organism" ref_id="3_1"/>
-    <reference name="sequenceOntologyTerm" ref_id="5_1"/>
-    <collection name="dataSets"><reference ref_id="2_1"/></collection>
   </item>
   <item id="7_2" class="BrainAtlasStructure">
     <attribute name="identifier" value="4151"/>
@@ -151,11 +120,6 @@
   <item id="7_7" class="BrainAtlasStructure">
     <attribute name="identifier" value="4270"/>
     <attribute name="name" value="long insular gyri, left"/>
-  </item>
-  <item id="6_7" class="Probe">
-    <attribute name="name" value="CUST_1334_PI416261804"/>
-    <attribute name="probe_id" value="1058679"/>
-    <reference name="gene" ref_id="4_7"/>
   </item>
   <item id="10_63" class="ProbeResult">
     <attribute name="PACall" value="1"/>
@@ -205,6 +169,11 @@
     <reference name="probe" ref_id="6_6"/>
     <reference name="sample" ref_id="9_5"/>
   </item>
+  <item id="6_5" class="Probe">
+    <attribute name="name" value="A_24_P232500"/>
+    <attribute name="probe_id" value="1058681"/>
+    <reference name="gene" ref_id="4_3"/>
+  </item>
   <item id="10_10" class="ProbeResult">
     <attribute name="PACall" value="0"/>
     <reference name="probe" ref_id="6_2"/>
@@ -238,11 +207,6 @@
     <reference name="probe" ref_id="6_9"/>
     <reference name="sample" ref_id="9_9"/>
   </item>
-  <item id="6_4" class="Probe">
-    <attribute name="name" value="A_23_P138819"/>
-    <attribute name="probe_id" value="1058682"/>
-    <reference name="gene" ref_id="4_4"/>
-  </item>
   <item id="10_32" class="ProbeResult">
     <attribute name="PACall" value="1"/>
     <attribute name="expressionValue" value="5.41300244062549"/>
@@ -271,13 +235,6 @@
     <reference name="sequenceOntologyTerm" ref_id="5_1"/>
     <collection name="dataSets"><reference ref_id="2_1"/></collection>
   </item>
-  <item id="4_3" class="Gene">
-    <attribute name="primaryIdentifier" value="735"/>
-    <attribute name="symbol" value="C9"/>
-    <reference name="organism" ref_id="3_1"/>
-    <reference name="sequenceOntologyTerm" ref_id="5_1"/>
-    <collection name="dataSets"><reference ref_id="2_1"/></collection>
-  </item>
   <item id="10_2" class="ProbeResult">
     <attribute name="PACall" value="0"/>
     <reference name="probe" ref_id="6_1"/>
@@ -287,11 +244,6 @@
     <attribute name="PACall" value="0"/>
     <reference name="probe" ref_id="6_3"/>
     <reference name="sample" ref_id="9_2"/>
-  </item>
-  <item id="6_6" class="Probe">
-    <attribute name="name" value="A_24_P201491"/>
-    <attribute name="probe_id" value="1058680"/>
-    <reference name="gene" ref_id="4_6"/>
   </item>
   <item id="10_35" class="ProbeResult">
     <attribute name="PACall" value="1"/>
@@ -451,9 +403,24 @@
     <attribute name="identifier" value="4143"/>
     <attribute name="name" value="middle temporal gyrus, left, inferior bank of gyrus"/>
   </item>
+  <item id="6_7" class="Probe">
+    <attribute name="name" value="CUST_1334_PI416261804"/>
+    <attribute name="probe_id" value="1058679"/>
+    <reference name="gene" ref_id="4_4"/>
+  </item>
   <item id="7_8" class="BrainAtlasStructure">
     <attribute name="identifier" value="4178"/>
     <attribute name="name" value="planum polare, left"/>
+  </item>
+  <item id="6_8" class="Probe">
+    <attribute name="name" value="A_23_P329286"/>
+    <attribute name="probe_id" value="1058678"/>
+    <reference name="gene" ref_id="4_4"/>
+  </item>
+  <item id="6_4" class="Probe">
+    <attribute name="name" value="A_23_P138819"/>
+    <attribute name="probe_id" value="1058682"/>
+    <reference name="gene" ref_id="4_3"/>
   </item>
   <item id="10_69" class="ProbeResult">
     <attribute name="PACall" value="1"/>
@@ -482,11 +449,6 @@
     <attribute name="expressionValue" value="3.9620342890083284"/>
     <reference name="probe" ref_id="6_1"/>
     <reference name="sample" ref_id="9_4"/>
-  </item>
-  <item id="6_8" class="Probe">
-    <attribute name="name" value="A_23_P329286"/>
-    <attribute name="probe_id" value="1058678"/>
-    <reference name="gene" ref_id="4_8"/>
   </item>
   <item id="10_38" class="ProbeResult">
     <attribute name="PACall" value="1"/>
@@ -531,6 +493,11 @@
     <attribute name="PACall" value="0"/>
     <reference name="probe" ref_id="6_1"/>
     <reference name="sample" ref_id="9_9"/>
+  </item>
+  <item id="6_6" class="Probe">
+    <attribute name="name" value="A_24_P201491"/>
+    <attribute name="probe_id" value="1058680"/>
+    <reference name="gene" ref_id="4_3"/>
   </item>
   <item id="10_60" class="ProbeResult">
     <attribute name="PACall" value="1"/>
@@ -579,6 +546,11 @@
     <reference name="probe" ref_id="6_8"/>
     <reference name="sample" ref_id="9_4"/>
   </item>
+  <item id="6_3" class="Probe">
+    <attribute name="name" value="A_32_P203917"/>
+    <attribute name="probe_id" value="1058683"/>
+    <reference name="gene" ref_id="4_2"/>
+  </item>
   <item id="8_2" class="BrainLocation">
     <attribute name="mni_x" value="-61.0"/>
     <attribute name="mni_y" value="-46.0"/>
@@ -587,13 +559,6 @@
     <attribute name="mri_voxel_y" value="128"/>
     <attribute name="mri_voxel_z" value="137"/>
     <attribute name="polygon_id" value="1283601"/>
-  </item>
-  <item id="4_9" class="Gene">
-    <attribute name="primaryIdentifier" value="744"/>
-    <attribute name="symbol" value="MPPED2"/>
-    <reference name="organism" ref_id="3_1"/>
-    <reference name="sequenceOntologyTerm" ref_id="5_1"/>
-    <collection name="dataSets"><reference ref_id="2_1"/></collection>
   </item>
   <item id="9_9" class="Sample">
     <attribute name="slab_num" value="6"/>
@@ -626,6 +591,13 @@
     <attribute name="well_id" value="11335"/>
     <reference name="location" ref_id="8_4"/>
     <reference name="structure" ref_id="7_4"/>
+  </item>
+  <item id="4_5" class="Gene">
+    <attribute name="primaryIdentifier" value="744"/>
+    <attribute name="symbol" value="MPPED2"/>
+    <reference name="organism" ref_id="3_1"/>
+    <reference name="sequenceOntologyTerm" ref_id="5_1"/>
+    <collection name="dataSets"><reference ref_id="2_1"/></collection>
   </item>
   <item id="10_8" class="ProbeResult">
     <attribute name="PACall" value="0"/>
@@ -741,6 +713,11 @@
     <reference name="probe" ref_id="6_6"/>
     <reference name="sample" ref_id="9_9"/>
   </item>
+  <item id="6_9" class="Probe">
+    <attribute name="name" value="A_23_P52888"/>
+    <attribute name="probe_id" value="1058677"/>
+    <reference name="gene" ref_id="4_5"/>
+  </item>
   <item id="10_28" class="ProbeResult">
     <attribute name="PACall" value="1"/>
     <attribute name="expressionValue" value="4.682877628101855"/>
@@ -759,10 +736,5 @@
     <attribute name="well_id" value="11326"/>
     <reference name="location" ref_id="8_7"/>
     <reference name="structure" ref_id="7_6"/>
-  </item>
-  <item id="6_5" class="Probe">
-    <attribute name="name" value="A_24_P232500"/>
-    <attribute name="probe_id" value="1058681"/>
-    <reference name="gene" ref_id="4_5"/>
   </item>
 </items>

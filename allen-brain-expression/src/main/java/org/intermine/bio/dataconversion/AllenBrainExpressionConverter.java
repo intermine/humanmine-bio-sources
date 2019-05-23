@@ -271,7 +271,7 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
             String entrezId = line[5];
 
             // Miguel says to ignore (for now) probes that don't have an associated gene
-            if (StringUtils.isEmpty(symbol)) {
+            if (StringUtils.isEmpty(entrezId)) {
                 continue;
             }
 
@@ -308,7 +308,7 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
             gene.setReference("organism", organism);
             store(gene);
             refId = gene.getIdentifier();
-            genes.put(symbol, refId);
+            genes.put(entrezId, refId);
         }
         return refId;
     }
