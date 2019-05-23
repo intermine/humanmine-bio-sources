@@ -185,7 +185,8 @@ public class AllenBrainExpressionPostProcess extends PostProcessor
         // Probe.probeResults
         QueryObjectReference probeResultsToProbeRef =
                 new QueryObjectReference(qcProbeResult, "probe");
-        cs.addConstraint(new ContainsConstraint(probeResultsToProbeRef, ConstraintOp.CONTAINS, qcProbe));
+        cs.addConstraint(new ContainsConstraint(probeResultsToProbeRef, ConstraintOp.CONTAINS,
+                qcProbe));
 
         // Probe.probeResults.sample
         QueryObjectReference sampleRef =
