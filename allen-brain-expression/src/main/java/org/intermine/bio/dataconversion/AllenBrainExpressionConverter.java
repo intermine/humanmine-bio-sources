@@ -44,7 +44,6 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
     private static final String DATA_SOURCE_NAME = "Allen Brain Atlas";
     private static final String TAXON_ID = "9606";
     private String organism;
-    private String donor;
 
     private static final String EXPRESSION_FILE = "MicroarrayExpression.csv";
     private static final String ONTOLOGY_FILE = "Ontology.csv";
@@ -57,6 +56,7 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
     private Map<String, String> structures = new HashMap<String, String>();
     private Map<String, String> probes = new HashMap<String, String>();
     private Map<String, String> donors = new HashMap<String, String>();
+    private Map<String, String> terms = new HashMap<String, String>();
     private Map<String, HashSet<String>> geneToProbe = new HashMap<String, HashSet<String>>();
     private Map<String, LinkedList<Item>> probeResults
             = new LinkedHashMap<String, LinkedList<Item>>();
@@ -77,7 +77,6 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
      */
     public void process(File dataDir) throws Exception {
         organism = getOrganism(TAXON_ID);
-        storeDonors();
 
         if (rslv == null) {
             rslv = IdResolverService.getIdResolverByOrganism(TAXON_ID);
@@ -90,17 +89,20 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
         for (File f: directories) {
 
             String directoryName = f.getName();
-            donor = donors.get(directoryName);
+            String donorRefId = getDonor(directoryName);
+
+            if (!"test".equals(directoryName)) {
+                throw new RuntimeException("dir " + directoryName);
+            }
 
             // get list of files
             Map<String, File> files = readFilesInDir(f);
 
             // don't change order
             processProbes(new FileReader(files.get(PROBES_FILE)));
-            processSamples(new FileReader(files.get(SAMPLES_FILE)));
+            processSamples(new FileReader(files.get(SAMPLES_FILE)), donorRefId);
             processExpression(new FileReader(files.get(EXPRESSION_FILE)),
                     new FileReader(files.get(PACALL_FILE)));
-//        processOntology(new FileReader(files.get(ONTOLOGY_FILE)));
             reset();
         }
     }
@@ -154,7 +156,8 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
         }
     }
 
-    private void processSamples(Reader reader) throws IOException, ObjectStoreException {
+    private void processSamples(Reader reader, String donorRefId)
+        throws IOException, ObjectStoreException {
         Iterator<String[]> lineIter = FormattedTextParser.parseCsvDelimitedReader(reader);
         // skip header
         lineIter.next();
@@ -201,6 +204,7 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
             sample.setAttribute("slab_type", slabtype);
             sample.setReference("structure", structureId);
             sample.setReference("location", location);
+            sample.setReference("donor", donorRefId);
             store(sample);
             samples.add(sample.getIdentifier());
         }
@@ -268,6 +272,19 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
         return refId;
     }
 
+    private String getStructureTerm(String identifier) throws ObjectStoreException {
+        String refId = terms.get(identifier);
+        if (refId == null) {
+            Item item = createItem("BrainStructureTerm");
+            item.setAttribute("identifier", identifier);
+            store(item);
+            refId = item.getIdentifier();
+            terms.put(identifier, refId);
+        }
+        return refId;
+    }
+
+
     private String getStructure(String identifier, String name, String acronym)
         throws ObjectStoreException {
         String refId = structures.get(identifier);
@@ -276,6 +293,10 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
             item.setAttribute("identifier", identifier);
             item.setAttribute("name", name);
             item.setAttribute("acronym", acronym);
+
+            String termRefId = getStructureTerm(identifier);
+            item.setReference("ontologyTerm", termRefId);
+
             store(item);
             refId = item.getIdentifier();
             structures.put(identifier, refId);
@@ -305,14 +326,28 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
         return rslv.resolveId(TAXON_ID, identifier).iterator().next();
     }
 
+    private String getDonor(String identifier) throws ObjectStoreException {
+        if ("test".equals(identifier)) {
+            // for our unit test, override the directory name
+            identifier = "H0351.1009";
+        }
+        String refId = donors.get(identifier);
+        if (refId == null) {
+            storeDonors();
+        }
+        return donors.get(identifier);
+    }
+
     private void storeDonors() throws ObjectStoreException {
-        Item item = createItem("Donor");
-        item.setAttribute("identifier", "H0351.1009");
-        item.setAttribute("age", "57");
-        item.setAttribute("gender", "M");
-        item.setAttribute("ethnicity", "White or Caucasian");
-        item.setAttribute("pmi_hours", "10");
-        store(item);
-        donors.put("H0351.1009", item.getIdentifier());
+        if (donors.get("H0351.1009") == null) {
+            Item item = createItem("Donor");
+            item.setAttribute("identifier", "H0351.1009");
+            item.setAttribute("age", "57");
+            item.setAttribute("gender", "M");
+            item.setAttribute("ethnicity", "White or Caucasian");
+            item.setAttribute("pmi_hours", "10");
+            store(item);
+            donors.put("H0351.1009", item.getIdentifier());
+        }
     }
 }

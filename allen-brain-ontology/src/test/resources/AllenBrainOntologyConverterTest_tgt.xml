@@ -1,0 +1,75 @@
+<items>
+  <item id="2_1" class="DataSet">
+    <attribute name="name" value="Allen Brain Structure Ontology"/>
+    <reference name="dataSource" ref_id="1_1"/>
+  </item>
+  <item id="3_4" class="BrainStructureTerm">
+    <attribute name="acronym" value="Cx"/>
+    <attribute name="identifier" value="4008"/>
+    <attribute name="name" value="cerebral cortex"/>
+    <collection name="dataSets"><reference ref_id="2_1"/></collection>
+    <collection name="parents"><reference ref_id="3_1"/><reference ref_id="3_2"/><reference ref_id="3_3"/></collection>
+  </item>
+  <item id="3_6" class="BrainStructureTerm">
+    <attribute name="acronym" value="AOrG"/>
+    <attribute name="identifier" value="4053"/>
+    <attribute name="name" value="anterior orbital gyrus"/>
+    <collection name="dataSets"><reference ref_id="2_1"/></collection>
+    <collection name="parents"><reference ref_id="3_1"/><reference ref_id="3_2"/><reference ref_id="3_3"/><reference ref_id="3_4"/><reference ref_id="3_5"/></collection>
+  </item>
+  <item id="3_8" class="BrainStructureTerm">
+    <attribute name="acronym" value="AOrG"/>
+    <attribute name="identifier" value="4055"/>
+    <attribute name="name" value="anterior orbital gyrus, right"/>
+    <collection name="dataSets"><reference ref_id="2_1"/></collection>
+    <collection name="parents"><reference ref_id="3_1"/><reference ref_id="3_2"/><reference ref_id="3_3"/><reference ref_id="3_4"/><reference ref_id="3_5"/><reference ref_id="3_6"/></collection>
+  </item>
+  <item id="3_2" class="BrainStructureTerm">
+    <attribute name="acronym" value="GM"/>
+    <attribute name="identifier" value="4006"/>
+    <attribute name="name" value="gray matter"/>
+    <collection name="dataSets"><reference ref_id="2_1"/></collection>
+    <collection name="parents"><reference ref_id="3_1"/></collection>
+  </item>
+  <item id="3_1" class="BrainStructureTerm">
+    <attribute name="acronym" value="Br"/>
+    <attribute name="identifier" value="4005"/>
+    <attribute name="name" value="brain"/>
+    <collection name="dataSets"><reference ref_id="2_1"/></collection>
+  </item>
+  <item id="3_3" class="BrainStructureTerm">
+    <attribute name="acronym" value="Tel"/>
+    <attribute name="identifier" value="4007"/>
+    <attribute name="name" value="telencephalon"/>
+    <collection name="dataSets"><reference ref_id="2_1"/></collection>
+    <collection name="parents"><reference ref_id="3_1"/><reference ref_id="3_2"/></collection>
+  </item>
+  <item id="3_7" class="BrainStructureTerm">
+    <attribute name="acronym" value="AOrG"/>
+    <attribute name="identifier" value="4054"/>
+    <attribute name="name" value="anterior orbital gyrus, left"/>
+    <collection name="dataSets"><reference ref_id="2_1"/></collection>
+    <collection name="parents"><reference ref_id="3_1"/><reference ref_id="3_2"/><reference ref_id="3_3"/><reference ref_id="3_4"/><reference ref_id="3_5"/><reference ref_id="3_6"/></collection>
+  </item>
+  <item id="3_9" class="BrainStructureTerm">
+    <attribute name="acronym" value="fro"/>
+    <attribute name="identifier" value="4078"/>
+    <attribute name="name" value="frontal operculum"/>
+    <collection name="dataSets"><reference ref_id="2_1"/></collection>
+    <collection name="parents"><reference ref_id="3_1"/><reference ref_id="3_2"/><reference ref_id="3_3"/><reference ref_id="3_4"/><reference ref_id="3_5"/></collection>
+  </item>
+  <item id="0_1" class="Ontology">
+    <attribute name="name" value="Sequence Ontology"/>
+    <attribute name="url" value="http://www.sequenceontology.org"/>
+  </item>
+  <item id="1_1" class="DataSource">
+    <attribute name="name" value="Allen Brain Atlas"/>
+  </item>
+  <item id="3_5" class="BrainStructureTerm">
+    <attribute name="acronym" value="FL"/>
+    <attribute name="identifier" value="4009"/>
+    <attribute name="name" value="frontal lobe"/>
+    <collection name="dataSets"><reference ref_id="2_1"/></collection>
+    <collection name="parents"><reference ref_id="3_1"/><reference ref_id="3_2"/><reference ref_id="3_3"/><reference ref_id="3_4"/></collection>
+  </item>
+</items>

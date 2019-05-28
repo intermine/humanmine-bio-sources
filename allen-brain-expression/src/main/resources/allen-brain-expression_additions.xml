@@ -6,11 +6,12 @@
         <attribute name="identifier" type="java.lang.String"/>
         <attribute name="acronym" type="java.lang.String"/>
         <attribute name="name" type="java.lang.String"/>
-        <reference name="ontologyTerm" referenced-type="OntologyTerm" />
+        <reference name="ontologyTerm" referenced-type="BrainStructureTerm" />
         <collection name="samples" referenced-type="Sample" reverse-reference="structure"/>
         <collection name="probes" referenced-type="Probe" reverse-reference="structures"/>
         <collection name="genes" referenced-type="Gene" reverse-reference="structures"/>
     </class>
+    <class name="BrainStructureTerm" extends="OntologyTerm" is-interface="true"/>
     <class name="Sample" is-interface="true">
         <attribute name="identifier" type="java.lang.String"/>
         <attribute name="well_id" type="java.lang.String"/>
@@ -20,7 +21,7 @@
         <reference name="location" referenced-type="BrainLocation" reverse-reference="sample"/>
         <reference name="donor" referenced-type="Donor" reverse-reference="samples"/>
         <collection name="probeResults" referenced-type="ProbeResult" reverse-reference="sample"/>
-        <collection name="expressionResults" referenced-type="ExpressionResult" reverse-reference="sample"/>
+        <!--<collection name="expressionResults" referenced-type="ExpressionResult" reverse-reference="sample"/>-->
     </class>
     <class name="BrainLocation" is-interface="true">
         <attribute name="polygon_id" type="java.lang.String"/>
@@ -40,6 +41,7 @@
         <attribute name="pmi_hours" type="java.lang.Integer"/>
         <collection name="samples" referenced-type="Sample" reverse-reference="donor"/>
     </class>
+    <!--
     <class name="ExpressionResult" is-interface="true">
         <attribute name="averagedExpression" type="java.lang.Double"/>
         <attribute name="logExpression" type="java.lang.Double"/>
@@ -47,17 +49,18 @@
         <reference name="gene" referenced-type="Gene" reverse-reference="expressionResults"/>
         <collection name="probeResults" referenced-type="ProbeResult" reverse-reference="expressionResult"/>
     </class>
+    -->
     <class name="ProbeResult" is-interface="true">
         <attribute name="PACall" type="java.lang.Boolean"/>
         <attribute name="expressionValue" type="java.lang.Double"/>
         <reference name="sample" referenced-type="Sample" reverse-reference="probeResults"/>
         <reference name="probe" referenced-type="Probe" reverse-reference="probeResults"/>
-        <reference name="expressionResult" referenced-type="ExpressionResult" reverse-reference="probeResults"/>
+        <!--<reference name="expressionResult" referenced-type="ExpressionResult" reverse-reference="probeResults"/>-->
     </class>
     <class name="Gene" is-interface="true">
         <collection name="probes" referenced-type="Probe" reverse-reference="gene"/>
         <collection name="structures" referenced-type="BrainAtlasStructure" reverse-reference="genes"/>
-        <collection name="expressionResults" referenced-type="ExpressionResult" reverse-reference="gene"/>
+        <!--<collection name="expressionResults" referenced-type="ExpressionResult" reverse-reference="gene"/>-->
     </class>
     <class name="Probe" is-interface="true">
         <attribute name="probe_id" type="java.lang.String"/>

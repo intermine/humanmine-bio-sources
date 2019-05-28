@@ -1,0 +1,10 @@
+id,acronym,name,parent_structure_id,hemisphere,graph_order,structure_id_path,color_hex_triplet
+4005,Br,brain,,,0,/4005/,A0A0A0
+4006,GM,gray matter,4005,,1,/4005/4006/,787878
+4007,Tel,telencephalon,4006,,2,/4005/4006/4007/,D988A3
+4008,Cx,cerebral cortex,4007,,3,/4005/4006/4007/4008/,EDA65F
+4009,FL,frontal lobe,4008,,4,/4005/4006/4007/4008/4009/,E8CD59
+4053,AOrG,anterior orbital gyrus,4009,,5,/4005/4006/4007/4008/4009/4053/,E8BF59
+4054,AOrG,"anterior orbital gyrus, left",4053,L,6,/4005/4006/4007/4008/4009/4053/4054/,E8BF59
+4055,AOrG,"anterior orbital gyrus, right",4053,R,7,/4005/4006/4007/4008/4009/4053/4055/,E8BF59
+4078,fro,frontal operculum,4009,,8,/4005/4006/4007/4008/4009/4078/,E8C159

@@ -35,3 +35,5 @@ project(':bio-source-protein-atlas').projectDir = new File(settingsDir, './prote
 project(':bio-source-humanmine-static').projectDir = new File(settingsDir, './humanmine-static')
 project(':bio-source-protein-atlas-rna').projectDir = new File(settingsDir, './protein-atlas-rna')
 project(':bio-source-allen-brain-expression').projectDir = new File(settingsDir, './allen-brain-expression')
+include ':bio-source-allen-brain-ontology'
+project(':bio-source-allen-brain-ontology').projectDir = new File(settingsDir, './allen-brain-ontology')
