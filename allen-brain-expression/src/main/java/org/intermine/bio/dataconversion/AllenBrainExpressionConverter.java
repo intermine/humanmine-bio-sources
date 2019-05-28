@@ -61,6 +61,7 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
     private Map<String, LinkedList<Item>> probeResults
             = new LinkedHashMap<String, LinkedList<Item>>();
     protected IdResolver rslv = null;
+    private int sampleIdentifier = 1;
 
     /**
      * Constructor
@@ -76,6 +77,7 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
      */
     public void process(File dataDir) throws Exception {
         organism = getOrganism(TAXON_ID);
+        storeDonors();
 
         if (rslv == null) {
             rslv = IdResolverService.getIdResolverByOrganism(TAXON_ID);
@@ -87,8 +89,8 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
         // process each directory
         for (File f: directories) {
 
-//            String directoryName = f.getName();
-            donor = getDonor(directoryName);
+            String directoryName = f.getName();
+            donor = donors.get(directoryName);
 
             // get list of files
             Map<String, File> files = readFilesInDir(f);
@@ -147,7 +149,6 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
                 } else {
                     probeResult.setAttribute("PACall", "false");
                 }
-
                 store(probeResult);
             }
         }
@@ -192,6 +193,9 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
             store(location);
 
             Item sample = createItem("Sample");
+            sample.setAttribute("identifier", String.valueOf(sampleIdentifier));
+            // increment for next sample
+            sampleIdentifier++;
             sample.setAttribute("slab_num", slabnum);
             sample.setAttribute("well_id", wellid);
             sample.setAttribute("slab_type", slabtype);
@@ -301,18 +305,14 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
         return rslv.resolveId(TAXON_ID, identifier).iterator().next();
     }
 
-    private Item getDonor(String directoryName) {
-
-    }
-
-    private void storeDonors() {
-
+    private void storeDonors() throws ObjectStoreException {
         Item item = createItem("Donor");
-        item.setAttribute();
-        H0351.1009
-        57
-        M
-        White or Caucasian
-
+        item.setAttribute("identifier", "H0351.1009");
+        item.setAttribute("age", "57");
+        item.setAttribute("gender", "M");
+        item.setAttribute("ethnicity", "White or Caucasian");
+        item.setAttribute("pmi_hours", "10");
+        store(item);
+        donors.put("H0351.1009", item.getIdentifier());
     }
 }

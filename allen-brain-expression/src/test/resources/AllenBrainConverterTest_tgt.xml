@@ -1,188 +1,75 @@
 <items>
-  <item id="10_8" class="ProbeResult">
-    <attribute name="PACall" value="false"/>
-    <reference name="probe" ref_id="6_1"/>
-    <reference name="sample" ref_id="9_8"/>
+  <item id="5_1" class="Gene">
+    <attribute name="primaryIdentifier" value="733"/>
+    <reference name="organism" ref_id="3_1"/>
+    <reference name="sequenceOntologyTerm" ref_id="6_1"/>
+    <collection name="dataSets"><reference ref_id="2_1"/></collection>
+  </item>
+  <item id="7_1" class="Probe">
+    <attribute name="name" value="A_23_P20713"/>
+    <attribute name="probe_id" value="1058685"/>
+    <reference name="gene" ref_id="5_1"/>
+  </item>
+  <item id="10_8" class="Sample">
+    <attribute name="identifier" value="8"/>
+    <attribute name="slab_num" value="6"/>
+    <attribute name="slab_type" value="CX"/>
+    <attribute name="well_id" value="11318"/>
+    <reference name="location" ref_id="9_8"/>
+    <reference name="structure" ref_id="8_7"/>
   </item>
   <item id="2_1" class="DataSet">
     <attribute name="name" value="Allen Brain Expression data set"/>
     <reference name="dataSource" ref_id="1_1"/>
   </item>
-  <item id="9_8" class="Sample">
+  <item id="11_9" class="ProbeResult">
+    <attribute name="PACall" value="false"/>
+    <reference name="probe" ref_id="7_1"/>
+    <reference name="sample" ref_id="10_9"/>
+  </item>
+  <item id="11_7" class="ProbeResult">
+    <attribute name="PACall" value="true"/>
+    <attribute name="expressionValue" value="4.238925182725189"/>
+    <reference name="probe" ref_id="7_1"/>
+    <reference name="sample" ref_id="10_7"/>
+  </item>
+  <item id="8_1" class="BrainAtlasStructure">
+    <attribute name="acronym" value="MTG-i"/>
+    <attribute name="identifier" value="4143"/>
+    <attribute name="name" value="middle temporal gyrus, left, inferior bank of gyrus"/>
+  </item>
+  <item id="10_9" class="Sample">
+    <attribute name="identifier" value="9"/>
     <attribute name="slab_num" value="6"/>
     <attribute name="slab_type" value="CX"/>
-    <attribute name="well_id" value="11318"/>
-    <reference name="location" ref_id="8_8"/>
-    <reference name="structure" ref_id="7_7"/>
+    <attribute name="well_id" value="11310"/>
+    <reference name="location" ref_id="9_9"/>
+    <reference name="structure" ref_id="8_8"/>
+  </item>
+  <item id="7_3" class="Probe">
+    <attribute name="name" value="A_32_P203917"/>
+    <attribute name="probe_id" value="1058683"/>
+    <reference name="gene" ref_id="5_2"/>
   </item>
   <item id="3_1" class="Organism">
     <attribute name="taxonId" value="9606"/>
   </item>
-  <item id="10_24" class="ProbeResult">
+  <item id="11_14" class="ProbeResult">
     <attribute name="PACall" value="false"/>
-    <reference name="probe" ref_id="6_3"/>
-    <reference name="sample" ref_id="9_6"/>
+    <reference name="probe" ref_id="7_2"/>
+    <reference name="sample" ref_id="10_5"/>
   </item>
-  <item id="10_18" class="ProbeResult">
+  <item id="11_19" class="ProbeResult">
     <attribute name="PACall" value="false"/>
-    <reference name="probe" ref_id="6_2"/>
-    <reference name="sample" ref_id="9_9"/>
+    <reference name="probe" ref_id="7_3"/>
+    <reference name="sample" ref_id="10_1"/>
   </item>
-  <item id="8_3" class="BrainLocation">
-    <attribute name="mni_x" value="-52.0"/>
-    <attribute name="mni_y" value="-46.0"/>
-    <attribute name="mni_z" value="-17.0"/>
-    <attribute name="mri_voxel_x" value="143"/>
-    <attribute name="mri_voxel_y" value="126"/>
-    <attribute name="mri_voxel_z" value="137"/>
-    <attribute name="polygon_id" value="1283603"/>
-  </item>
-  <item id="10_10" class="ProbeResult">
+  <item id="11_24" class="ProbeResult">
     <attribute name="PACall" value="false"/>
-    <reference name="probe" ref_id="6_2"/>
-    <reference name="sample" ref_id="9_1"/>
+    <reference name="probe" ref_id="7_3"/>
+    <reference name="sample" ref_id="10_6"/>
   </item>
-  <item id="9_5" class="Sample">
-    <attribute name="slab_num" value="8"/>
-    <attribute name="slab_type" value="CX"/>
-    <attribute name="well_id" value="11319"/>
-    <reference name="location" ref_id="8_5"/>
-    <reference name="structure" ref_id="7_5"/>
-  </item>
-  <item id="10_22" class="ProbeResult">
-    <attribute name="PACall" value="false"/>
-    <reference name="probe" ref_id="6_3"/>
-    <reference name="sample" ref_id="9_4"/>
-  </item>
-  <item id="10_16" class="ProbeResult">
-    <attribute name="PACall" value="false"/>
-    <reference name="probe" ref_id="6_2"/>
-    <reference name="sample" ref_id="9_7"/>
-  </item>
-  <item id="10_9" class="ProbeResult">
-    <attribute name="PACall" value="false"/>
-    <reference name="probe" ref_id="6_1"/>
-    <reference name="sample" ref_id="9_9"/>
-  </item>
-  <item id="0_1" class="Ontology">
-    <attribute name="name" value="Sequence Ontology"/>
-    <attribute name="url" value="http://www.sequenceontology.org"/>
-  </item>
-  <item id="10_23" class="ProbeResult">
-    <attribute name="PACall" value="false"/>
-    <reference name="probe" ref_id="6_3"/>
-    <reference name="sample" ref_id="9_5"/>
-  </item>
-  <item id="10_6" class="ProbeResult">
-    <attribute name="PACall" value="false"/>
-    <reference name="probe" ref_id="6_1"/>
-    <reference name="sample" ref_id="9_6"/>
-  </item>
-  <item id="7_2" class="BrainAtlasStructure">
-    <attribute name="acronym" value="ITG-mts"/>
-    <attribute name="identifier" value="4151"/>
-    <attribute name="name" value="inferior temporal gyrus, left, bank of mts"/>
-  </item>
-  <item id="10_3" class="ProbeResult">
-    <attribute name="PACall" value="true"/>
-    <attribute name="expressionValue" value="4.10332400682848"/>
-    <reference name="probe" ref_id="6_1"/>
-    <reference name="sample" ref_id="9_3"/>
-  </item>
-  <item id="10_7" class="ProbeResult">
-    <attribute name="PACall" value="true"/>
-    <attribute name="expressionValue" value="4.238925182725189"/>
-    <reference name="probe" ref_id="6_1"/>
-    <reference name="sample" ref_id="9_7"/>
-  </item>
-  <item id="10_17" class="ProbeResult">
-    <attribute name="PACall" value="false"/>
-    <reference name="probe" ref_id="6_2"/>
-    <reference name="sample" ref_id="9_8"/>
-  </item>
-  <item id="9_2" class="Sample">
-    <attribute name="slab_num" value="9"/>
-    <attribute name="slab_type" value="CX"/>
-    <attribute name="well_id" value="11305"/>
-    <reference name="location" ref_id="8_2"/>
-    <reference name="structure" ref_id="7_2"/>
-  </item>
-  <item id="8_4" class="BrainLocation">
-    <attribute name="mni_x" value="-60.0"/>
-    <attribute name="mni_y" value="-36.0"/>
-    <attribute name="mni_z" value="1.0"/>
-    <attribute name="mri_voxel_x" value="151"/>
-    <attribute name="mri_voxel_y" value="108"/>
-    <attribute name="mri_voxel_z" value="127"/>
-    <attribute name="polygon_id" value="1279507"/>
-  </item>
-  <item id="8_9" class="BrainLocation">
-    <attribute name="mni_x" value="-59.0"/>
-    <attribute name="mni_y" value="-8.0"/>
-    <attribute name="mni_z" value="5.0"/>
-    <attribute name="mri_voxel_x" value="150"/>
-    <attribute name="mri_voxel_y" value="104"/>
-    <attribute name="mri_voxel_z" value="99"/>
-    <attribute name="polygon_id" value="1284515"/>
-  </item>
-  <item id="8_6" class="BrainLocation">
-    <attribute name="mni_x" value="-58.0"/>
-    <attribute name="mni_y" value="-19.0"/>
-    <attribute name="mni_z" value="-19.0"/>
-    <attribute name="mri_voxel_x" value="149"/>
-    <attribute name="mri_voxel_y" value="128"/>
-    <attribute name="mri_voxel_z" value="110"/>
-    <attribute name="polygon_id" value="1284160"/>
-  </item>
-  <item id="10_12" class="ProbeResult">
-    <attribute name="PACall" value="false"/>
-    <reference name="probe" ref_id="6_2"/>
-    <reference name="sample" ref_id="9_3"/>
-  </item>
-  <item id="10_11" class="ProbeResult">
-    <attribute name="PACall" value="false"/>
-    <reference name="probe" ref_id="6_2"/>
-    <reference name="sample" ref_id="9_2"/>
-  </item>
-  <item id="7_7" class="BrainAtlasStructure">
-    <attribute name="acronym" value="LIG"/>
-    <attribute name="identifier" value="4270"/>
-    <attribute name="name" value="long insular gyri, left"/>
-  </item>
-  <item id="6_1" class="Probe">
-    <attribute name="name" value="A_23_P20713"/>
-    <attribute name="probe_id" value="1058685"/>
-    <reference name="gene" ref_id="4_1"/>
-  </item>
-  <item id="7_6" class="BrainAtlasStructure">
-    <attribute name="acronym" value="SIG"/>
-    <attribute name="identifier" value="4273"/>
-    <attribute name="name" value="short insular gyri, left"/>
-  </item>
-  <item id="10_2" class="ProbeResult">
-    <attribute name="PACall" value="false"/>
-    <reference name="probe" ref_id="6_1"/>
-    <reference name="sample" ref_id="9_2"/>
-  </item>
-  <item id="1_1" class="DataSource">
-    <attribute name="name" value="Allen Brain Atlas"/>
-  </item>
-  <item id="7_5" class="BrainAtlasStructure">
-    <attribute name="acronym" value="STG-l"/>
-    <attribute name="identifier" value="4135"/>
-    <attribute name="name" value="superior temporal gyrus, left, lateral bank of gyrus"/>
-  </item>
-  <item id="6_2" class="Probe">
-    <attribute name="name" value="CUST_15185_PI416261804"/>
-    <attribute name="probe_id" value="1058684"/>
-    <reference name="gene" ref_id="4_2"/>
-  </item>
-  <item id="6_3" class="Probe">
-    <attribute name="name" value="A_32_P203917"/>
-    <attribute name="probe_id" value="1058683"/>
-    <reference name="gene" ref_id="4_2"/>
-  </item>
-  <item id="8_2" class="BrainLocation">
+  <item id="9_2" class="BrainLocation">
     <attribute name="mni_x" value="-61.0"/>
     <attribute name="mni_y" value="-46.0"/>
     <attribute name="mni_z" value="-19.0"/>
@@ -191,69 +78,21 @@
     <attribute name="mri_voxel_z" value="137"/>
     <attribute name="polygon_id" value="1283601"/>
   </item>
-  <item id="9_9" class="Sample">
-    <attribute name="slab_num" value="6"/>
-    <attribute name="slab_type" value="CX"/>
-    <attribute name="well_id" value="11310"/>
-    <reference name="location" ref_id="8_9"/>
-    <reference name="structure" ref_id="7_8"/>
-  </item>
-  <item id="7_1" class="BrainAtlasStructure">
-    <attribute name="acronym" value="MTG-i"/>
-    <attribute name="identifier" value="4143"/>
-    <attribute name="name" value="middle temporal gyrus, left, inferior bank of gyrus"/>
-  </item>
-  <item id="4_1" class="Gene">
-    <attribute name="primaryIdentifier" value="733"/>
-    <reference name="organism" ref_id="3_1"/>
-    <reference name="sequenceOntologyTerm" ref_id="5_1"/>
-    <collection name="dataSets"><reference ref_id="2_1"/></collection>
-  </item>
-  <item id="10_19" class="ProbeResult">
+  <item id="11_2" class="ProbeResult">
     <attribute name="PACall" value="false"/>
-    <reference name="probe" ref_id="6_3"/>
-    <reference name="sample" ref_id="9_1"/>
+    <reference name="probe" ref_id="7_1"/>
+    <reference name="sample" ref_id="10_2"/>
   </item>
-  <item id="10_15" class="ProbeResult">
+  <item id="11_25" class="ProbeResult">
     <attribute name="PACall" value="false"/>
-    <reference name="probe" ref_id="6_2"/>
-    <reference name="sample" ref_id="9_6"/>
+    <reference name="probe" ref_id="7_3"/>
+    <reference name="sample" ref_id="10_7"/>
   </item>
-  <item id="9_4" class="Sample">
-    <attribute name="slab_num" value="8"/>
-    <attribute name="slab_type" value="CX"/>
-    <attribute name="well_id" value="11335"/>
-    <reference name="location" ref_id="8_4"/>
-    <reference name="structure" ref_id="7_4"/>
+  <item id="0_1" class="Ontology">
+    <attribute name="name" value="Sequence Ontology"/>
+    <attribute name="url" value="http://www.sequenceontology.org"/>
   </item>
-  <item id="10_5" class="ProbeResult">
-    <attribute name="PACall" value="false"/>
-    <reference name="probe" ref_id="6_1"/>
-    <reference name="sample" ref_id="9_5"/>
-  </item>
-  <item id="10_27" class="ProbeResult">
-    <attribute name="PACall" value="false"/>
-    <reference name="probe" ref_id="6_3"/>
-    <reference name="sample" ref_id="9_9"/>
-  </item>
-  <item id="10_13" class="ProbeResult">
-    <attribute name="PACall" value="false"/>
-    <reference name="probe" ref_id="6_2"/>
-    <reference name="sample" ref_id="9_4"/>
-  </item>
-  <item id="10_14" class="ProbeResult">
-    <attribute name="PACall" value="false"/>
-    <reference name="probe" ref_id="6_2"/>
-    <reference name="sample" ref_id="9_5"/>
-  </item>
-  <item id="9_3" class="Sample">
-    <attribute name="slab_num" value="9"/>
-    <attribute name="slab_type" value="CX"/>
-    <attribute name="well_id" value="11289"/>
-    <reference name="location" ref_id="8_3"/>
-    <reference name="structure" ref_id="7_3"/>
-  </item>
-  <item id="8_1" class="BrainLocation">
+  <item id="9_1" class="BrainLocation">
     <attribute name="mni_x" value="-58.0"/>
     <attribute name="mni_y" value="-46.0"/>
     <attribute name="mni_z" value="3.0"/>
@@ -262,12 +101,7 @@
     <attribute name="mri_voxel_z" value="137"/>
     <attribute name="polygon_id" value="1283581"/>
   </item>
-  <item id="10_25" class="ProbeResult">
-    <attribute name="PACall" value="false"/>
-    <reference name="probe" ref_id="6_3"/>
-    <reference name="sample" ref_id="9_7"/>
-  </item>
-  <item id="8_7" class="BrainLocation">
+  <item id="9_7" class="BrainLocation">
     <attribute name="mni_x" value="-43.0"/>
     <attribute name="mni_y" value="-8.0"/>
     <attribute name="mni_z" value="13.0"/>
@@ -276,18 +110,22 @@
     <attribute name="mri_voxel_z" value="99"/>
     <attribute name="polygon_id" value="1280038"/>
   </item>
-  <item id="10_4" class="ProbeResult">
-    <attribute name="PACall" value="true"/>
-    <attribute name="expressionValue" value="3.9620342890083284"/>
-    <reference name="probe" ref_id="6_1"/>
-    <reference name="sample" ref_id="9_4"/>
+  <item id="8_8" class="BrainAtlasStructure">
+    <attribute name="acronym" value="PLP"/>
+    <attribute name="identifier" value="4178"/>
+    <attribute name="name" value="planum polare, left"/>
   </item>
-  <item id="7_3" class="BrainAtlasStructure">
+  <item id="8_3" class="BrainAtlasStructure">
     <attribute name="acronym" value="ITG-its"/>
     <attribute name="identifier" value="4149"/>
     <attribute name="name" value="inferior temporal gyrus, left, bank of the its"/>
   </item>
-  <item id="8_8" class="BrainLocation">
+  <item id="11_17" class="ProbeResult">
+    <attribute name="PACall" value="false"/>
+    <reference name="probe" ref_id="7_2"/>
+    <reference name="sample" ref_id="10_8"/>
+  </item>
+  <item id="9_8" class="BrainLocation">
     <attribute name="mni_x" value="-41.0"/>
     <attribute name="mni_y" value="-9.0"/>
     <attribute name="mni_z" value="5.0"/>
@@ -296,23 +134,12 @@
     <attribute name="mri_voxel_z" value="100"/>
     <attribute name="polygon_id" value="1280037"/>
   </item>
-  <item id="10_1" class="ProbeResult">
-    <attribute name="PACall" value="true"/>
-    <attribute name="expressionValue" value="3.5010774998847847"/>
-    <reference name="probe" ref_id="6_1"/>
-    <reference name="sample" ref_id="9_1"/>
-  </item>
-  <item id="10_26" class="ProbeResult">
+  <item id="11_23" class="ProbeResult">
     <attribute name="PACall" value="false"/>
-    <reference name="probe" ref_id="6_3"/>
-    <reference name="sample" ref_id="9_8"/>
+    <reference name="probe" ref_id="7_3"/>
+    <reference name="sample" ref_id="10_5"/>
   </item>
-  <item id="7_8" class="BrainAtlasStructure">
-    <attribute name="acronym" value="PLP"/>
-    <attribute name="identifier" value="4178"/>
-    <attribute name="name" value="planum polare, left"/>
-  </item>
-  <item id="8_5" class="BrainLocation">
+  <item id="9_5" class="BrainLocation">
     <attribute name="mni_x" value="-69.0"/>
     <attribute name="mni_y" value="-36.0"/>
     <attribute name="mni_z" value="9.0"/>
@@ -321,51 +148,240 @@
     <attribute name="mri_voxel_z" value="127"/>
     <attribute name="polygon_id" value="1283331"/>
   </item>
-  <item id="9_6" class="Sample">
+  <item id="11_13" class="ProbeResult">
+    <attribute name="PACall" value="false"/>
+    <reference name="probe" ref_id="7_2"/>
+    <reference name="sample" ref_id="10_4"/>
+  </item>
+  <item id="10_6" class="Sample">
+    <attribute name="identifier" value="6"/>
     <attribute name="slab_num" value="7"/>
     <attribute name="slab_type" value="CX"/>
     <attribute name="well_id" value="11263"/>
-    <reference name="location" ref_id="8_6"/>
-    <reference name="structure" ref_id="7_1"/>
+    <reference name="location" ref_id="9_6"/>
+    <reference name="structure" ref_id="8_1"/>
   </item>
-  <item id="10_21" class="ProbeResult">
-    <attribute name="PACall" value="false"/>
-    <reference name="probe" ref_id="6_3"/>
-    <reference name="sample" ref_id="9_3"/>
-  </item>
-  <item id="5_1" class="SOTerm">
-    <attribute name="name" value="gene"/>
-    <reference name="ontology" ref_id="0_1"/>
+  <item id="5_2" class="Gene">
+    <attribute name="primaryIdentifier" value="735"/>
+    <reference name="organism" ref_id="3_1"/>
+    <reference name="sequenceOntologyTerm" ref_id="6_1"/>
     <collection name="dataSets"><reference ref_id="2_1"/></collection>
   </item>
-  <item id="9_1" class="Sample">
-    <attribute name="slab_num" value="9"/>
-    <attribute name="slab_type" value="CX"/>
-    <attribute name="well_id" value="11281"/>
-    <reference name="location" ref_id="8_1"/>
-    <reference name="structure" ref_id="7_1"/>
+  <item id="11_8" class="ProbeResult">
+    <attribute name="PACall" value="false"/>
+    <reference name="probe" ref_id="7_1"/>
+    <reference name="sample" ref_id="10_8"/>
   </item>
-  <item id="7_4" class="BrainAtlasStructure">
+  <item id="10_7" class="Sample">
+    <attribute name="identifier" value="7"/>
+    <attribute name="slab_num" value="6"/>
+    <attribute name="slab_type" value="CX"/>
+    <attribute name="well_id" value="11326"/>
+    <reference name="location" ref_id="9_7"/>
+    <reference name="structure" ref_id="8_6"/>
+  </item>
+  <item id="8_4" class="BrainAtlasStructure">
     <attribute name="acronym" value="MTG-s"/>
     <attribute name="identifier" value="4142"/>
     <attribute name="name" value="middle temporal gyrus, left, superior bank of gyrus"/>
   </item>
-  <item id="10_20" class="ProbeResult">
-    <attribute name="PACall" value="false"/>
-    <reference name="probe" ref_id="6_3"/>
-    <reference name="sample" ref_id="9_2"/>
+  <item id="1_1" class="DataSource">
+    <attribute name="name" value="Allen Brain Atlas"/>
   </item>
-  <item id="4_2" class="Gene">
-    <attribute name="primaryIdentifier" value="735"/>
-    <reference name="organism" ref_id="3_1"/>
-    <reference name="sequenceOntologyTerm" ref_id="5_1"/>
+  <item id="6_1" class="SOTerm">
+    <attribute name="name" value="gene"/>
+    <reference name="ontology" ref_id="0_1"/>
     <collection name="dataSets"><reference ref_id="2_1"/></collection>
   </item>
-  <item id="9_7" class="Sample">
-    <attribute name="slab_num" value="6"/>
+  <item id="10_1" class="Sample">
+    <attribute name="identifier" value="1"/>
+    <attribute name="slab_num" value="9"/>
     <attribute name="slab_type" value="CX"/>
-    <attribute name="well_id" value="11326"/>
-    <reference name="location" ref_id="8_7"/>
-    <reference name="structure" ref_id="7_6"/>
+    <attribute name="well_id" value="11281"/>
+    <reference name="location" ref_id="9_1"/>
+    <reference name="structure" ref_id="8_1"/>
+  </item>
+  <item id="11_4" class="ProbeResult">
+    <attribute name="PACall" value="true"/>
+    <attribute name="expressionValue" value="3.9620342890083284"/>
+    <reference name="probe" ref_id="7_1"/>
+    <reference name="sample" ref_id="10_4"/>
+  </item>
+  <item id="10_4" class="Sample">
+    <attribute name="identifier" value="4"/>
+    <attribute name="slab_num" value="8"/>
+    <attribute name="slab_type" value="CX"/>
+    <attribute name="well_id" value="11335"/>
+    <reference name="location" ref_id="9_4"/>
+    <reference name="structure" ref_id="8_4"/>
+  </item>
+  <item id="11_11" class="ProbeResult">
+    <attribute name="PACall" value="false"/>
+    <reference name="probe" ref_id="7_2"/>
+    <reference name="sample" ref_id="10_2"/>
+  </item>
+  <item id="11_26" class="ProbeResult">
+    <attribute name="PACall" value="false"/>
+    <reference name="probe" ref_id="7_3"/>
+    <reference name="sample" ref_id="10_8"/>
+  </item>
+  <item id="11_12" class="ProbeResult">
+    <attribute name="PACall" value="false"/>
+    <reference name="probe" ref_id="7_2"/>
+    <reference name="sample" ref_id="10_3"/>
+  </item>
+  <item id="10_3" class="Sample">
+    <attribute name="identifier" value="3"/>
+    <attribute name="slab_num" value="9"/>
+    <attribute name="slab_type" value="CX"/>
+    <attribute name="well_id" value="11289"/>
+    <reference name="location" ref_id="9_3"/>
+    <reference name="structure" ref_id="8_3"/>
+  </item>
+  <item id="11_5" class="ProbeResult">
+    <attribute name="PACall" value="false"/>
+    <reference name="probe" ref_id="7_1"/>
+    <reference name="sample" ref_id="10_5"/>
+  </item>
+  <item id="11_22" class="ProbeResult">
+    <attribute name="PACall" value="false"/>
+    <reference name="probe" ref_id="7_3"/>
+    <reference name="sample" ref_id="10_4"/>
+  </item>
+  <item id="9_3" class="BrainLocation">
+    <attribute name="mni_x" value="-52.0"/>
+    <attribute name="mni_y" value="-46.0"/>
+    <attribute name="mni_z" value="-17.0"/>
+    <attribute name="mri_voxel_x" value="143"/>
+    <attribute name="mri_voxel_y" value="126"/>
+    <attribute name="mri_voxel_z" value="137"/>
+    <attribute name="polygon_id" value="1283603"/>
+  </item>
+  <item id="11_10" class="ProbeResult">
+    <attribute name="PACall" value="false"/>
+    <reference name="probe" ref_id="7_2"/>
+    <reference name="sample" ref_id="10_1"/>
+  </item>
+  <item id="11_18" class="ProbeResult">
+    <attribute name="PACall" value="false"/>
+    <reference name="probe" ref_id="7_2"/>
+    <reference name="sample" ref_id="10_9"/>
+  </item>
+  <item id="9_6" class="BrainLocation">
+    <attribute name="mni_x" value="-58.0"/>
+    <attribute name="mni_y" value="-19.0"/>
+    <attribute name="mni_z" value="-19.0"/>
+    <attribute name="mri_voxel_x" value="149"/>
+    <attribute name="mri_voxel_y" value="128"/>
+    <attribute name="mri_voxel_z" value="110"/>
+    <attribute name="polygon_id" value="1284160"/>
+  </item>
+  <item id="8_2" class="BrainAtlasStructure">
+    <attribute name="acronym" value="ITG-mts"/>
+    <attribute name="identifier" value="4151"/>
+    <attribute name="name" value="inferior temporal gyrus, left, bank of mts"/>
+  </item>
+  <item id="10_5" class="Sample">
+    <attribute name="identifier" value="5"/>
+    <attribute name="slab_num" value="8"/>
+    <attribute name="slab_type" value="CX"/>
+    <attribute name="well_id" value="11319"/>
+    <reference name="location" ref_id="9_5"/>
+    <reference name="structure" ref_id="8_5"/>
+  </item>
+  <item id="10_2" class="Sample">
+    <attribute name="identifier" value="2"/>
+    <attribute name="slab_num" value="9"/>
+    <attribute name="slab_type" value="CX"/>
+    <attribute name="well_id" value="11305"/>
+    <reference name="location" ref_id="9_2"/>
+    <reference name="structure" ref_id="8_2"/>
+  </item>
+  <item id="11_20" class="ProbeResult">
+    <attribute name="PACall" value="false"/>
+    <reference name="probe" ref_id="7_3"/>
+    <reference name="sample" ref_id="10_2"/>
+  </item>
+  <item id="11_1" class="ProbeResult">
+    <attribute name="PACall" value="true"/>
+    <attribute name="expressionValue" value="3.5010774998847847"/>
+    <reference name="probe" ref_id="7_1"/>
+    <reference name="sample" ref_id="10_1"/>
+  </item>
+  <item id="7_2" class="Probe">
+    <attribute name="name" value="CUST_15185_PI416261804"/>
+    <attribute name="probe_id" value="1058684"/>
+    <reference name="gene" ref_id="5_2"/>
+  </item>
+  <item id="9_4" class="BrainLocation">
+    <attribute name="mni_x" value="-60.0"/>
+    <attribute name="mni_y" value="-36.0"/>
+    <attribute name="mni_z" value="1.0"/>
+    <attribute name="mri_voxel_x" value="151"/>
+    <attribute name="mri_voxel_y" value="108"/>
+    <attribute name="mri_voxel_z" value="127"/>
+    <attribute name="polygon_id" value="1279507"/>
+  </item>
+  <item id="11_6" class="ProbeResult">
+    <attribute name="PACall" value="false"/>
+    <reference name="probe" ref_id="7_1"/>
+    <reference name="sample" ref_id="10_6"/>
+  </item>
+  <item id="9_9" class="BrainLocation">
+    <attribute name="mni_x" value="-59.0"/>
+    <attribute name="mni_y" value="-8.0"/>
+    <attribute name="mni_z" value="5.0"/>
+    <attribute name="mri_voxel_x" value="150"/>
+    <attribute name="mri_voxel_y" value="104"/>
+    <attribute name="mri_voxel_z" value="99"/>
+    <attribute name="polygon_id" value="1284515"/>
+  </item>
+  <item id="11_21" class="ProbeResult">
+    <attribute name="PACall" value="false"/>
+    <reference name="probe" ref_id="7_3"/>
+    <reference name="sample" ref_id="10_3"/>
+  </item>
+  <item id="11_15" class="ProbeResult">
+    <attribute name="PACall" value="false"/>
+    <reference name="probe" ref_id="7_2"/>
+    <reference name="sample" ref_id="10_6"/>
+  </item>
+  <item id="8_6" class="BrainAtlasStructure">
+    <attribute name="acronym" value="SIG"/>
+    <attribute name="identifier" value="4273"/>
+    <attribute name="name" value="short insular gyri, left"/>
+  </item>
+  <item id="11_16" class="ProbeResult">
+    <attribute name="PACall" value="false"/>
+    <reference name="probe" ref_id="7_2"/>
+    <reference name="sample" ref_id="10_7"/>
+  </item>
+  <item id="11_27" class="ProbeResult">
+    <attribute name="PACall" value="false"/>
+    <reference name="probe" ref_id="7_3"/>
+    <reference name="sample" ref_id="10_9"/>
+  </item>
+  <item id="4_1" class="Donor">
+    <attribute name="age" value="57"/>
+    <attribute name="ethnicity" value="White or Caucasian"/>
+    <attribute name="gender" value="M"/>
+    <attribute name="identifier" value="H0351.1009"/>
+    <attribute name="pmi_hours" value="10"/>
+  </item>
+  <item id="8_7" class="BrainAtlasStructure">
+    <attribute name="acronym" value="LIG"/>
+    <attribute name="identifier" value="4270"/>
+    <attribute name="name" value="long insular gyri, left"/>
+  </item>
+  <item id="11_3" class="ProbeResult">
+    <attribute name="PACall" value="true"/>
+    <attribute name="expressionValue" value="4.10332400682848"/>
+    <reference name="probe" ref_id="7_1"/>
+    <reference name="sample" ref_id="10_3"/>
+  </item>
+  <item id="8_5" class="BrainAtlasStructure">
+    <attribute name="acronym" value="STG-l"/>
+    <attribute name="identifier" value="4135"/>
+    <attribute name="name" value="superior temporal gyrus, left, lateral bank of gyrus"/>
   </item>
 </items>

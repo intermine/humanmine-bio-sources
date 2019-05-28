@@ -12,6 +12,7 @@
         <collection name="genes" referenced-type="Gene" reverse-reference="structures"/>
     </class>
     <class name="Sample" is-interface="true">
+        <attribute name="identifier" type="java.lang.String"/>
         <attribute name="well_id" type="java.lang.String"/>
         <attribute name="slab_type" type="java.lang.String"/>
         <attribute name="slab_num" type="java.lang.String"/>
