@@ -24,7 +24,6 @@ import org.intermine.xml.full.Item;
 
 
 /**
- * 
  * @author Julie Sullivan
  */
 public class AllenBrainOntologyConverter extends BioFileConverter
@@ -50,7 +49,6 @@ public class AllenBrainOntologyConverter extends BioFileConverter
         Iterator<String[]> lineIter = FormattedTextParser.parseCsvDelimitedReader(reader);
         // skip header
         lineIter.next();
-        // id,acronym,name,parent_structure_id,hemisphere,graph_order,structure_id_path,color_hex_triplet
         while (lineIter.hasNext()) {
             String[] line = lineIter.next();
 
@@ -78,6 +76,6 @@ public class AllenBrainOntologyConverter extends BioFileConverter
             }
         }
         store(item);
-        terms.put(identifier,item.getIdentifier());
+        terms.put(identifier, item.getIdentifier());
     }
 }
