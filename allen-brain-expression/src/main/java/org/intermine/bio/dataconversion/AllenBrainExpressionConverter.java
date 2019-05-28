@@ -91,10 +91,6 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
             String directoryName = f.getName();
             String donorRefId = getDonor(directoryName);
 
-            if (!"test".equals(directoryName)) {
-                throw new RuntimeException("dir " + directoryName);
-            }
-
             // get list of files
             Map<String, File> files = readFilesInDir(f);
 
