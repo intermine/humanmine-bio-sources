@@ -77,6 +77,7 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
      */
     public void process(File dataDir) throws Exception {
         organism = getOrganism(TAXON_ID);
+        storeDonors();
 
         if (rslv == null) {
             rslv = IdResolverService.getIdResolverByOrganism(TAXON_ID);
@@ -322,16 +323,10 @@ public class AllenBrainExpressionConverter extends BioDirectoryConverter
         return rslv.resolveId(TAXON_ID, identifier).iterator().next();
     }
 
-    private String getDonor(String identifier) throws ObjectStoreException {
-        if ("test".equals(identifier)) {
-            // for our unit test, override the directory name
-            identifier = "H0351.1009";
-        }
-        String refId = donors.get(identifier);
-        if (refId == null) {
-            storeDonors();
-        }
-        return donors.get(identifier);
+    private String getDonor(String directoryName) throws ObjectStoreException {
+        // TODO temporary
+        directoryName = "H0351.1009";
+        return donors.get(directoryName);
     }
 
     private void storeDonors() throws ObjectStoreException {
