@@ -5,7 +5,6 @@ include ':bio-source-arrayexpress-atlas',
 ':bio-source-clinvar',
 ':bio-source-ensembl-hgnc',
 ':bio-source-gtex',
-':bio-source-hgnc',
 ':bio-source-hpo',
 ':bio-source-hpo-annotation',
 ':bio-source-huge-gwas',
@@ -23,7 +22,6 @@ project(':bio-source-atlas-express').projectDir = new File(settingsDir, './atlas
 project(':bio-source-clinvar').projectDir = new File(settingsDir, './clinvar')
 project(':bio-source-ensembl-hgnc').projectDir = new File(settingsDir, './ensembl-hgnc')
 project(':bio-source-gtex').projectDir = new File(settingsDir, './gtex')
-project(':bio-source-hgnc').projectDir = new File(settingsDir, './hgnc')
 project(':bio-source-hpo').projectDir = new File(settingsDir, './hpo')
 project(':bio-source-hpo-annotation').projectDir = new File(settingsDir, './hpo-annotation')
 project(':bio-source-huge-gwas').projectDir = new File(settingsDir, './huge-gwas')
