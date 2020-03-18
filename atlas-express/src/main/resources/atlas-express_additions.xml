@@ -3,14 +3,14 @@
 
 <classes>
 
-<class name="AtlasExpression" is-interface="true">
+<class name="AtlasExpression" is-interface="true" term="http://edamontology.org/data_2603">
   <attribute name="type" type="java.lang.String"/>
   <attribute name="condition" type="java.lang.String"/>
   <attribute name="expression" type="java.lang.String"/>
   <reference name="gene" referenced-type="Gene" reverse-reference="atlasExpression"/>
   <collection name="dataSets" referenced-type="DataSet"/>
 </class>
-<class name="Gene" is-interface="true">
+<class name="Gene" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000704">
   <collection name="atlasExpression" referenced-type="AtlasExpression"  reverse-reference="gene"/>
 </class>
 </classes>
