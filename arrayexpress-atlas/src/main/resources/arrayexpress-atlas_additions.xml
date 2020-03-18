@@ -3,7 +3,7 @@
 
 <classes>
 
-<class name="AtlasExpression" is-interface="true">
+<class name="AtlasExpression" is-interface="true" term="http://edamontology.org/data_2603">
   <attribute name="type" type="java.lang.String"/>
   <attribute name="condition" type="java.lang.String"/>
   <attribute name="expression" type="java.lang.String"/>
@@ -17,7 +17,7 @@
   <collection name="atlasExpression" referenced-type="AtlasExpression"  reverse-reference="gene"/>
   <collection name="probeSets" referenced-type="ProbeSet" reverse-reference="genes"/>
 </class>
-<class name="ProbeSet" extends="SequenceFeature" is-interface="true">
+<class name="ProbeSet" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/NCIT_C43523">
   <attribute name="description" type="java.lang.String"/>
   <collection name="genes" referenced-type="Gene" reverse-reference="probeSets"/>
   <collection name="atlasExpression" referenced-type="AtlasExpression"  reverse-reference="probe"/>
