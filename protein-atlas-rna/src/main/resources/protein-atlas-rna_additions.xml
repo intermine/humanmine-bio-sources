@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <classes>
-  <class name="Gene" extends="SequenceFeature" is-interface="true">
+  <class name="Gene" extends="SequenceFeature" is-interface="true" term="http://purl.obolibrary.org/obo/SO:0000704">
     <collection name="rnaSeqResults" referenced-type="RNASeqResult" reverse-reference="gene"/>
   </class>
-  <class name="RNASeqResult" is-interface="true">
+  <class name="RNASeqResult" is-interface="true" term="http://edamontology.org/operation_3680">
     <attribute name="expressionScore" type="java.lang.Double"/>
     <attribute name="tissue" type="java.lang.String"/>
     <attribute name="expressionType" type="java.lang.String"/>
