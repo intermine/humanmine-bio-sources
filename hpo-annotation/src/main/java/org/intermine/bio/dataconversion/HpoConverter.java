@@ -45,10 +45,9 @@ public class HpoConverter extends BioDirectoryConverter
 
     private List<String> ignoreDbList = Arrays.asList("DECIPHER");
 
-    private static final String HPOTEAM_FILE = "phenotype_annotation_hpoteam.tab";
-    private static final String NEG_FILE = "negative_phenotype_annotation.tab";
-    private static final String GENE_FILE =
-            "ALL_SOURCES_ALL_FREQUENCIES_diseases_to_genes_to_phenotypes.txt";
+    private static final String HPOTEAM_FILE = "phenotype_annotation.tab";
+    private static final String NEG_FILE = "phenotype_annotation_negated.tab";
+    private static final String GENE_FILE = "genes_to_phenotype.txt";
     private String omimFile = null;
     private static final String GENE_ENTRY = "Asterisk";
     private static final String GENE_PHENOTYPE_ENTRY = "Plus";
@@ -136,9 +135,9 @@ public class HpoConverter extends BioDirectoryConverter
                 continue;
             }
 
-            String diseaseId = line[0];
-            String identifier = line[2];
-            String hpoId = line[3];
+            String diseaseId = line[8];
+            String identifier = line[0];
+            String hpoId = line[2];
 
             Item disease = getDisease(diseaseId);
             if (disease == null) {
