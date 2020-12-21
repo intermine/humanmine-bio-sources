@@ -39,4 +39,4 @@ jobs:
        # sudo apt-get install -y libpq-dev postgresql-client
         #sudo service postgresql start
     - name: Run unit tests
-      run: ./config/ci/init.sh && ./config/ci/run.sh
+      run: ./config/init.sh && ./config/run.sh
