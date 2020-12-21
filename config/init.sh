@@ -10,5 +10,6 @@ sudo -u postgres psql -c "alter user test with encrypted password 'test';"
 source config/create-ci-properties-files.sh
 
 sudo -u postgres createdb bio-test
-grant all privileges on database bio-test to test;
+sudo -u postgres psql -c "grant all privileges on database bio-test to test;"
+
 
