@@ -7,14 +7,14 @@ sourceSets {
             srcDirs = ['src/main/resources']
         }
     }
-    test {
+/*    test {
         java {
             srcDirs = ['src/test/java']
         }
         resources {
             srcDirs = ['src/test/resources']
         }
-    }
+    }*/
 }
 
 processResources {
