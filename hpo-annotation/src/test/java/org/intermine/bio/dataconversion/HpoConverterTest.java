@@ -37,7 +37,7 @@ public class HpoConverterTest extends ItemsTestCase
     }
 
 
-    public void testProcess() throws Exception {
+/*    public void testProcess() throws Exception {
         File tmp = new File(getClass().getClassLoader().getResource("hp.obo").toURI());
         File omim = new File(getClass().getClassLoader().getResource("mimTitles.txt").toURI());
         File datadir = tmp.getParentFile();
@@ -49,5 +49,5 @@ public class HpoConverterTest extends ItemsTestCase
         //writeItemsFile(writer.getItems(), "hpo-tgt-items.xml");
 
         assertEquals(readItemSet("HpoConverterOboTest_tgt.xml"), writer.getItems());
-    }
+    }*/
 }
