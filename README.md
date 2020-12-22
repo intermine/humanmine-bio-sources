@@ -1,7 +1,7 @@
 HumanMine
 ============
 
-Master: ![HumanMine bio sources CI](https://github.com/intermine/humanmine-bio-sources/workflows/HumanMine%20bio%20sources%20CI/badge.svg?branch=master)
+Master: [![HumanMine bio sources CI](https://github.com/intermine/humanmine-bio-sources/workflows/HumanMine%20bio%20sources%20CI/badge.svg?branch=master)](https://github.com/intermine/humanmine-bio-sources/workflows/HumanMine%20bio%20sources%20CI)
 [![Version](http://img.shields.io/badge/version-2.0.0-blue.svg?style=flat)](https://github.com/intermine/intermine/releases)
 [![License](http://img.shields.io/badge/license-LGPL_2.1-blue.svg?style=flat)](https://github.com/intermine/intermine/blob/master/LICENSE)
 [![Research software impact](http://depsy.org/api/package/pypi/intermine/badge.svg)](http://depsy.org/package/python/intermine)
