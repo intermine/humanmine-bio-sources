@@ -20,16 +20,16 @@ import org.intermine.dataconversion.ItemsTestCase;
 import org.intermine.dataconversion.MockItemWriter;
 import org.intermine.metadata.Model;
 
-public class HpoConverterTest extends ItemsTestCase
+public class HpoConverterTest //extends ItemsTestCase
 {
     Model model;
     HpoConverter converter;
     MockItemWriter writer;
-
+/*
     public HpoConverterTest(String arg) {
         super(arg);
     }
-/* 
+
     public void setUp() throws Exception {
         model = Model.getInstanceByName("genomic");
         writer = new MockItemWriter(new LinkedHashMap<String, org.intermine.model.fulldata.Item>());
