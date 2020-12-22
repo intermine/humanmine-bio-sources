@@ -1,7 +1,7 @@
 HumanMine
 ============
 
-Master: [![Build Status: master][travis-badge-master]][ci]
+Master: ![HumanMine bio sources CI](https://github.com/intermine/humanmine-bio-sources/workflows/HumanMine%20bio%20sources%20CI/badge.svg?branch=master)
 [![Version](http://img.shields.io/badge/version-2.0.0-blue.svg?style=flat)](https://github.com/intermine/intermine/releases)
 [![License](http://img.shields.io/badge/license-LGPL_2.1-blue.svg?style=flat)](https://github.com/intermine/intermine/blob/master/LICENSE)
 [![Research software impact](http://depsy.org/api/package/pypi/intermine/badge.svg)](http://depsy.org/package/python/intermine)
@@ -34,8 +34,6 @@ Please cite
 [![pubmed](http://img.shields.io/badge/pubmed-23023984-blue.svg?style=flat)](http://www.ncbi.nlm.nih.gov/pubmed/23023984)
 
 
-[travis-badge-master]: https://travis-ci.org/intermine/intermine.svg?branch=master
-[ci]: https://travis-ci.org/intermine/flymine-bio-sources
 [readthedocs]: http://intermine.readthedocs.org/en/latest
 [tutorial]: http://intermine.readthedocs.org/en/latest/get-started/tutorial
 [psql]: http://www.postgresql.org
