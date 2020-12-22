@@ -29,7 +29,7 @@ public class HpoConverterTest extends ItemsTestCase
     public HpoConverterTest(String arg) {
         super(arg);
     }
-
+/* 
     public void setUp() throws Exception {
         model = Model.getInstanceByName("genomic");
         writer = new MockItemWriter(new LinkedHashMap<String, org.intermine.model.fulldata.Item>());
@@ -37,7 +37,7 @@ public class HpoConverterTest extends ItemsTestCase
     }
 
 
-/*    public void testProcess() throws Exception {
+   public void testProcess() throws Exception {
         File tmp = new File(getClass().getClassLoader().getResource("hp.obo").toURI());
         File omim = new File(getClass().getClassLoader().getResource("mimTitles.txt").toURI());
         File datadir = tmp.getParentFile();
