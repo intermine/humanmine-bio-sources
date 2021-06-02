@@ -3,6 +3,7 @@ rootProject.name = 'bio-sources-human'
 include ':bio-source-arrayexpress-atlas',
 ':bio-source-atlas-express',
 ':bio-source-clinvar',
+':bio-source-disgenet-disease-associations',
 ':bio-source-ensembl-hgnc',
 ':bio-source-gtex',
 ':bio-source-hgnc',
@@ -19,6 +20,7 @@ include ':bio-source-arrayexpress-atlas',
 
 project(':bio-source-arrayexpress-atlas').projectDir = new File(settingsDir, './arrayexpress-atlas')
 project(':bio-source-atlas-express').projectDir = new File(settingsDir, './atlas-express')
+project(':bio-source-disgenet-disease-associations').projectDir = new File(settingsDir, './disgenet-disease-associations')
 project(':bio-source-clinvar').projectDir = new File(settingsDir, './clinvar')
 project(':bio-source-ensembl-hgnc').projectDir = new File(settingsDir, './ensembl-hgnc')
 project(':bio-source-gtex').projectDir = new File(settingsDir, './gtex')
