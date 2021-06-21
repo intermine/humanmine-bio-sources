@@ -7,7 +7,7 @@
         <reference name="gene" referenced-type="Gene" reverse-reference="diseaseAssociations"/>
         <reference name="disease" referenced-type="Disease" reverse-reference="diseaseAssociations"/>
     </class>
-    <class name="Disease" is-interface="true" extends="BioEntity">
+    <class name="Disease" is-interface="true" extends="Annotatable">
         <attribute name="diseaseId" type="java.lang.String"/>
         <attribute name="diseaseType" type="java.lang.String"/>
         <collection name="diseaseAssociations" referenced-type="DiseaseAssociation" reverse-reference="disease"/>
