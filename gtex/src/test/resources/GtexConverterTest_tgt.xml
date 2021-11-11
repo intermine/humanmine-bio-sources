@@ -1,497 +1,497 @@
 <items>
-    <item id="5_7" class="SNP">
-        <attribute name="pValue" value="1.31112e-05"/>
-        <attribute name="primaryIdentifier" value="1_1465688_T_TAGTC_b37"/>
-        <attribute name="tissue" value="Liver"/>
-        <attribute name="tssDistance" value="900668"/>
-        <reference name="gene" ref_id="3_1"/>
-        <reference name="organism" ref_id="4_1"/>
-        <reference name="sequenceOntologyTerm" ref_id="6_1"/>
-        <collection name="dataSets"><reference ref_id="2_2"/></collection>
-    </item>
-    <item id="7_45" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.05982"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Skin - Sun Exposed (Lower leg)"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_6" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.04977"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Artery - Tibial"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_53" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.1175"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Whole Blood"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="6_1" class="SOTerm">
-        <attribute name="name" value="SNP"/>
-        <reference name="ontology" ref_id="0_1"/>
-    </item>
-    <item id="7_21" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.05648"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Breast - Mammary Tissue"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_35" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.06259"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Liver"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_39" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.056495"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Nerve - Tibial"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_50" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.05835"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Thyroid"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_34" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.06347"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Kidney - Cortex"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_13" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.0801"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Brain - Cortex"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_9" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.07901"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Brain - Anterior cingulate cortex (BA24)"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_27" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.06107"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Colon - Transverse"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_49" class="RNASeqResult">
-        <attribute name="expressionScore" value="1.76"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Testis"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="0_1" class="Ontology">
-        <attribute name="name" value="Sequence Ontology"/>
-        <attribute name="url" value="http://www.sequenceontology.org"/>
-    </item>
-    <item id="7_51" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.03849"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Uterus"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_12" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.08034"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Brain - Cerebellum"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_43" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.065955"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Prostate"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="5_6" class="SNP">
-        <attribute name="pValue" value="4.86499e-08"/>
-        <attribute name="primaryIdentifier" value="1_1448024_C_T_b37"/>
-        <attribute name="tissue" value="Liver"/>
-        <attribute name="tssDistance" value="883004"/>
-        <reference name="gene" ref_id="3_1"/>
-        <reference name="organism" ref_id="4_1"/>
-        <reference name="sequenceOntologyTerm" ref_id="6_1"/>
-        <collection name="dataSets"><reference ref_id="2_2"/></collection>
-    </item>
-    <item id="2_2" class="DataSet">
-        <attribute name="name" value="Single-Tissue cis-eQTL Data"/>
-        <reference name="dataSource" ref_id="1_1"/>
-    </item>
-    <item id="5_9" class="SNP">
-        <attribute name="pValue" value="1.31112e-05"/>
-        <attribute name="primaryIdentifier" value="1_1469087_A_ATT_b37"/>
-        <attribute name="tissue" value="Liver"/>
-        <attribute name="tssDistance" value="904067"/>
-        <reference name="gene" ref_id="3_1"/>
-        <reference name="organism" ref_id="4_1"/>
-        <reference name="sequenceOntologyTerm" ref_id="6_1"/>
-        <collection name="dataSets"><reference ref_id="2_2"/></collection>
-    </item>
-    <item id="7_44" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.05417"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Skin - Not Sun Exposed (Suprapubic)"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_41" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.027255"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Pancreas"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_15" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.08286"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Brain - Hippocampus"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_26" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.05467"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Colon - Sigmoid"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="5_8" class="SNP">
-        <attribute name="pValue" value="1.31112e-05"/>
-        <attribute name="primaryIdentifier" value="1_1468125_C_G_b37"/>
-        <attribute name="tissue" value="Liver"/>
-        <attribute name="tssDistance" value="903105"/>
-        <reference name="gene" ref_id="3_1"/>
-        <reference name="organism" ref_id="4_1"/>
-        <reference name="sequenceOntologyTerm" ref_id="6_1"/>
-        <collection name="dataSets"><reference ref_id="2_2"/></collection>
-    </item>
-    <item id="7_17" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.06842"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Brain - Nucleus accumbens (basal ganglia)"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="5_1" class="SNP">
-        <attribute name="pValue" value="7.05065e-06"/>
-        <attribute name="primaryIdentifier" value="1_1297836_G_A_b37"/>
-        <attribute name="tissue" value="Liver"/>
-        <attribute name="tssDistance" value="732816"/>
-        <reference name="gene" ref_id="3_1"/>
-        <reference name="organism" ref_id="4_1"/>
-        <reference name="sequenceOntologyTerm" ref_id="6_1"/>
-        <collection name="dataSets"><reference ref_id="2_2"/></collection>
-    </item>
-    <item id="6_2" class="SOTerm">
-        <attribute name="name" value="gene"/>
-        <reference name="ontology" ref_id="0_1"/>
-    </item>
-    <item id="7_36" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.06655"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Lung"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_11" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.085395"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Brain - Cerebellar Hemisphere"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="3_1" class="Gene">
-        <attribute name="primaryIdentifier" value="123"/>
-        <reference name="organism" ref_id="4_1"/>
-        <reference name="sequenceOntologyTerm" ref_id="6_2"/>
-        <collection name="SNPs"><reference ref_id="5_1"/><reference ref_id="5_2"/><reference ref_id="5_3"/><reference ref_id="5_4"/><reference ref_id="5_5"/><reference ref_id="5_6"/><reference ref_id="5_7"/><reference ref_id="5_8"/><reference ref_id="5_9"/></collection>
-        <collection name="dataSets"><reference ref_id="2_2"/><reference ref_id="2_1"/></collection>
-        <collection name="rnaSeqResults"><reference ref_id="7_1"/><reference ref_id="7_2"/><reference ref_id="7_3"/><reference ref_id="7_4"/><reference ref_id="7_5"/><reference ref_id="7_6"/><reference ref_id="7_7"/><reference ref_id="7_8"/><reference ref_id="7_9"/><reference ref_id="7_10"/><reference ref_id="7_11"/><reference ref_id="7_12"/><reference ref_id="7_13"/><reference ref_id="7_14"/><reference ref_id="7_15"/><reference ref_id="7_16"/><reference ref_id="7_17"/><reference ref_id="7_18"/><reference ref_id="7_19"/><reference ref_id="7_20"/><reference ref_id="7_21"/><reference ref_id="7_22"/><reference ref_id="7_23"/><reference ref_id="7_24"/><reference ref_id="7_25"/><reference ref_id="7_26"/><reference ref_id="7_27"/><reference ref_id="7_28"/><reference ref_id="7_29"/><reference ref_id="7_30"/><reference ref_id="7_31"/><reference ref_id="7_32"/><reference ref_id="7_33"/><reference ref_id="7_34"/><reference ref_id="7_35"/><reference ref_id="7_36"/><reference ref_id="7_37"/><reference ref_id="7_38"/><reference ref_id="7_39"/><reference ref_id="7_40"/><reference ref_id="7_41"/><reference ref_id="7_42"/><reference ref_id="7_43"/><reference ref_id="7_44"/><reference ref_id="7_45"/><reference ref_id="7_46"/><reference ref_id="7_47"/><reference ref_id="7_48"/><reference ref_id="7_49"/><reference ref_id="7_50"/><reference ref_id="7_51"/><reference ref_id="7_52"/><reference ref_id="7_53"/></collection>
-    </item>
-    <item id="1_1" class="DataSource">
-        <attribute name="name" value="GTEx portal"/>
-    </item>
-    <item id="7_7" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.05878"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Bladder"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_22" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.046275"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Cells - EBV-transformed lymphocytes"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="5_5" class="SNP">
-        <attribute name="pValue" value="1.37072e-05"/>
-        <attribute name="primaryIdentifier" value="1_1442203_C_T_b37"/>
-        <attribute name="tissue" value="Liver"/>
-        <attribute name="tssDistance" value="877183"/>
-        <reference name="gene" ref_id="3_1"/>
-        <reference name="organism" ref_id="4_1"/>
-        <reference name="sequenceOntologyTerm" ref_id="6_1"/>
-        <collection name="dataSets"><reference ref_id="2_2"/></collection>
-    </item>
-    <item id="2_1" class="DataSet">
-        <attribute name="name" value="RNA-Seq Data"/>
-        <reference name="dataSource" ref_id="1_1"/>
-    </item>
-    <item id="7_28" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.05949"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Esophagus - Gastroesophageal Junction"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_29" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.03987"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Esophagus - Mucosa"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_20" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.06999"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Brain - Substantia nigra"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_48" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.063895"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Stomach"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="4_1" class="Organism">
-        <attribute name="taxonId" value="9606"/>
-    </item>
-    <item id="7_33" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.08724"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Heart - Left Ventricle"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_4" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.03976"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Artery - Aorta"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_8" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.089315"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Brain - Amygdala"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_37" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.03569"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Minor Salivary Gland"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_30" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.055465"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Esophagus - Muscularis"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_14" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.08063"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Brain - Frontal Cortex (BA9)"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_25" class="RNASeqResult">
-        <attribute name="expressionScore" value="0"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Cervix - Endocervix"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="5_2" class="SNP">
-        <attribute name="pValue" value="7.05065e-06"/>
-        <attribute name="primaryIdentifier" value="1_1301504_G_T_b37"/>
-        <attribute name="tissue" value="Liver"/>
-        <attribute name="tssDistance" value="736484"/>
-        <reference name="gene" ref_id="3_1"/>
-        <reference name="organism" ref_id="4_1"/>
-        <reference name="sequenceOntologyTerm" ref_id="6_1"/>
-        <collection name="dataSets"><reference ref_id="2_2"/></collection>
-    </item>
-    <item id="7_2" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.05054"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Adipose - Visceral (Omentum)"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_16" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.07874"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Brain - Hypothalamus"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_32" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.06724"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Heart - Atrial Appendage"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_23" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.03682"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Cells - Transformed fibroblasts"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_31" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.0369"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Fallopian Tube"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_38" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.062785"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Muscle - Skeletal"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_47" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.07025"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Spleen"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_10" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.07587"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Brain - Caudate (basal ganglia)"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_5" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.04386"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Artery - Coronary"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_3" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.0746"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Adrenal Gland"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_18" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.075745"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Brain - Putamen (basal ganglia)"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="5_3" class="SNP">
-        <attribute name="pValue" value="6.13432e-07"/>
-        <attribute name="primaryIdentifier" value="1_1384429_G_A_b37"/>
-        <attribute name="tissue" value="Liver"/>
-        <attribute name="tssDistance" value="819409"/>
-        <reference name="gene" ref_id="3_1"/>
-        <reference name="organism" ref_id="4_1"/>
-        <reference name="sequenceOntologyTerm" ref_id="6_1"/>
-        <collection name="dataSets"><reference ref_id="2_2"/></collection>
-    </item>
-    <item id="7_46" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.06089"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Small Intestine - Terminal Ileum"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_19" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.07473"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Brain - Spinal cord (cervical c-1)"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_24" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.03333"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Cervix - Ectocervix"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_1" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.056945"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Adipose - Subcutaneous"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_42" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.04817"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Pituitary"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_52" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.03386"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Vagina"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_40" class="RNASeqResult">
-        <attribute name="expressionScore" value="0.03514"/>
-        <attribute name="expressionType" value="TPM"/>
-        <attribute name="tissue" value="Ovary"/>
-        <reference name="gene" ref_id="3_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="5_4" class="SNP">
-        <attribute name="pValue" value="1.31112e-05"/>
-        <attribute name="primaryIdentifier" value="1_1439571_G_T_b37"/>
-        <attribute name="tissue" value="Liver"/>
-        <attribute name="tssDistance" value="874551"/>
-        <reference name="gene" ref_id="3_1"/>
-        <reference name="organism" ref_id="4_1"/>
-        <reference name="sequenceOntologyTerm" ref_id="6_1"/>
-        <collection name="dataSets"><reference ref_id="2_2"/></collection>
-    </item>
+<item id="5_17" class="RNASeqResult">
+<attribute name="expressionScore" value="0.06842"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Brain - Nucleus accumbens (basal ganglia)"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_3" class="RNASeqResult">
+<attribute name="expressionScore" value="0.0746"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Adrenal Gland"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_10" class="RNASeqResult">
+<attribute name="expressionScore" value="0.07587"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Brain - Caudate (basal ganglia)"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_26" class="RNASeqResult">
+<attribute name="expressionScore" value="0.05467"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Colon - Sigmoid"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_19" class="RNASeqResult">
+<attribute name="expressionScore" value="0.07473"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Brain - Spinal cord (cervical c-1)"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_36" class="RNASeqResult">
+<attribute name="expressionScore" value="0.06655"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Lung"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_5" class="RNASeqResult">
+<attribute name="expressionScore" value="0.04386"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Artery - Coronary"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_18" class="RNASeqResult">
+<attribute name="expressionScore" value="0.075745"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Brain - Putamen (basal ganglia)"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_11" class="RNASeqResult">
+<attribute name="expressionScore" value="0.085395"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Brain - Cerebellar Hemisphere"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_1" class="RNASeqResult">
+<attribute name="expressionScore" value="0.056945"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Adipose - Subcutaneous"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_7" class="RNASeqResult">
+<attribute name="expressionScore" value="0.05878"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Bladder"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_28" class="RNASeqResult">
+<attribute name="expressionScore" value="0.05949"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Esophagus - Gastroesophageal Junction"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="0_1" class="Ontology">
+<attribute name="name" value="Sequence Ontology"/>
+<attribute name="url" value="http://www.sequenceontology.org"/>
+</item>
+<item id="5_40" class="RNASeqResult">
+<attribute name="expressionScore" value="0.03514"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Ovary"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_21" class="RNASeqResult">
+<attribute name="expressionScore" value="0.05648"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Breast - Mammary Tissue"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_45" class="RNASeqResult">
+<attribute name="expressionScore" value="0.05982"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Skin - Sun Exposed (Lower leg)"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="2_2" class="DataSet">
+<attribute name="name" value="Single-Tissue cis-eQTL Data"/>
+<reference name="dataSource" ref_id="1_1"/>
+</item>
+<item id="6_4" class="SNP">
+<attribute name="pValue" value="1.31112e-05"/>
+<attribute name="primaryIdentifier" value="1_1439571_G_T_b37"/>
+<attribute name="tissue" value="Liver"/>
+<attribute name="tssDistance" value="874551"/>
+<reference name="gene" ref_id="3_1"/>
+<reference name="organism" ref_id="4_1"/>
+<reference name="sequenceOntologyTerm" ref_id="7_1"/>
+<collection name="dataSets"><reference ref_id="2_2"/></collection>
+</item>
+<item id="5_20" class="RNASeqResult">
+<attribute name="expressionScore" value="0.06999"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Brain - Substantia nigra"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_48" class="RNASeqResult">
+<attribute name="expressionScore" value="0.063895"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Stomach"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_39" class="RNASeqResult">
+<attribute name="expressionScore" value="0.056495"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Nerve - Tibial"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="3_1" class="Gene">
+<attribute name="primaryIdentifier" value="123"/>
+<reference name="organism" ref_id="4_1"/>
+<reference name="sequenceOntologyTerm" ref_id="7_2"/>
+<collection name="SNPs"><reference ref_id="6_1"/><reference ref_id="6_2"/><reference ref_id="6_3"/><reference ref_id="6_4"/><reference ref_id="6_5"/><reference ref_id="6_6"/><reference ref_id="6_7"/><reference ref_id="6_8"/><reference ref_id="6_9"/></collection>
+<collection name="dataSets"><reference ref_id="2_1"/><reference ref_id="2_2"/></collection>
+<collection name="rnaSeqResults"><reference ref_id="5_1"/><reference ref_id="5_2"/><reference ref_id="5_3"/><reference ref_id="5_4"/><reference ref_id="5_5"/><reference ref_id="5_6"/><reference ref_id="5_7"/><reference ref_id="5_8"/><reference ref_id="5_9"/><reference ref_id="5_10"/><reference ref_id="5_11"/><reference ref_id="5_12"/><reference ref_id="5_13"/><reference ref_id="5_14"/><reference ref_id="5_15"/><reference ref_id="5_16"/><reference ref_id="5_17"/><reference ref_id="5_18"/><reference ref_id="5_19"/><reference ref_id="5_20"/><reference ref_id="5_21"/><reference ref_id="5_22"/><reference ref_id="5_23"/><reference ref_id="5_24"/><reference ref_id="5_25"/><reference ref_id="5_26"/><reference ref_id="5_27"/><reference ref_id="5_28"/><reference ref_id="5_29"/><reference ref_id="5_30"/><reference ref_id="5_31"/><reference ref_id="5_32"/><reference ref_id="5_33"/><reference ref_id="5_34"/><reference ref_id="5_35"/><reference ref_id="5_36"/><reference ref_id="5_37"/><reference ref_id="5_38"/><reference ref_id="5_39"/><reference ref_id="5_40"/><reference ref_id="5_41"/><reference ref_id="5_42"/><reference ref_id="5_43"/><reference ref_id="5_44"/><reference ref_id="5_45"/><reference ref_id="5_46"/><reference ref_id="5_47"/><reference ref_id="5_48"/><reference ref_id="5_49"/><reference ref_id="5_50"/><reference ref_id="5_51"/><reference ref_id="5_52"/><reference ref_id="5_53"/></collection>
+</item>
+<item id="5_50" class="RNASeqResult">
+<attribute name="expressionScore" value="0.05835"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Thyroid"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="6_7" class="SNP">
+<attribute name="pValue" value="1.31112e-05"/>
+<attribute name="primaryIdentifier" value="1_1465688_T_TAGTC_b37"/>
+<attribute name="tissue" value="Liver"/>
+<attribute name="tssDistance" value="900668"/>
+<reference name="gene" ref_id="3_1"/>
+<reference name="organism" ref_id="4_1"/>
+<reference name="sequenceOntologyTerm" ref_id="7_1"/>
+<collection name="dataSets"><reference ref_id="2_2"/></collection>
+</item>
+<item id="5_37" class="RNASeqResult">
+<attribute name="expressionScore" value="0.03569"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Minor Salivary Gland"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="1_1" class="DataSource">
+<attribute name="name" value="GTEx portal"/>
+</item>
+<item id="5_4" class="RNASeqResult">
+<attribute name="expressionScore" value="0.03976"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Artery - Aorta"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_8" class="RNASeqResult">
+<attribute name="expressionScore" value="0.089315"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Brain - Amygdala"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_9" class="RNASeqResult">
+<attribute name="expressionScore" value="0.07901"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Brain - Anterior cingulate cortex (BA24)"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_32" class="RNASeqResult">
+<attribute name="expressionScore" value="0.06724"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Heart - Atrial Appendage"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="6_3" class="SNP">
+<attribute name="pValue" value="6.13432e-07"/>
+<attribute name="primaryIdentifier" value="1_1384429_G_A_b37"/>
+<attribute name="tissue" value="Liver"/>
+<attribute name="tssDistance" value="819409"/>
+<reference name="gene" ref_id="3_1"/>
+<reference name="organism" ref_id="4_1"/>
+<reference name="sequenceOntologyTerm" ref_id="7_1"/>
+<collection name="dataSets"><reference ref_id="2_2"/></collection>
+</item>
+<item id="5_38" class="RNASeqResult">
+<attribute name="expressionScore" value="0.062785"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Muscle - Skeletal"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="2_1" class="DataSet">
+<attribute name="name" value="RNA-Seq Data"/>
+<reference name="dataSource" ref_id="1_1"/>
+</item>
+<item id="7_1" class="SOTerm">
+<attribute name="name" value="SNP"/>
+<reference name="ontology" ref_id="0_1"/>
+</item>
+<item id="5_15" class="RNASeqResult">
+<attribute name="expressionScore" value="0.08286"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Brain - Hippocampus"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_46" class="RNASeqResult">
+<attribute name="expressionScore" value="0.06089"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Small Intestine - Terminal Ileum"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="4_1" class="Organism">
+<attribute name="taxonId" value="9606"/>
+</item>
+<item id="5_24" class="RNASeqResult">
+<attribute name="expressionScore" value="0.03333"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Cervix - Ectocervix"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_42" class="RNASeqResult">
+<attribute name="expressionScore" value="0.04817"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Pituitary"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="6_1" class="SNP">
+<attribute name="pValue" value="7.05065e-06"/>
+<attribute name="primaryIdentifier" value="1_1297836_G_A_b37"/>
+<attribute name="tissue" value="Liver"/>
+<attribute name="tssDistance" value="732816"/>
+<reference name="gene" ref_id="3_1"/>
+<reference name="organism" ref_id="4_1"/>
+<reference name="sequenceOntologyTerm" ref_id="7_1"/>
+<collection name="dataSets"><reference ref_id="2_2"/></collection>
+</item>
+<item id="5_44" class="RNASeqResult">
+<attribute name="expressionScore" value="0.05417"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Skin - Not Sun Exposed (Suprapubic)"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_52" class="RNASeqResult">
+<attribute name="expressionScore" value="0.03386"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Vagina"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_29" class="RNASeqResult">
+<attribute name="expressionScore" value="0.03987"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Esophagus - Mucosa"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="6_5" class="SNP">
+<attribute name="pValue" value="1.37072e-05"/>
+<attribute name="primaryIdentifier" value="1_1442203_C_T_b37"/>
+<attribute name="tissue" value="Liver"/>
+<attribute name="tssDistance" value="877183"/>
+<reference name="gene" ref_id="3_1"/>
+<reference name="organism" ref_id="4_1"/>
+<reference name="sequenceOntologyTerm" ref_id="7_1"/>
+<collection name="dataSets"><reference ref_id="2_2"/></collection>
+</item>
+<item id="5_53" class="RNASeqResult">
+<attribute name="expressionScore" value="0.1175"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Whole Blood"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_35" class="RNASeqResult">
+<attribute name="expressionScore" value="0.06259"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Liver"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_33" class="RNASeqResult">
+<attribute name="expressionScore" value="0.08724"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Heart - Left Ventricle"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_22" class="RNASeqResult">
+<attribute name="expressionScore" value="0.046275"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Cells - EBV-transformed lymphocytes"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="7_2" class="SOTerm">
+<attribute name="name" value="gene"/>
+<reference name="ontology" ref_id="0_1"/>
+</item>
+<item id="5_30" class="RNASeqResult">
+<attribute name="expressionScore" value="0.055465"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Esophagus - Muscularis"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_25" class="RNASeqResult">
+<attribute name="expressionScore" value="0"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Cervix - Endocervix"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_34" class="RNASeqResult">
+<attribute name="expressionScore" value="0.06347"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Kidney - Cortex"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_14" class="RNASeqResult">
+<attribute name="expressionScore" value="0.08063"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Brain - Frontal Cortex (BA9)"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_27" class="RNASeqResult">
+<attribute name="expressionScore" value="0.06107"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Colon - Transverse"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_16" class="RNASeqResult">
+<attribute name="expressionScore" value="0.07874"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Brain - Hypothalamus"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_49" class="RNASeqResult">
+<attribute name="expressionScore" value="1.76"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Testis"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_41" class="RNASeqResult">
+<attribute name="expressionScore" value="0.027255"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Pancreas"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="6_8" class="SNP">
+<attribute name="pValue" value="1.31112e-05"/>
+<attribute name="primaryIdentifier" value="1_1468125_C_G_b37"/>
+<attribute name="tissue" value="Liver"/>
+<attribute name="tssDistance" value="903105"/>
+<reference name="gene" ref_id="3_1"/>
+<reference name="organism" ref_id="4_1"/>
+<reference name="sequenceOntologyTerm" ref_id="7_1"/>
+<collection name="dataSets"><reference ref_id="2_2"/></collection>
+</item>
+<item id="5_2" class="RNASeqResult">
+<attribute name="expressionScore" value="0.05054"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Adipose - Visceral (Omentum)"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_23" class="RNASeqResult">
+<attribute name="expressionScore" value="0.03682"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Cells - Transformed fibroblasts"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="6_6" class="SNP">
+<attribute name="pValue" value="4.86499e-08"/>
+<attribute name="primaryIdentifier" value="1_1448024_C_T_b37"/>
+<attribute name="tissue" value="Liver"/>
+<attribute name="tssDistance" value="883004"/>
+<reference name="gene" ref_id="3_1"/>
+<reference name="organism" ref_id="4_1"/>
+<reference name="sequenceOntologyTerm" ref_id="7_1"/>
+<collection name="dataSets"><reference ref_id="2_2"/></collection>
+</item>
+<item id="5_51" class="RNASeqResult">
+<attribute name="expressionScore" value="0.03849"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Uterus"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_31" class="RNASeqResult">
+<attribute name="expressionScore" value="0.0369"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Fallopian Tube"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_43" class="RNASeqResult">
+<attribute name="expressionScore" value="0.065955"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Prostate"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_47" class="RNASeqResult">
+<attribute name="expressionScore" value="0.07025"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Spleen"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_13" class="RNASeqResult">
+<attribute name="expressionScore" value="0.0801"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Brain - Cortex"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_6" class="RNASeqResult">
+<attribute name="expressionScore" value="0.04977"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Artery - Tibial"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="6_2" class="SNP">
+<attribute name="pValue" value="7.05065e-06"/>
+<attribute name="primaryIdentifier" value="1_1301504_G_T_b37"/>
+<attribute name="tissue" value="Liver"/>
+<attribute name="tssDistance" value="736484"/>
+<reference name="gene" ref_id="3_1"/>
+<reference name="organism" ref_id="4_1"/>
+<reference name="sequenceOntologyTerm" ref_id="7_1"/>
+<collection name="dataSets"><reference ref_id="2_2"/></collection>
+</item>
+<item id="6_9" class="SNP">
+<attribute name="pValue" value="1.31112e-05"/>
+<attribute name="primaryIdentifier" value="1_1469087_A_ATT_b37"/>
+<attribute name="tissue" value="Liver"/>
+<attribute name="tssDistance" value="904067"/>
+<reference name="gene" ref_id="3_1"/>
+<reference name="organism" ref_id="4_1"/>
+<reference name="sequenceOntologyTerm" ref_id="7_1"/>
+<collection name="dataSets"><reference ref_id="2_2"/></collection>
+</item>
+<item id="5_12" class="RNASeqResult">
+<attribute name="expressionScore" value="0.08034"/>
+<attribute name="expressionType" value="TPM"/>
+<attribute name="tissue" value="Brain - Cerebellum"/>
+<reference name="gene" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
 </items>
