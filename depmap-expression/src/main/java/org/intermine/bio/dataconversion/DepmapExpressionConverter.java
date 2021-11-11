@@ -35,16 +35,14 @@ import org.intermine.xml.full.Item;
 public class DepmapExpressionConverter extends BioDirectoryConverter
 {
     //
-    private static final String DATASET_TITLE = "DepMap Expression Data";
-    private static final String DATA_SOURCE_NAME = "DepMap Public 20Q3";
+    private static final String DATASET_TITLE = "depmap-expression";
+    private static final String DATA_SOURCE_NAME = "depmap";
 
     private static final String TAXON_ID = "9606"; // Human Taxon ID
 
     private static final String EXPRESSION_CSV_FILE = "CCLE_expression.csv";
 
     private Map<String, String> genes = new HashMap<String, String>();
-    private Map<String, String> resolvedGenes = new HashMap<String, String>();
-    private Map<String, String> unresolvableGenes = new HashMap<String, String>();
     private Map<String, String> cellLines = new HashMap<String, String>();
 
     protected IdResolver rslv;
@@ -53,7 +51,7 @@ public class DepmapExpressionConverter extends BioDirectoryConverter
     private String organismIdentifier; // Not the taxon ID. It references the object that is created into the database.
 
     // Methods to integrate the data only for a list of genes
-    private static final String GENE_LIST_FILE = "/data/storm/targets/storm_targets_symbols.csv";
+    private static final String GENE_LIST_FILE = "";
     private ArrayList<String> processGeneList(String geneListFile) throws Exception {
         File geneListF = new File(geneListFile);
 
@@ -67,17 +65,32 @@ public class DepmapExpressionConverter extends BioDirectoryConverter
                 continue;
             }
 
-            if(unresolvableGenes.get(gene) != null) {
-                continue;
+            String resolvedGeneIdentifier = getGeneIdentifier(gene);
+            if(resolvedGeneIdentifier != null) {
+                geneListArray.add(resolvedGeneIdentifier);
             }
-            String geneId = getGeneId(gene);
-            if(geneId == null) {
-                continue;
-            }
-            geneListArray.add(geneId);
         }
 
         return geneListArray;
+    }
+
+    private String getGeneIdentifier(String geneSymbol) throws ObjectStoreException {
+        String resolvedIdentifier = resolveGene(geneSymbol);
+        if (StringUtils.isEmpty(resolvedIdentifier)) {
+            return null;
+        }
+        String geneId = genes.get(resolvedIdentifier);
+        if (geneId == null) {
+            Item gene = createItem("Gene");
+            gene.setAttribute("primaryIdentifier", resolvedIdentifier);
+          //  gene.setAttribute("symbol", primaryIdentifier);
+            gene.setAttribute("symbol", geneSymbol);
+            gene.setReference("organism", getOrganism(TAXON_ID));
+            store(gene);
+            geneId = gene.getIdentifier();
+            genes.put(resolvedIdentifier, geneId);
+        }
+        return geneId;
     }
     //
 
@@ -156,14 +169,8 @@ public class DepmapExpressionConverter extends BioDirectoryConverter
                 String theGeneForThisItem = genes.get(i-1);
 
                 if(!geneList.isEmpty()) {
-                    if(unresolvableGenes.get(theGeneForThisItem) != null) {
-                        continue;
-                    }
-                    String geneId = getGeneId(theGeneForThisItem);
-                    if(geneId == null) {
-                        continue;
-                    }
-                    if(!geneList.contains(geneId)) {
+                    String resolvedGene = getGeneIdentifier(theGeneForThisItem);
+                    if(!geneList.contains(resolvedGene)) {
                         continue;
                     }
                 }
@@ -179,11 +186,9 @@ public class DepmapExpressionConverter extends BioDirectoryConverter
                 }
 
                 if(!theGeneForThisItem.isEmpty()) {
-                    if(unresolvableGenes.get(theGeneForThisItem) != null) {
-                        continue;
-                    }
                     String geneId = getGeneId(theGeneForThisItem);
-                    if(geneId == null) {
+
+                    if (StringUtils.isEmpty(geneId)) {
                         continue;
                     }
 
@@ -204,44 +209,36 @@ public class DepmapExpressionConverter extends BioDirectoryConverter
         }
     }
 
-    private String getGeneId(String identifier) throws ObjectStoreException {
-        String geneId = null;
-        try {
-            String resolvedIdentifier = resolveGene(identifier);
-            if(resolvedIdentifier != null) {
-                geneId = genes.get(resolvedIdentifier);
-                if (geneId == null) {
-                    Item gene = createItem("Gene");
-                    gene.setAttribute("primaryIdentifier", resolvedIdentifier);
-                    store(gene);
-                    geneId = gene.getIdentifier();
-                    genes.put(resolvedIdentifier, geneId);
-                }
-                return geneId;
-            } else {
-                return resolvedIdentifier;
-            }
-        } catch (Exception e) {
-            LOG.info("getGeneId: failed to resolve gene: " + identifier);
+    private String getGeneId(String primaryIdentifier) throws ObjectStoreException {
+        String resolvedIdentifier = resolveGene(primaryIdentifier);
+        if (StringUtils.isEmpty(resolvedIdentifier)) {
             return null;
         }
+        String geneId = genes.get(resolvedIdentifier);
+        if (geneId == null) {
+            Item gene = createItem("Gene");
+            gene.setAttribute("primaryIdentifier", resolvedIdentifier);
+            gene.setAttribute("symbol", primaryIdentifier);
+            gene.setReference("organism", getOrganism(TAXON_ID));
+            store(gene);
+            geneId = gene.getIdentifier();
+            genes.put(resolvedIdentifier, geneId);
+        }
+        return geneId;
     }
 
     private String resolveGene(String identifier) {
-        String id = null;
+        String id = identifier;
 
-        if(resolvedGenes.get(identifier) != null) {
-            id = resolvedGenes.get(identifier);
-        } else {
-            if (rslv != null && rslv.hasTaxon(TAXON_ID)) {
-                int resCount = rslv.countResolutions(TAXON_ID, identifier);
-                if (resCount != 1) {
-                    unresolvableGenes.put(identifier, identifier);
-                    return null;
-                }
-                id = rslv.resolveId(TAXON_ID, identifier).iterator().next();
-                resolvedGenes.put(identifier, id);
+        if (rslv != null && rslv.hasTaxon(TAXON_ID)) {
+            int resCount = rslv.countResolutions(TAXON_ID, identifier);
+            if (resCount != 1) {
+                LOG.info("RESOLVER: failed to resolve gene to one identifier, ignoring gene: "
+                        + identifier + " count: " + resCount + " Human identifier: "
+                        + rslv.resolveId(TAXON_ID, identifier));
+                return null;
             }
+            id = rslv.resolveId(TAXON_ID, identifier).iterator().next();
         }
         return id;
     }

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
 import org.intermine.dataconversion.ItemWriter;
 import org.intermine.metadata.Model;
 import org.intermine.objectstore.ObjectStoreException;
@@ -31,9 +32,10 @@ import org.intermine.xml.full.Item;
  */
 public class DepmapSampleInfoConverter extends BioDirectoryConverter
 {
-    //
-    private static final String DATASET_TITLE = "DepMap Sample Info";
-    private static final String DATA_SOURCE_NAME = "DepMap Public 20Q3";
+    protected static final Logger LOG = Logger.getLogger(DepmapSampleInfoConverter.class);
+
+    private static final String DATASET_TITLE = "depmap-sample-info";
+    private static final String DATA_SOURCE_NAME = "depmap";
 
     private static final String TAXON_ID = "9606"; // Human Taxon ID
 
@@ -79,7 +81,10 @@ public class DepmapSampleInfoConverter extends BioDirectoryConverter
         Iterator<?> lineIter = FormattedTextParser.parseCsvDelimitedReader(reader);
         // Skip header
         lineIter.next();
+        int counter = 0;
         while (lineIter.hasNext()) {
+            counter++;
+            LOG.info("AAA " + counter);
             String[] line = (String[]) lineIter.next();
 
             String DepMapID = line[0];
@@ -88,18 +93,19 @@ public class DepmapSampleInfoConverter extends BioDirectoryConverter
                 continue;
             }
 
+            // it seems there are mis-alignments
             String ShortName = line[1];
-            String CCLEname = line[2];
-            String Lineage = line[21];
-            String LineageSubtype = line[22];
-            String LineageSubsubtype = line[23];
-            String Sex = line[5];
-            String PrimaryOrMetastasis = line[14];
-            String Disease = line[15];
-            String DiseaseSubtype = line[16];
+            String CCLEname = line[3]; //2
+            String Lineage = line[22]; //21
+            String LineageSubtype = line[23];
+            String LineageSubsubtype = line[24];
+            String Sex = line[6]; //5
+            String PrimaryOrMetastasis = line[16]; //14
+            String Disease = line[17]; //15
+            String DiseaseSubtype = line[18]; //17
             String Age = "Not specified";
-            if(!line[17].isEmpty()) {
-                Age = Double.toString(Math.floor(Double.valueOf(line[17])));
+            if(!line[19].isEmpty() && line[19].length() < 4) { // to avoid strings; e.g. "Unknown"
+                Age = Double.toString(Math.floor(Double.valueOf(line[19])));
             }
 
             if(Lineage.isEmpty()) {
@@ -181,6 +187,8 @@ public class DepmapSampleInfoConverter extends BioDirectoryConverter
             } else {
                 cellLineItem.setAttribute("Age", "Not specified");
             }
+
+            cellLineItem.setReference("organism", getOrganism(TAXON_ID));
 
             store(cellLineItem);
             cellLines.put(DepMapID, cellLineItem.getIdentifier());
