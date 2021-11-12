@@ -10,10 +10,6 @@
 <collection name="dataSets"><reference ref_id="2_1"/></collection>
 <collection name="diseases"><reference ref_id="7_1"/></collection>
 </item>
-<item id="2_1" class="DataSet">
-<attribute name="name" value="ClinVar data set"/>
-<reference name="dataSource" ref_id="1_1"/>
-</item>
 <item id="5_2" class="Allele">
 <attribute name="alternate" value="A"/>
 <attribute name="clinicalSignificance" value="Pathogenic"/>
@@ -70,11 +66,8 @@
 <item id="6_1" class="Organism">
 <attribute name="taxonId" value="9606"/>
 </item>
-<item id="7_1" class="Disease">
-<attribute name="primaryIdentifier" value="OMIM:114500"/>
-</item>
-<item id="7_2" class="Disease">
-<attribute name="primaryIdentifier" value="OMIM:604367"/>
+<item id="1_1" class="DataSource">
+<attribute name="name" value="NCBI"/>
 </item>
 <item id="5_3" class="Allele">
 <attribute name="alternate" value="G"/>
@@ -131,6 +124,16 @@
 <reference name="gene" ref_id="3_2"/>
 <reference name="organism" ref_id="6_1"/>
 <collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="7_1" class="Disease">
+<attribute name="primaryIdentifier" value="OMIM:114500"/>
+</item>
+<item id="7_2" class="Disease">
+<attribute name="primaryIdentifier" value="OMIM:604367"/>
+</item>
+<item id="2_1" class="DataSet">
+<attribute name="name" value="clinvar"/>
+<reference name="dataSource" ref_id="1_1"/>
 </item>
 <item id="3_1" class="Gene">
 <attribute name="primaryIdentifier" value="133522"/>
@@ -189,9 +192,6 @@
 <attribute name="name" value="gene"/>
 <reference name="ontology" ref_id="0_1"/>
 <collection name="dataSets"><reference ref_id="2_1"/></collection>
-</item>
-<item id="1_1" class="DataSource">
-<attribute name="name" value="ClinVar"/>
 </item>
 <item id="5_12" class="Allele">
 <attribute name="alternate" value="T"/>

@@ -1,57 +1,57 @@
 <items>
-    <item id="8_1" class="SNP">
-        <attribute name="primaryIdentifier" value="rs3736830"/>
-        <reference name="organism" ref_id="5_1"/>
-        <reference name="sequenceOntologyTerm" ref_id="6_2"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="1_1" class="DataSource">
-        <attribute name="name" value="Public Health Genomics Knowledge Base"/>
-    </item>
-    <item id="6_2" class="SOTerm">
-        <attribute name="name" value="SNP"/>
-        <reference name="ontology" ref_id="0_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="7_1" class="GWASResult">
-        <attribute name="associatedVariantRiskAllele" value="?"/>
-        <attribute name="pValue" value="9.0E-6"/>
-        <attribute name="phenotype" value="Inflammatory skin disease"/>
-        <reference name="SNP" ref_id="8_1"/>
-        <reference name="study" ref_id="9_1"/>
-        <collection name="associatedGenes"><reference ref_id="4_1"/></collection>
-    </item>
-    <item id="3_1" class="Publication">
-        <attribute name="pubMedId" value="25574825"/>
-    </item>
-    <item id="0_1" class="Ontology">
-        <attribute name="name" value="Sequence Ontology"/>
-        <attribute name="url" value="http://www.sequenceontology.org"/>
-    </item>
-    <item id="2_1" class="DataSet">
-        <attribute name="name" value="HuGE navigator and GWAS catalog"/>
-        <reference name="dataSource" ref_id="1_1"/>
-    </item>
-    <item id="6_1" class="SOTerm">
-        <attribute name="name" value="gene"/>
-        <reference name="ontology" ref_id="0_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="4_1" class="Gene">
-        <attribute name="primaryIdentifier" value="ENSG00000102753"/>
-        <reference name="organism" ref_id="5_1"/>
-        <reference name="sequenceOntologyTerm" ref_id="6_1"/>
-        <collection name="dataSets"><reference ref_id="2_1"/></collection>
-    </item>
-    <item id="5_1" class="Organism">
-        <attribute name="taxonId" value="9606"/>
-    </item>
-    <item id="9_1" class="GWAS">
-        <attribute name="firstAuthor" value="Baurecht H"/>
-        <attribute name="initialSample" value="2,079 European ancestry atopic dermatitis cases, 4,212 European ancestry psoriasis cases, 11,899 European ancestry controls"/>
-        <attribute name="name" value="Genome-wide comparative analysis of atopic dermatitis and psoriasis gives insight into opposing genetic mechanisms."/>
-        <attribute name="replicateSample" value="NA"/>
-        <attribute name="year" value="2015"/>
-        <reference name="publication" ref_id="3_1"/>
-    </item>
+<item id="8_1" class="SNP">
+<attribute name="primaryIdentifier" value="rs3736830"/>
+<reference name="organism" ref_id="5_1"/>
+<reference name="sequenceOntologyTerm" ref_id="6_2"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="6_2" class="SOTerm">
+<attribute name="name" value="SNP"/>
+<reference name="ontology" ref_id="0_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="7_1" class="GWASResult">
+<attribute name="associatedVariantRiskAllele" value="?"/>
+<attribute name="pValue" value="9.0E-6"/>
+<attribute name="phenotype" value="Inflammatory skin disease"/>
+<reference name="SNP" ref_id="8_1"/>
+<reference name="study" ref_id="9_1"/>
+<collection name="associatedGenes"><reference ref_id="4_1"/></collection>
+</item>
+<item id="3_1" class="Publication">
+<attribute name="pubMedId" value="25574825"/>
+</item>
+<item id="2_1" class="DataSet">
+<attribute name="name" value="huge-gwas"/>
+<reference name="dataSource" ref_id="1_1"/>
+</item>
+<item id="0_1" class="Ontology">
+<attribute name="name" value="Sequence Ontology"/>
+<attribute name="url" value="http://www.sequenceontology.org"/>
+</item>
+<item id="1_1" class="DataSource">
+<attribute name="name" value="GWAS catalog"/>
+</item>
+<item id="6_1" class="SOTerm">
+<attribute name="name" value="gene"/>
+<reference name="ontology" ref_id="0_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="4_1" class="Gene">
+<attribute name="primaryIdentifier" value="ENSG00000102753"/>
+<reference name="organism" ref_id="5_1"/>
+<reference name="sequenceOntologyTerm" ref_id="6_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_1" class="Organism">
+<attribute name="taxonId" value="9606"/>
+</item>
+<item id="9_1" class="GWAS">
+<attribute name="firstAuthor" value="Baurecht H"/>
+<attribute name="initialSample" value="2,079 European ancestry atopic dermatitis cases, 4,212 European ancestry psoriasis cases, 11,899 European ancestry controls"/>
+<attribute name="name" value="Genome-wide comparative analysis of atopic dermatitis and psoriasis gives insight into opposing genetic mechanisms."/>
+<attribute name="replicateSample" value="NA"/>
+<attribute name="year" value="2015"/>
+<reference name="publication" ref_id="3_1"/>
+</item>
 </items>

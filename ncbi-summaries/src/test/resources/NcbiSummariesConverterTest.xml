@@ -1,11 +1,15 @@
 <items>
-<item id="1_1" class="DataSource">
-<attribute name="name" value="NCBI"/>
+<item id="2_1" class="DataSet">
+<attribute name="name" value="ncbi-summaries"/>
+<reference name="dataSource" ref_id="1_1"/>
 </item>
 <item id="5_1" class="SOTerm">
 <attribute name="name" value="gene"/>
 <reference name="ontology" ref_id="0_1"/>
 <collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="1_1" class="DataSource">
+<attribute name="name" value="NCBI"/>
 </item>
 <item id="3_2" class="Gene">
 <attribute name="description" value="Alpha-2-macroglobulin is a protease inhibitor and cytokine transporter. It inhibits many proteases, including trypsin, thrombin and collagenase. A2M is implicated in Alzheimer disease (AD) due to its ability to mediate the clearance and degradation of A-beta, the major component of beta-amyloid deposits. [provided by RefSeq, Jul 2008]"/>
@@ -41,10 +45,6 @@
 </item>
 <item id="4_1" class="Organism">
 <attribute name="taxonId" value="9606"/>
-</item>
-<item id="2_1" class="DataSet">
-<attribute name="name" value="NCBI Gene summaries"/>
-<reference name="dataSource" ref_id="1_1"/>
 </item>
 <item id="3_1" class="Gene">
 <attribute name="description" value="The V0 domain consists of five different subunits: a, c, c', c&quot;, and d."/>
