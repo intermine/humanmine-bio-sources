@@ -251,7 +251,7 @@ public class GtexConverter extends BioDirectoryConverter
         if (rslv != null && rslv.hasTaxon(TAXON_ID)) {
             int resCount = rslv.countResolutions(TAXON_ID, ensemblIdentifier);
             if (resCount != 1) {
-                LOG.info("RESOLVER: failed to resolve gene to one identifier, ignoring gene: "
+                LOG.debug("RESOLVER: failed to resolve gene to one identifier, ignoring gene: "
                         + ensemblIdentifier + " count: " + resCount + " Human identifier: "
                         + rslv.resolveId(TAXON_ID, ensemblIdentifier));
                 return null;
