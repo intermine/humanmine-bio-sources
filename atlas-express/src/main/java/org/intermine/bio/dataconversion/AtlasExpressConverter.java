@@ -30,7 +30,7 @@ import org.intermine.xml.full.Item;
  */
 public class AtlasExpressConverter extends BioFileConverter
 {
-    private static final String DATASET_TITLE = "E-MTAB-513";
+    private static final String DATASET_TITLE = "atlas-express";
     private static final String DATA_SOURCE_NAME = "ArrayExpress";
     private Map<String, String> genes = new HashMap<String, String>();
     protected IdResolver rslv;

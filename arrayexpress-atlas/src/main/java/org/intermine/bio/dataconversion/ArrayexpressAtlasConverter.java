@@ -40,7 +40,7 @@ import org.json.JSONObject;
 public class ArrayexpressAtlasConverter extends BioDirectoryConverter
 {
     //
-    private static final String DATASET_TITLE = "E-MTAB-62";
+    private static final String DATASET_TITLE = "arrayexpress-atlas";
     private static final String DATA_SOURCE_NAME = "ArrayExpress";
     private Map<String, String> genes = new HashMap<String, String>();
     protected IdResolver rslv;

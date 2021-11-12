@@ -33,9 +33,8 @@ import org.intermine.xml.full.Item;
  */
 public class DisgenetDiseaseAssociationsConverter extends BioDirectoryConverter
 {
-    private static final String DATASET_TITLE = "DisGeNET";
-    private static final String DATA_SOURCE_NAME =
-            "Curated gene-disease associations (v7 June 2020)";
+    private static final String DATASET_TITLE = "disgenet-disease-associations";
+    private static final String DATA_SOURCE_NAME = "disgenet-disease-associations";
 
     private static final String TAXON_ID = "9606"; // Human Taxon ID
     private static final String DISGENET_FILE = "curated_gene_disease_associations.tsv";

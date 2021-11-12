@@ -31,8 +31,8 @@ import org.intermine.xml.full.Item;
 public class MgiAllelesConverter extends BioFileConverter
 {
     //
-    private static final String DATASET_TITLE = "MGI Alleles";
-    private static final String DATA_SOURCE_NAME = "MGI";
+    private static final String DATASET_TITLE = "mgi-alleles";
+    private static final String DATA_SOURCE_NAME = "The Mouse genome database (MGD) from Mouse Genome Informatics (MGI)";
     private static final String MOUSE_TAXON = "10090";
 
     private Map<String, String> pubs = new HashMap<String, String>();

@@ -31,7 +31,7 @@ import org.intermine.xml.full.Item;
  */
 public class HgncConverter extends BioFileConverter
 {
-    private static final String DATASET_TITLE = "HGNC identifiers";
+    private static final String DATASET_TITLE = "hgnc";
     private static final String DATA_SOURCE_NAME = "HGNC";
     private Map<String, String> genes = new HashMap<String, String>();
     private static final String TAXON_ID = "9606";

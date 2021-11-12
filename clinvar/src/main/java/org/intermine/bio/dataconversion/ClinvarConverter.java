@@ -32,8 +32,8 @@ import org.intermine.xml.full.Item;
 public class ClinvarConverter extends BioFileConverter
 {
     private static final Logger LOG = Logger.getLogger(ClinvarConverter.class);
-    private static final String DATASET_TITLE = "ClinVar data set";
-    private static final String DATA_SOURCE_NAME = "ClinVar";
+    private static final String DATASET_TITLE = "clinvar";
+    private static final String DATA_SOURCE_NAME = "NCBI";
     private static final String ASSEMBLY = "GRCh38";
     private static final String TAXON_ID = "9606";
     private static final String DUMMY_GENE_ENTRY = "-1";

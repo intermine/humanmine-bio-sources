@@ -30,8 +30,8 @@ import org.intermine.xml.full.Item;
 public class HugeGwasConverter extends BioFileConverter
 {
     //
-    private static final String DATASET_TITLE = "HuGE navigator and GWAS catalog";
-    private static final String DATA_SOURCE_NAME = "Public Health Genomics Knowledge Base";
+    private static final String DATASET_TITLE = "huge-gwas";
+    private static final String DATA_SOURCE_NAME = "GWAS catalog";
 
     private Map<String, String> genes = new HashMap<String, String>();
     private Map<String, String> pubs = new HashMap<String, String>();

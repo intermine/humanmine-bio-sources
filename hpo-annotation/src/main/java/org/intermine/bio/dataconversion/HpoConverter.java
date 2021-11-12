@@ -40,8 +40,8 @@ import org.intermine.xml.full.Item;
 public class HpoConverter extends BioDirectoryConverter
 {
 
-    private static final String DATASET_TITLE = "Human Phenotype Ontology Annotations";
-    private static final String DATA_SOURCE_NAME = "HPO";
+    private static final String DATASET_TITLE = "hpo-annotation";
+    private static final String DATA_SOURCE_NAME = "Human Phenotype Ontology";
 
     private List<String> ignoreDbList = Arrays.asList("DECIPHER");
 

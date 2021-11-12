@@ -35,7 +35,7 @@ import org.xml.sax.SAXException;
  */
 public class OrphanetConverter extends BioFileConverter
 {
-    private static final String DATASET_TITLE = "Orphanet data set";
+    private static final String DATASET_TITLE = "orphanet";
     private static final String DATA_SOURCE_NAME = "Orphanet";
     private static final String PREFIX = "ORPHANET:";
     private static final String LICENCE = "https://creativecommons.org/licenses/by/4.0/";
