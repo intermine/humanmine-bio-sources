@@ -1,15 +1,10 @@
 buildscript {
     repositories {
         mavenLocal()
-        jcenter()
-        maven {
-            url "https://oss.jfrog.org/artifactory/oss-snapshot-local"
-        }
+        mavenCentral()
     }
     dependencies {
         classpath group: 'org.intermine', name: 'plugin', version: System.getProperty("imVersion")
-        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0"
-        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.6.2"
     }
 }
 
@@ -28,17 +23,13 @@ subprojects {
     apply plugin: 'dbmodel'
     apply plugin: 'biosource-dbmodel'
     apply plugin: "checkstyle"
-    apply plugin: 'com.jfrog.bintray'
 
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
 
     repositories {
         mavenLocal()
-        jcenter()
-        maven {
-            url "https://oss.jfrog.org/artifactory/oss-snapshot-local"
-        }
+        mavenCentral()
     }
 
     configurations {
@@ -47,7 +38,8 @@ subprojects {
     }
 
     dependencies {
-        compile group: 'log4j', name: 'log4j', version: '1.2.17'
+        compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.17.1'
+        compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.17.1'
         compile group: 'org.intermine', name: 'bio-core', version: bioVersion
         compile group : "org.intermine", name: "intermine-resources", version: imVersion // log4j
         compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
@@ -129,30 +121,6 @@ subprojects {
         archives sourcesJar
         archives javadocJar
     }
-
-    bintray {
-        user = System.getenv('BINTRAY_USER')
-        key = System.getenv('BINTRAY_KEY')
-        dryRun = false //[Default: false] Whether to run this as dry-run, without deploying
-        publish = true //[Default: false] Whether version should be auto published after an upload
-        override = true //[Default: false] Whether to override version artifacts already published
-        pkg {
-            repo = 'humanmine-sources'
-            name = project.name
-            userOrg = user
-            licenses = ['LGPL-2.1']
-            vcsUrl = 'https://github.com/intermine/humanmine-bio-sources.git'
-            publicDownloadNumbers = true
-            version {
-                name = '4.2.0'
-                desc = 'HumanMine 4.2.0'
-                vcsTag = 'humanmine-4.2.0'
-            }
-        }
-
-        configurations = ['archives']
-    }
-
 }
 
 task testReport(type: TestReport) {
