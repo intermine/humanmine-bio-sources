@@ -33,7 +33,7 @@ import org.intermine.util.FormattedTextParser;
 import org.intermine.xml.full.Item;
 
 /**
- * DataConverter to parse a HPO annotation file into Items.
+ * DataConverter to parse HPO annotation files into Items.
  *
  * @author Fengyuan Hu
  */
@@ -43,15 +43,14 @@ public class HpoConverter extends BioDirectoryConverter
     private static final String DATASET_TITLE = "hpo-annotation";
     private static final String DATA_SOURCE_NAME = "Human Phenotype Ontology";
 
+    // @TODO: why does DECIPHER get excluded?
     private List<String> ignoreDbList = Arrays.asList("DECIPHER");
 
-    private static final String HPOTEAM_FILE = "phenotype_annotation.tab";
+    private static final String ANN_FILE = "phenotype_annotation.tab";
     private static final String NEG_FILE = "phenotype_annotation_negated.tab";
     private static final String GENE_FILE = "genes_to_phenotype.txt";
-    private String omimFile = null;
-    private static final String GENE_ENTRY = "Asterisk";
-    private static final String GENE_PHENOTYPE_ENTRY = "Plus";
-    private static final String OBSOLETE = "Caret";
+
+    private String omimFile = null; // original filename should be "mim2gene.txt"
 
     private Map<String, Item> diseases = new HashMap<String, Item>();
     private Map<String, Item> hpoTerms = new HashMap<String, Item>();
@@ -79,23 +78,27 @@ public class HpoConverter extends BioDirectoryConverter
     public void process(File dataDir) throws Exception {
         Map<String, File> files = readFilesInDir(dataDir);
 
-        String[] requiredFiles = new String[] {HPOTEAM_FILE, NEG_FILE};
+        // check if all required files are available:
+        // @TODO: does it make sense to treat the OMIM file separately?
+        String[] requiredFiles = new String[] {GENE_FILE, ANN_FILE, NEG_FILE};
         Set<String> missingFiles = new HashSet<String>();
         for (String requiredFile : requiredFiles) {
             if (!files.containsKey(requiredFile)) {
                 missingFiles.add(requiredFile);
             }
         }
-
         if (!missingFiles.isEmpty()) {
-            throw new RuntimeException("Not all required files for the OMIM sources were found in: "
-                    + dataDir.getAbsolutePath() + ", was missing " + missingFiles);
+            throw new RuntimeException("Not all required files for the HPO sources were found in: "
+                    + dataDir.getAbsolutePath() + "\nMissing file(s):" + missingFiles);
+        }
+        if (omimFile == null) {
+            throw new RuntimeException("Path to OMIM input file ('mim2gene.txt') not defined. Set property 'hpo.disease.file' for source 'hpo-annotation' in 'project.xml'.");
         }
 
         ontologyItemId = storeOntology();
         processOMIMFile(new FileReader(omimFile));
         processGeneFile(new FileReader(files.get(GENE_FILE)));
-        processAnnotationFile(new FileReader(files.get(HPOTEAM_FILE)));
+        processAnnotationFile(new FileReader(files.get(ANN_FILE)));
         processAnnotationFile(new FileReader(files.get(NEG_FILE)));
     }
 
@@ -103,7 +106,7 @@ public class HpoConverter extends BioDirectoryConverter
      * HPO lists all OMIM IDs whether they are genes or diseases. There is no way to differeniate
      * the two. So instead we use the OMIM file which does label diseases and genes correctly.
      *
-     * @param fileName name of OMIM file that lists all diseases and OMIM identifiers
+     * @param fileName path to OMIM file that lists all diseases and OMIM identifiers
      */
     public void setHpoDiseaseFile(String fileName) {
         if (StringUtils.isNotEmpty(fileName)) {
@@ -141,7 +144,7 @@ public class HpoConverter extends BioDirectoryConverter
 
             Item disease = getDisease(diseaseId);
             if (disease == null) {
-                // whoops this is a gene. genes have OMIM IDs too. ignore.
+                // this shouldn't happen for the "genes_to_phenotype" file...
                 continue;
             }
             Item gene = getGene(identifier);
@@ -339,18 +342,17 @@ public class HpoConverter extends BioDirectoryConverter
 
         while (lineIter.hasNext()) {
             String[] line = (String[]) lineIter.next();
-
-            String prefix = line[0].trim();
-            String mimId = line[1];
-            // String preferredTitles = line[2]; - don't need names
-
-            // skip header AND genes
-            if (GENE_ENTRY.equals(prefix) || GENE_PHENOTYPE_ENTRY.equals(prefix)
-                    || OBSOLETE.equals(prefix)) {
+            if (line[0].startsWith("#")) { // skip header
                 continue;
             }
 
-            omimDiseaseMasterList.add("OMIM:" + mimId);
+            String mimNumber = line[0];
+            String mimType = line[1];
+
+            if (mimType.equals("phenotype") ||
+                mimType.equals("predominantly phenotypes")) {
+                omimDiseaseMasterList.add("OMIM:" + mimNumber);
+            }
         }
     }
 }
